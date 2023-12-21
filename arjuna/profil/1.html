@@ -6,13 +6,11 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title></title>
 	<style>
-		body{
-			background: url("https://i0.wp.com/portalmadura.com/wp-content/uploads/2021/04/Tempat-Terbaik-di-Sumenep-yang-Pas-Banget-Untuk-Ngabuburit.jpg");
-			background-attachment: fixed;
-			background-size: cover;
+		body {
 			margin: 0;
 			padding: 0;
 		}
+
 		h1 {
 			font-family: Arial, Helvetica, sans-serif;
 			font-weight: bold;
@@ -32,7 +30,8 @@
 		.card:hover {
 			background: rgb(224, 224, 224);
 		}
-		.background{
+
+		.background {
 			background-color: rgba(255, 255, 255, 0.788);
 			position: absolute;
 			overflow: auto;
@@ -40,25 +39,29 @@
 			padding-top: 10px;
 			height: 100%;
 		}
+
 		.grid {
 			display: grid;
 			grid-template-columns: repeat(2, 1fr);
 		}
-		.imggrid{
+
+		.imggrid {
 			position: relative;
-			width: 275px;
+			width: 240px;
 			background-color: white;
 			transition: 0.2s all;
 			transform: scale(1);
 			border-radius: 5px;
 			box-shadow: 1px 5px 10px rgba(0, 0, 0, 0.199);
 		}
-		.imggrid:hover{
+
+		.imggrid:hover {
 			transform: scale(0.9);
 		}
+
 		.imggrid img {
 			width: 100%;
-			height: 350px;
+			height: 300px;
 			border-top-left-radius: 5px;
 			border-top-right-radius: 5px;
 			margin: 0px;
@@ -70,7 +73,7 @@
 			top: -4px;
 		}
 
-		.imggridcontent p{
+		.imggridcontent p {
 			position: relative;
 			top: -20px;
 		}
@@ -91,28 +94,34 @@
 			font-family: Arial, Helvetica, sans-serif;
 			box-shadow: 1px 5px 10px rgba(0, 0, 0, 0.329);
 		}
+		.subgrid{
+			display: grid;
+			grid-template-columns: repeat(3,1fr);
+		}
 	</style>
 </head>
 
 <body>
 	<div class="background">
 		<div class="grid">
-		<center>
-			<div class="imggrid">
-				<img src="https://bkpsdm.sumenepkab.go.id/images/profil/197805182005011010.png" alt="">
-				<div class="imggridcontent">
-					<h2>Nama</h2>
-					<p>Status</p>
+			<center>
+				<div class="imggrid">
+					<img src="https://bkpsdm.sumenepkab.go.id/images/profil/197805182005011010.png" alt="">
+					<div class="imggridcontent">
+						<h2>Nama</h2>
+						<p>Status</p>
+					</div>
+				</div>
+			</center>
+			<div class="item">
+				<div class="subgrid">
+					<div class="subitem">Visi Misi</div>
+					<div class="subitem">Visi Misi</div>
+					<div class="subitem">Visi Misi</div>
+					<div class="subitem">Visi Misi</div>
 				</div>
 			</div>
-		</center>
-		<div class="item">
-			<div class="subitem">Visi Misi</div>
-			<div class="subitem">Visi Misi</div>
-			<div class="subitem">Visi Misi</div>
-			<div class="subitem">Visi Misi</div>
 		</div>
-	</div>
 	</div>
 </body>
 
