@@ -31,15 +31,6 @@
 			background: rgb(224, 224, 224);
 		}
 
-		.background {
-			background-color: rgba(255, 255, 255, 0.788);
-			position: absolute;
-			overflow: auto;
-			width: 100%;
-			padding-top: 10px;
-			height: 100%;
-		}
-
 		.grid {
 			display: grid;
 			grid-template-columns: repeat(2, 1fr);
@@ -90,23 +81,24 @@
 			color: black;
 			border-radius: 10px;
 			margin-right: 10px;
+			width: 120px;
 			font-weight: bold;
 			font-family: Arial, Helvetica, sans-serif;
 			box-shadow: 1px 5px 10px rgba(0, 0, 0, 0.329);
 		}
 		.subgrid{
 			display: grid;
+			gap: 0px;
 			grid-template-columns: repeat(3,1fr);
 		}
 	</style>
 </head>
 
-<body>
-	<div class="background">
+<body><br>
 		<div class="grid">
 			<center>
 				<div class="imggrid">
-					<img src="https://bkpsdm.sumenepkab.go.id/images/profil/197805182005011010.png" alt="">
+					<img src="../../197805182005011010.png" alt="">
 					<div class="imggridcontent">
 						<h2>Nama</h2>
 						<p>Status</p>
@@ -122,7 +114,6 @@
 				</div>
 			</div>
 		</div>
-	</div>
 </body>
 
 </html>
