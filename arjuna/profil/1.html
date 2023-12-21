@@ -1,15 +1,24 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title></title>
 	<style>
-		h1{
+		body{
+			background: url("https://i0.wp.com/portalmadura.com/wp-content/uploads/2021/04/Tempat-Terbaik-di-Sumenep-yang-Pas-Banget-Untuk-Ngabuburit.jpg");
+			background-attachment: fixed;
+			background-size: cover;
+			margin: 0;
+			padding: 0;
+		}
+		h1 {
 			font-family: Arial, Helvetica, sans-serif;
 			font-weight: bold;
 		}
-		.card{
+
+		.card {
 			background-color: white;
 			padding: 10px;
 			box-shadow: 1px 5px 10px rgba(0, 0, 0, 0.301);
@@ -19,33 +28,82 @@
 			cursor: pointer;
 			transition: 0.3s all;
 		}
-		.card:hover{
+
+		.card:hover {
 			background: rgb(224, 224, 224);
 		}
-		.grid{
+		.background{
+			background-color: rgba(255, 255, 255, 0.788);
+			position: fixed;
+			overflow: auto;
+			width: 100%;
+			padding-top: 10px;
+			height: 100%;
+		}
+		.grid {
 			display: grid;
-			grid-template-columns: repeat(2,1fr);
+			grid-template-columns: repeat(2, 1fr);
 		}
-		.grid img{
-			border: 1px solid;
-			width: 300px;
-			height: 500px;
-		}
-		.item{
-			border-left: 1px solid grey;padding-left: 50px;
-		}
-		.item .subitem{
-			padding: 10px;
+		.imggrid{
+			position: relative;
+			width: 275px;
 			background-color: white;
-			margin-bottom: 5px;
+			transition: 0.2s all;
+			transform: scale(1);
+			border-radius: 5px;
+			box-shadow: 1px 5px 10px rgba(0, 0, 0, 0.199);
+		}
+		.imggrid:hover{
+			transform: scale(0.9);
+		}
+		.imggrid img {
+			width: 100%;
+			height: 350px;
+			border-top-left-radius: 5px;
+			border-top-right-radius: 5px;
+			margin: 0px;
+		}
+
+		.imggrid .imggridcontent {
+			width: 250px;
+			position: relative;
+			top: -4px;
+		}
+
+		.imggridcontent p{
+			position: relative;
+			top: -20px;
+		}
+
+		.item {
+			border-left: 1px solid grey;
+			padding-left: 50px;
+		}
+
+		.item .subitem {
+			padding: 10px;
+			background-color: rgb(56, 56, 56);
+			margin-bottom: 2px;
+			color: white;
+			border: 1px solid rgb(0, 182, 0);
+			font-weight: bold;
+			font-family: Arial, Helvetica, sans-serif;
 			box-shadow: 1px 5px 10px rgba(0, 0, 0, 0.212);
 		}
 	</style>
 </head>
+
 <body>
-	<div class="grid">
+	<div class="background">
+		<div class="grid">
 		<center>
-			<img src="" alt="">
+			<div class="imggrid">
+				<img src="https://bkpsdm.sumenepkab.go.id/images/profil/197805182005011010.png" alt="">
+				<div class="imggridcontent">
+					<h2>Nama</h2>
+					<p>Status</p>
+				</div>
+			</div>
 		</center>
 		<div class="item">
 			<div class="subitem">Visi Misi</div>
@@ -54,5 +112,7 @@
 			<div class="subitem">Visi Misi</div>
 		</div>
 	</div>
+	</div>
 </body>
+
 </html>
