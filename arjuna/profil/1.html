@@ -22,9 +22,37 @@
 		.card:hover{
 			background: rgb(224, 224, 224);
 		}
+		.grid{
+			display: grid;
+			grid-template-columns: repeat(2,1fr);
+		}
+		.grid img{
+			border: 1px solid;
+			width: 300px;
+			height: 500px;
+		}
+		.item{
+			border-left: 1px solid grey;padding-left: 50px;
+		}
+		.item .subitem{
+			padding: 10px;
+			background-color: white;
+			margin-bottom: 5px;
+			box-shadow: 1px 5px 10px rgba(0, 0, 0, 0.212);
+		}
 	</style>
 </head>
 <body>
-	
+	<div class="grid">
+		<center>
+			<img src="" alt="">
+		</center>
+		<div class="item">
+			<div class="subitem">Visi Misi</div>
+			<div class="subitem">Visi Misi</div>
+			<div class="subitem">Visi Misi</div>
+			<div class="subitem">Visi Misi</div>
+		</div>
+	</div>
 </body>
 </html>
