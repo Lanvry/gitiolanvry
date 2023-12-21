@@ -451,6 +451,8 @@ input[type=number]:focus,
     width: 100%;
     position: fixed;
     z-index: 99;
+    animation: slideInUp;
+    animation-duration: 1s;
     bottom: 25px !important;
     align-items: center;
     padding: 10px;
@@ -1187,6 +1189,8 @@ input[type=number]:focus,
 
 .show-element {
     display: block;
+    animation : slideInDown;
+    animation-duration: 1s;
     transition: all ease-in .2s;
     visibility: visible;
 }

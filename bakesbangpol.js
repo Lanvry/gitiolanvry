@@ -1,5 +1,6 @@
 /*
 /* menu */
+AOS.init();
 function getMenumanager(id) {
     showBasedModal();
     $.ajax({
