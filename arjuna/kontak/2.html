@@ -1,50 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
 
-<div style="text-align:center; font-size:1.5rem; padding:1rem;">
-	<span>KONTAK</span>
-</div>
-<style>
-	.title-container{
-    	font-family: 'Rubik', 'Fauna One', 'Roboto';
-    	font-size: 1.1rem;
-    	text-align: center;
-	}
-	.tool-items-text {
-        font-size: 0.8rem;
-    }
-	.tools-sc-container{
-    	grid-template-columns: 20% 20% 20% 20% 20% !important;
-        grid-column-gap: 0px;
-	}
-	@media  all and (max-width:600px){
-    	.tools-sc-container{
-        	grid-template-columns: 33% 33% 33%  !important;
-        	padding:0px !important;
-    	}
-    	.padadaset{
-    	    padding:unset !important;
-    	}
-    	.tools-sc-container-item {
-            padding: 20px 5px;
-        }
-	}
-</style>
-<div class="container padadaset" style="width:100%">
-    <div class="tools-sc-container ">
-                                    <div class="tools-sc-container-item">
-            			<a href="https://www.instagram.com/bakesbangpol_sumenep/" target="_SELF">
-            				<div class="tool-items">
-            					<img class="tool-items-icon" title="Instagram" src="https://tugasnuqi.github.io/pkl/instagram.png" alt="Instagram">
-            				</div>
-            				<div class="tool-items-text" title="Instagram">Instagram</div>
-            			</a>
-            		</div>
-                                    <div class="tools-sc-container-item">
-            			<a href="mailto:bakesbangpolsumenep141@gmail.com"  target="_SELF">
-            				<div class="tool-items">
-            					<img class="tool-items-icon" title="Email" src="https://tugasnuqi.github.io/pkl/email.png" alt="Email">
-            				</div>
-            				<div class="tool-items-text" title="Email">Email</div>
-            			</a>
-            		</div>
-                    </div>
-</div>
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+	<style>
+		* {
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #f2f2fe;
+}
+
+.icons a {
+  display: inline-flex;
+  width: 100px;
+  height: 100px;
+  position: relative;
+  align-items: center;
+  border-radius: 5px;
+  justify-content: center;
+  text-decoration: none;
+  font-size: 40px;
+  margin: 10px;
+  box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
+
+  background-size: 100% 200%;
+  background-position: 0% 5%;
+
+  transition: background-position 0.5s, color 0.5s;
+}
+
+.icons a:nth-child(1) {
+  color: #ec7302;
+  background-image: linear-gradient(#fff 50%, #ec7302 50%);
+}
+
+.icons a:nth-child(2) {
+  color: #c00d00;
+  background-image: linear-gradient(#fff 50%, #c00d00 50%);
+}
+
+.icons a:nth-child(3) {
+  color: #000;
+  background-image: linear-gradient(#fff 50%, #000 50%);
+}
+
+.icons a:nth-child(4) {
+  color: #03a9f5;
+  background-image: linear-gradient(#fff 50%, #03a9f5 50%);
+}
+
+.icons a:hover {
+  background-position: 0% 100%;
+  color: #fff;
+}
+.icons a p{
+	position: absolute;
+	color: black;
+	top: 110px;
+	font-size: 20px;
+	font-family: Arial, Helvetica, sans-serif;
+	font-weight: bold;
+}
+
+	</style>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+</head>
+
+<body>
+	<div class="container">
+		<div class="icons">
+			<a href="">
+				<i class="fa fa-envelope"></i>
+				<p>Email</p>
+			</a>
+			<a href="">
+				<i class="fab fa-instagram"></i>
+				<p>Instagram</p>
+			</a>
+		</div>
+	</div>
+</body>
+
+</html>
