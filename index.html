@@ -45,14 +45,14 @@
   <link
     href="https://fonts.googleapis.com/css?family=Open+Sans:300,400%7CRaleway:300,400,500,600,700%7CLato:300,400,400italic,600,700"
     rel="stylesheet" type="text/css" />
-    <script src="//cdn.jsdelivr.net/gh/freeps2/a7rarpress@main/swiper-bundle.min.js"></script>
-    <script src="//cdn.jsdelivr.net/gh/freeps2/a7rarpress@main/script.js"></script>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/freeps2/a7rarpress@main/swiper-bundle.min.css">
-    <link rel="stylesheet" href="css/fe/bootstrap.min.css" type="text/css" />
-    <link rel="stylesheet" href="css/fe/style1.css">
-    <link rel="stylesheet" href="css/fe/portal.css" type="text/css" />
-    <link rel="stylesheet" href="bakesbangpol.css" type="text/css" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+  <script src="//cdn.jsdelivr.net/gh/freeps2/a7rarpress@main/swiper-bundle.min.js"></script>
+  <script src="//cdn.jsdelivr.net/gh/freeps2/a7rarpress@main/script.js"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/freeps2/a7rarpress@main/swiper-bundle.min.css">
+  <link rel="stylesheet" href="css/fe/bootstrap.min.css" type="text/css" />
+  <link rel="stylesheet" href="css/fe/style1.css">
+  <link rel="stylesheet" href="css/fe/portal.css" type="text/css" />
+  <link rel="stylesheet" href="bakesbangpol.css" type="text/css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
   <link rel="stylesheet" type="text/css" href="css/fe/table1.min.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
   <link href="css/fe/slick.css" rel="stylesheet" type="text/css" />
@@ -66,7 +66,7 @@
   <script src="js/fe/select2.min.js"></script>
 </head>
 
-<body style="background-color: #fff">
+<body style="background-color: #ffffff">
   <div id="search"></div>
   <div>
     <div id="topNav" class="nav-portal show-element">
@@ -131,7 +131,7 @@
         <div style="height: 5vh;"></div>
 
         <div id="toolbar-p-1" class="">
-          <div id="toolbar-p-1" class="">
+          <div id="toolbar-p-1" class="" style="transition: 1s all;">
             <div id="toolbar-p-1-container" class="tools-wrp-bottom-container">
               <div onclick="getProfil(1)">
                 <div class="tools-wrp-bottom" id="1">
@@ -166,15 +166,16 @@
               </div>
               </a>
 
-              <div onclick="search()" id="search">
+              <div onclick="search()">
                 <a href="#search">
-                  <div class="tools-wrp-bottom">
+                  <div class="tools-wrp-bottom" id="searchbtn">
                     <div class="tool-bottom-wrp-icon">
-                      <img class="tool-bottom-icon" title="contoh" src="https://lanvry.github.io/gitiolanvry/search.gif" alt="contoh">
+                      <img class="tool-bottom-icon" title="contoh"
+                        src="https://lanvry.github.io/gitiolanvry/searchgif.gif" alt="contoh">
                     </div>
                     <div class="tool-bottom-text" title="contoh">Search</div>
                   </div>
-                  </a>
+                </a>
                 </a>
               </div>
 
@@ -190,6 +191,29 @@
               </div>
 
             </div>
+          </div>
+          <div id="formsearch">
+            <a onclick="searchoff()" style="font-size: 30px; font-weight: bold;"><ion-icon name="close-outline"></ion-icon></a>
+            <div id="bwi-brand" class=" title-text-single coloring-text-logo typewriter">
+              <img class="iming" src="https://sumenepkab.go.id/assets/theme2/img/logo.png" style="width:350px">
+            </div>
+            <!-- search bar -->
+            <form action="" method="post" class="searchform">
+              <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
+
+              <div class="wrapper">
+                <div class="label">Submit your search</div>
+                <div class="searchBar">
+                  <input id="searchQueryInput" type="text" name="searchQueryInput" placeholder="Search" value="" />
+                  <button id="searchQuerySubmit" type="submit" name="searchQuerySubmit">
+                    <svg style="width:24px;height:24px" viewBox="0 0 24 24">
+                      <path fill="#666666"
+                        d="M9.5,3A6.5,6.5 0 0,1 16,9.5C16,11.11 15.41,12.59 14.44,13.73L14.71,14H15.5L20.5,19L19,20.5L14,15.5V14.71L13.73,14.44C12.59,15.41 11.11,16 9.5,16A6.5,6.5 0 0,1 3,9.5A6.5,6.5 0 0,1 9.5,3M9.5,5C7,5 5,7 5,9.5C5,12 7,14 9.5,14C12,14 14,12 14,9.5C14,7 12,5 9.5,5Z" />
+                    </svg>
+                  </button>
+                </div>
+              </div>
+            </form>
           </div>
           <script>
             function getMenumanager(id) {
@@ -273,7 +297,10 @@
                             <img
                               src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjxivAs4UknzmDfLBXGMxQkayiZDhR2ftB4jcIV7LEnIEStiUyMygioZnbLXCAND-I_xWQpVp0jv-dv9NVNbuKn4sNpXYtLIJk2-IOdWQNpC2Ldapnljifu0pnQqAWU848Ja4lT9ugQex-nwECEh3a96GXwiRXlnGEE6FFF_tKm66IGe3fzmLaVIoNL/s1600/img_avatar.png"
                               alt="" class="card-img">
-                            <div class="tanggal"><div id="tanggal1">20</div><div id="bulandantahun">NOV 23</div></div>
+                            <div class="tanggal">
+                              <div id="tanggal1">20</div>
+                              <div id="bulandantahun">NOV 23</div>
+                            </div>
                           </div>
                         </div>
 
@@ -294,7 +321,10 @@
                             <img
                               src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjxivAs4UknzmDfLBXGMxQkayiZDhR2ftB4jcIV7LEnIEStiUyMygioZnbLXCAND-I_xWQpVp0jv-dv9NVNbuKn4sNpXYtLIJk2-IOdWQNpC2Ldapnljifu0pnQqAWU848Ja4lT9ugQex-nwECEh3a96GXwiRXlnGEE6FFF_tKm66IGe3fzmLaVIoNL/s1600/img_avatar.png"
                               alt="" class="card-img">
-                            <div class="tanggal"><div id="tanggal1">20</div><div id="bulandantahun">NOV 23</div></div>
+                            <div class="tanggal">
+                              <div id="tanggal1">20</div>
+                              <div id="bulandantahun">NOV 23</div>
+                            </div>
                           </div>
                         </div>
 
@@ -315,7 +345,10 @@
                             <img
                               src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjxivAs4UknzmDfLBXGMxQkayiZDhR2ftB4jcIV7LEnIEStiUyMygioZnbLXCAND-I_xWQpVp0jv-dv9NVNbuKn4sNpXYtLIJk2-IOdWQNpC2Ldapnljifu0pnQqAWU848Ja4lT9ugQex-nwECEh3a96GXwiRXlnGEE6FFF_tKm66IGe3fzmLaVIoNL/s1600/img_avatar.png"
                               alt="" class="card-img">
-                            <div class="tanggal"><div id="tanggal1">20</div><div id="bulandantahun">NOV 23</div></div>
+                            <div class="tanggal">
+                              <div id="tanggal1">20</div>
+                              <div id="bulandantahun">NOV 23</div>
+                            </div>
                           </div>
                         </div>
 
@@ -336,7 +369,10 @@
                             <img
                               src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjxivAs4UknzmDfLBXGMxQkayiZDhR2ftB4jcIV7LEnIEStiUyMygioZnbLXCAND-I_xWQpVp0jv-dv9NVNbuKn4sNpXYtLIJk2-IOdWQNpC2Ldapnljifu0pnQqAWU848Ja4lT9ugQex-nwECEh3a96GXwiRXlnGEE6FFF_tKm66IGe3fzmLaVIoNL/s1600/img_avatar.png"
                               alt="" class="card-img">
-                            <div class="tanggal"><div id="tanggal1">20</div><div id="bulandantahun">NOV 23</div></div>
+                            <div class="tanggal">
+                              <div id="tanggal1">20</div>
+                              <div id="bulandantahun">NOV 23</div>
+                            </div>
                           </div>
                         </div>
 
@@ -357,7 +393,10 @@
                             <img
                               src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjxivAs4UknzmDfLBXGMxQkayiZDhR2ftB4jcIV7LEnIEStiUyMygioZnbLXCAND-I_xWQpVp0jv-dv9NVNbuKn4sNpXYtLIJk2-IOdWQNpC2Ldapnljifu0pnQqAWU848Ja4lT9ugQex-nwECEh3a96GXwiRXlnGEE6FFF_tKm66IGe3fzmLaVIoNL/s1600/img_avatar.png"
                               alt="" class="card-img">
-                            <div class="tanggal"><div id="tanggal1">20</div><div id="bulandantahun">NOV 23</div></div>
+                            <div class="tanggal">
+                              <div id="tanggal1">20</div>
+                              <div id="bulandantahun">NOV 23</div>
+                            </div>
                           </div>
                         </div>
 
@@ -378,7 +417,10 @@
                             <img
                               src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjxivAs4UknzmDfLBXGMxQkayiZDhR2ftB4jcIV7LEnIEStiUyMygioZnbLXCAND-I_xWQpVp0jv-dv9NVNbuKn4sNpXYtLIJk2-IOdWQNpC2Ldapnljifu0pnQqAWU848Ja4lT9ugQex-nwECEh3a96GXwiRXlnGEE6FFF_tKm66IGe3fzmLaVIoNL/s1600/img_avatar.png"
                               alt="" class="card-img">
-                            <div class="tanggal"><div id="tanggal1">20</div><div id="bulandantahun">NOV 23</div></div>
+                            <div class="tanggal">
+                              <div id="tanggal1">20</div>
+                              <div id="bulandantahun">NOV 23</div>
+                            </div>
                           </div>
                         </div>
 
@@ -399,7 +441,10 @@
                             <img
                               src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjxivAs4UknzmDfLBXGMxQkayiZDhR2ftB4jcIV7LEnIEStiUyMygioZnbLXCAND-I_xWQpVp0jv-dv9NVNbuKn4sNpXYtLIJk2-IOdWQNpC2Ldapnljifu0pnQqAWU848Ja4lT9ugQex-nwECEh3a96GXwiRXlnGEE6FFF_tKm66IGe3fzmLaVIoNL/s1600/img_avatar.png"
                               alt="" class="card-img">
-                            <div class="tanggal"><div id="tanggal1">20</div><div id="bulandantahun">NOV 23</div></div>
+                            <div class="tanggal">
+                              <div id="tanggal1">20</div>
+                              <div id="bulandantahun">NOV 23</div>
+                            </div>
                           </div>
                         </div>
 
@@ -420,7 +465,10 @@
                             <img
                               src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjxivAs4UknzmDfLBXGMxQkayiZDhR2ftB4jcIV7LEnIEStiUyMygioZnbLXCAND-I_xWQpVp0jv-dv9NVNbuKn4sNpXYtLIJk2-IOdWQNpC2Ldapnljifu0pnQqAWU848Ja4lT9ugQex-nwECEh3a96GXwiRXlnGEE6FFF_tKm66IGe3fzmLaVIoNL/s1600/img_avatar.png"
                               alt="" class="card-img">
-                            <div class="tanggal"><div id="tanggal1">20</div><div id="bulandantahun">NOV 23</div></div>
+                            <div class="tanggal">
+                              <div id="tanggal1">20</div>
+                              <div id="bulandantahun">NOV 23</div>
+                            </div>
                           </div>
                         </div>
 
@@ -449,7 +497,7 @@
             </div>
           </div>
         </div>
-       <!-- Akhir Background -->
+        <!-- Akhir Background -->
         <div style="height: 2rem;"></div>
         <div class="container">
           <script src="https://apps.elfsight.com/p/platform.js" defer></script>
