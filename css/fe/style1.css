@@ -2410,7 +2410,7 @@ h5,
 }
 
 .card {
-  border-radius: 25px;
+  border-radius: 10px;
   min-height: auto;
   position: relative;
   box-shadow: 0px -10px 10px white;
