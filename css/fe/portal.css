@@ -55,6 +55,14 @@ body {
     scroll-behavior: smooth;
 }
 
+.background{
+    background: url("https://lanvry.github.io/gitiolanvry/background.png");
+    background-size: cover;
+    position: relative;
+    box-shadow: inset 0px -20px 10px white;
+    width: 100%;
+}
+
 a {
     color: #022b26 !important;
     text-decoration: none !important;
