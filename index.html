@@ -67,6 +67,7 @@
 </head>
 
 <body style="background-color: #fff">
+  <div id="search"></div>
   <div>
     <div id="topNav" class="nav-portal show-element">
       <!-- container biasa -->
@@ -133,7 +134,7 @@
           <div id="toolbar-p-1" class="">
             <div id="toolbar-p-1-container" class="tools-wrp-bottom-container">
               <div onclick="getProfil(1)">
-                <div class="tools-wrp-bottom">
+                <div class="tools-wrp-bottom" id="1">
                   <div class="tool-bottom-wrp-icon">
                     <img class="tool-bottom-icon" title="PROFIL" src="user.gif" alt="PROFIL">
                   </div>
@@ -141,7 +142,7 @@
                 </div>
               </div>
 
-              <div class="tools-wrp-bottom">
+              <div class="tools-wrp-bottom" id="2">
                 <div class="tool-bottom-wrp-icon">
                   <img class="tool-bottom-icon" style="background-color: white;" title="contoh"
                     src="https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExd2g3aDFmNXk3OWtsd2xqaWhwYWNnbGd0eHUzeTBmcDM5bDl6ZWk0YyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9cw/moutEMlv0lA3bChkuC/giphy.gif"
@@ -150,22 +151,14 @@
                 <div class="tool-bottom-text" title="contoh">Berita</div>
               </div>
 
-              <div class="tools-wrp-bottom">
+              <div class="tools-wrp-bottom" id="3">
                 <div class="tool-bottom-wrp-icon">
                   <img class="tool-bottom-icon" title="contoh" src="icon.png" alt="contoh">
                 </div>
                 <div class="tool-bottom-text" title="contoh">contoh</div>
               </div>
 
-              <div class="tools-wrp-bottom">
-                <div class="tool-bottom-wrp-icon">
-                  <img class="tool-bottom-icon" title="contoh" src="icon.png" alt="contoh">
-                </div>
-                <div class="tool-bottom-text" title="contoh">contoh</div>
-              </div>
-              </a>
-
-              <div class="tools-wrp-bottom">
+              <div class="tools-wrp-bottom" id="4">
                 <div class="tool-bottom-wrp-icon">
                   <img class="tool-bottom-icon" title="contoh" src="icon.png" alt="contoh">
                 </div>
@@ -173,7 +166,19 @@
               </div>
               </a>
 
-              <div onclick="getMenumanager(2)">
+              <div onclick="search()" id="search">
+                <a href="#search">
+                  <div class="tools-wrp-bottom">
+                    <div class="tool-bottom-wrp-icon">
+                      <img class="tool-bottom-icon" title="contoh" src="https://lanvry.github.io/gitiolanvry/search.gif" alt="contoh">
+                    </div>
+                    <div class="tool-bottom-text" title="contoh">Search</div>
+                  </div>
+                  </a>
+                </a>
+              </div>
+
+              <div onclick="getMenumanager(2)" id="5">
                 <div class="tools-wrp-bottom">
                   <div class="tool-bottom-wrp-icon">
                     <img class="tool-bottom-icon" title="KONTAK"
@@ -835,6 +840,7 @@
   <div id="notifications"></div>
   <!--<div id="contact"></div>-->
   <script src="js/fe/jquery.smartmenus.min.js"></script>
+  <script src="js/fe/script1.js"></script>
   <script>
     $(document).ready(function () {
       $('#main-menu').smartmenus();

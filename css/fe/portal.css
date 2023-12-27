@@ -43,6 +43,10 @@ GREEN CREATION
     min-width: 0;
 }
 
+html {
+    scroll-behavior: smooth;
+  }
+  
 html,
 body {
     padding: 0px;
