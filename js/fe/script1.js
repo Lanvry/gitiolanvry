@@ -1,4 +1,5 @@
 function search() {
+    document.getElementById("6").style.transition = "0.2s all";
     document.getElementById("5").style.transition = "0.2s all";
     document.getElementById("4").style.transition = "0.2s all";
     document.getElementById("3").style.transition = "0.2s all";
@@ -17,6 +18,7 @@ function search() {
                     document.getElementById("3").style.opacity = "0%";
                     setTimeout(() => {
                         document.getElementById("4").style.opacity = "0%";
+                        document.getElementById("6").style.opacity = "0%";
                         setTimeout(() => {
                             document.getElementById("searchbtn").style.position = "absolute";
                             document.getElementById("searchbtn").style.left = "50%";
@@ -34,6 +36,7 @@ function search() {
     }, 500);
 }
 function searchoff() {
+    document.getElementById("6").style.transition = "0.2s all";
     document.getElementById("5").style.transition = "0.2s all";
     document.getElementById("4").style.transition = "0.2s all";
     document.getElementById("3").style.transition = "0.2s all";
@@ -59,6 +62,7 @@ function searchoff() {
                             document.getElementById("3").style.opacity = "100%";
                             setTimeout(() => {
                                 document.getElementById("4").style.opacity = "100%";
+                                document.getElementById("6").style.opacity = "100%";
                             }, 100);
                         }, 100);
                     }, 100);
@@ -67,3 +71,19 @@ function searchoff() {
         }, 200);
     }, 1000);
 }
+
+    const counters = document.querySelectorAll(".number");
+
+    counters.forEach((counter) => {
+        counter.innerText = "0";
+        const updateCounter = () => {
+            const target = +counter.getAttribute("data-target");
+            const count = +counter.innerText;
+            const increment = target / 50000;
+            if (count < target) {
+                counter.innerText = `${Math.ceil(count + increment)}`;
+                setTimeout(updateCounter, 1);
+            } else counter.innerText = target;
+        };
+        updateCounter();
+    });
