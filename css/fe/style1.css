@@ -2839,4 +2839,14 @@ h5,
     height: 300px;
     background: rgba(255, 255, 255, 0);
   }
+  .imgkantoroverlay {
+    height: 200px;
+    width: 100%;
+  }
+}
+@media screen and (max-width: 350px) {
+  .imgkantoroverlay {
+    height: 90px;
+    width: 100%;
+  }
 }
