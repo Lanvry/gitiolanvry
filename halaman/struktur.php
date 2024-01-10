@@ -41,9 +41,7 @@
   <link rel="apple-touch-icon" href="https://sumenepkab.go.id/assets/theme2/img/favicon.png" />
   <link rel="mask-icon" href="https://sumenepkab.go.id/assets/theme2/img/favicon.png" color="#f4e4d7">
 
-  <link
-    href="https://fonts.googleapis.com/css?family=Open+Sans:300,400%7CRaleway:300,400,500,600,700%7CLato:300,400,400italic,600,700"
-    rel="stylesheet" type="text/css" />
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400%7CRaleway:300,400,500,600,700%7CLato:300,400,400italic,600,700" rel="stylesheet" type="text/css" />
   <link rel="stylesheet" href="https://lanvry.github.io/gitiolanvry/css/fe/bootstrap.min.css" type="text/css" />
   <link rel="stylesheet" href="https://lanvry.github.io/gitiolanvry/css/fe/portal.css" type="text/css" />
   <link rel="stylesheet" href="https://lanvry.github.io/gitiolanvry/bakesbangpol2.css" type="text/css" />
@@ -408,110 +406,17 @@
     </div>
   </div>
   <div id="ctn-utama" class="based-div-1">
-    <div
-      style="background:linear-gradient(10deg, #ffffff 1%,  #ffffff, #ffffff); opacity:0.8; content:''; position:absolute; top:0; bottom:0px; left:0px; right:0px; width:100%;">
+    <div style="background:linear-gradient(10deg, #ffffff 1%,  #ffffff, #ffffff); opacity:0.8; content:''; position:absolute; top:0; bottom:0px; left:0px; right:0px; width:100%;">
     </div>
-    <div id="main-content"
-      style="opacity: 1; z-index:1; position: relative; max-height:100vh; overflow-y:auto; overflow-x:hidden;"
-      class="scroller">
+    <div id="main-content" style="opacity: 1; z-index:1; position: relative; max-height:100vh; overflow-y:auto; overflow-x:hidden;" class="scroller">
+    <?php 
+       include "formsearch.php"
+      ?>
       <div style="height: 8vh;" class="gangg"></div>
       <div id="toolbar-p-1" class="bottom-based-tools-wrp">
-        <div id="toolbar-p-1" class="">
-          <div id="toolbar-p-1-container" class="tools-wrp-bottom-container">
-            <div onclick="getProfil(1)">
-              <div class="tools-wrp-bottom">
-                <div class="tool-bottom-wrp-icon">
-                  <img class="tool-bottom-icon" title="PROFIL" src="https://lanvry.github.io/gitiolanvry/user.gif"
-                    alt="PROFIL">
-                </div>
-                <div class="tool-bottom-text" title="PROFIL">Profil</div>
-              </div>
-            </div>
-            <div class="tools-wrp-bottom">
-              <div class="tool-bottom-wrp-icon">
-                <img class="tool-bottom-icon" title="contoh" src="https://lanvry.github.io/gitiolanvry/icon.png"
-                  alt="contoh">
-              </div>
-              <div class="tool-bottom-text" title="contoh">Berita</div>
-            </div>
-
-            <div class="tools-wrp-bottom">
-              <div class="tool-bottom-wrp-icon">
-                <img class="tool-bottom-icon" title="contoh" src="https://lanvry.github.io/gitiolanvry/icon.png"
-                  alt="contoh">
-              </div>
-              <div class="tool-bottom-text" title="contoh">contoh</div>
-            </div>
-
-            <div class="tools-wrp-bottom">
-              <div class="tool-bottom-wrp-icon">
-                <img class="tool-bottom-icon" title="contoh" src="https://lanvry.github.io/gitiolanvry/icon.png"
-                  alt="contoh">
-              </div>
-              <div class="tool-bottom-text" title="contoh">contoh</div>
-            </div>
-            </a>
-
-            <div class="tools-wrp-bottom">
-              <div class="tool-bottom-wrp-icon">
-                <img class="tool-bottom-icon" title="contoh" src="https://lanvry.github.io/gitiolanvry/icon.png"
-                  alt="contoh">
-              </div>
-              <div class="tool-bottom-text" title="contoh">contoh</div>
-            </div>
-            </a>
-            <div onclick="getMenumanager(2)">
-              <div class="tools-wrp-bottom">
-                <div class="tool-bottom-wrp-icon">
-                  <img class="tool-bottom-icon" title="KONTAK" src="https://lanvry.github.io/gitiolanvry/icon.png"
-                    alt="KONTAK">
-                </div>
-                <div class="tool-bottom-text" title="KONTAK">KONTAK</div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <script>
-          /* menu */
-          function getMenumanager(id) {
-            showBasedModal();
-            $.ajax({
-              type: 'GET',
-              url: APP_URL + '/arjuna/kontak/' + id,
-              dataType: "html",
-              success: function (html) {
-                $("#navbar_based_modal_content").html(html);
-              },
-              error: function (err) {
-                $("#navbar_based_modal_content").html(
-                  `<div style="text-align:center; font-size:1.5rem">isi</div>`
-                );
-                console.log(err)
-              }
-            })
-          }
-
-          /* profile */
-          function getProfil(id) {
-            showBasedModal();
-            $.ajax({
-              type: 'GET',
-              url: APP_URL + '/arjuna/profil/' + id,
-              dataType: "html",
-              success: function (html) {
-                $("#navbar_based_modal_content").html(html);
-              },
-              error: function (err) {
-                $("#navbar_based_modal_content").html(
-                  `<div style="text-align:center; font-size:1.5rem">isi</div>`
-                );
-                console.log(err)
-              }
-            })
-          }
-
-
-        </script>
+        <?php
+        include "toolbar.php";
+        ?>
 
       </div>
 
@@ -641,10 +546,7 @@
               </div>
               <div class="col-md-4 col-xs-12">
                 <div class="peta">
-                  <iframe
-                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d484.80653174534797!2d113.8578961800629!3d-7.015541329234289!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2dd9e68284aedc7b%3A0x914544e72f0bb7f6!2sBadan%20Kesatuan%20Bangsa%20Politik%20dan%20Perlindungan%20Masyarakat!5e0!3m2!1sid!2sid!4v1697008775197!5m2!1sid!2sid"
-                    width="400" height="300" style="border:0;" allowfullscreen="" loading="lazy"
-                    referrerpolicy="no-referrer-when-downgrade"></iframe>
+                  <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d484.80653174534797!2d113.8578961800629!3d-7.015541329234289!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2dd9e68284aedc7b%3A0x914544e72f0bb7f6!2sBadan%20Kesatuan%20Bangsa%20Politik%20dan%20Perlindungan%20Masyarakat!5e0!3m2!1sid!2sid!4v1697008775197!5m2!1sid!2sid" width="400" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
                 </div>
               </div>
             </div>
@@ -726,7 +628,7 @@
 
       var isChrome = /Chrome/.test(navigator.userAgent) && /Google Inc/.test(navigator.vendor);
       if (window.location.hash && isChrome) {
-        setTimeout(function () {
+        setTimeout(function() {
           var hash = window.location.hash;
           window.location.hash = "";
           window.location.hash = hash;
@@ -741,7 +643,7 @@
 
 
 
-      $("#main-content").scroll(function (e) {
+      $("#main-content").scroll(function(e) {
         var scrollTop = $(this).scrollTop()
 
         if (scrollTop > 300) {
@@ -837,7 +739,6 @@
       // }, 1000);
 
     })
-
   </script>
   <!-- SCROLL TO TOP -->
   <a href="#" id="toTop"></a>
@@ -845,7 +746,7 @@
   <script type="text/javascript" src="https://lanvry.github.io/gitiolanvry/js/fe/bootstrap.bundle.min.js"></script>
   <script src="https://lanvry.github.io/gitiolanvry/js/fe/slick.min.js"></script>
   <script>
-    var APP_URL = "https://lanvry.github.io/gitiolanvry"
+    var APP_URL = "https://lanvry.github.io/gitiolanvry/"
   </script>
   <!-- Menu boostrap 4 -->
   <script>
@@ -868,18 +769,18 @@
 
       // make it as accordion for smaller screens
       if ($(window).width() > 100) {
-        $('.dropdown-menu a').click(function (e) {
+        $('.dropdown-menu a').click(function(e) {
           e.preventDefault();
           if ($(this).next('.submenu').length) {
             $(this).next('.submenu').toggle();
           }
-          $('.dropdown').on('hide.bs.dropdown', function () {
+          $('.dropdown').on('hide.bs.dropdown', function() {
             $(this).find('.submenu').hide();
           })
         });
 
         //mobile out of canvas
-        $("[data-trigger]").on("click", function (e) {
+        $("[data-trigger]").on("click", function(e) {
           console.log("showing element ...")
           e.preventDefault();
           e.stopPropagation();
@@ -909,7 +810,7 @@
         });
 
 
-        $(".btn-close, .screen-overlay").click(function (e) {
+        $(".btn-close, .screen-overlay").click(function(e) {
           $(".screen-overlay").removeClass("show");
           $(".mobile-offcanvas").removeClass("show");
           $("#navbar_based_modal_content").html(``)
@@ -924,7 +825,7 @@
         });
 
 
-        $(".mobile-offcanvas").click(function (e) {
+        $(".mobile-offcanvas").click(function(e) {
           if (e.target.className == "must-close mobile-offcanvas show") {
             $(".screen-overlay").removeClass("show");
             $(".mobile-offcanvas").removeClass("show");
@@ -949,7 +850,7 @@
   <!--<div id="contact"></div>-->
   <script src="https://lanvry.github.io/gitiolanvry/js/fe/jquery.smartmenus.min.js"></script>
   <script>
-    $(document).ready(function () {
+    $(document).ready(function() {
       $('#main-menu').smartmenus();
     });
   </script>

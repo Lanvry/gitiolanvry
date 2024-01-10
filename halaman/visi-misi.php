@@ -144,105 +144,14 @@
     <div id="main-content"
       style="opacity: 1; z-index:1; position: relative; max-height:100vh; overflow-y:auto; overflow-x:hidden;"
       class="scroller">
+      <?php 
+       include "formsearch.php"
+      ?>
       <div style="height: 8vh;" class="gangg"></div>
       <div id="toolbar-p-1" class="bottom-based-tools-wrp">
-        <div id="toolbar-p-1" class="">
-          <div id="toolbar-p-1-container" class="tools-wrp-bottom-container">
-            <div onclick="getProfil(1)">
-              <div class="tools-wrp-bottom">
-                <div class="tool-bottom-wrp-icon">
-                  <img class="tool-bottom-icon" title="PROFIL" src="https://lanvry.github.io/gitiolanvry/user.gif"
-                    alt="PROFIL">
-                </div>
-                <div class="tool-bottom-text" title="PROFIL">PROFIL</div>
-              </div>
-            </div>
-            <div class="tools-wrp-bottom">
-              <div class="tool-bottom-wrp-icon">
-                <img class="tool-bottom-icon" title="contoh" src="https://lanvry.github.io/gitiolanvry/icon.png"
-                  alt="contoh">
-              </div>
-              <div class="tool-bottom-text" title="contoh">contoh</div>
-            </div>
-
-            <div class="tools-wrp-bottom">
-              <div class="tool-bottom-wrp-icon">
-                <img class="tool-bottom-icon" title="contoh" src="https://lanvry.github.io/gitiolanvry/icon.png"
-                  alt="contoh">
-              </div>
-              <div class="tool-bottom-text" title="contoh">contoh</div>
-            </div>
-
-            <div class="tools-wrp-bottom">
-              <div class="tool-bottom-wrp-icon">
-                <img class="tool-bottom-icon" title="contoh" src="https://lanvry.github.io/gitiolanvry/icon.png"
-                  alt="contoh">
-              </div>
-              <div class="tool-bottom-text" title="contoh">contoh</div>
-            </div>
-            </a>
-
-            <div class="tools-wrp-bottom">
-              <div class="tool-bottom-wrp-icon">
-                <img class="tool-bottom-icon" title="contoh" src="https://lanvry.github.io/gitiolanvry/icon.png"
-                  alt="contoh">
-              </div>
-              <div class="tool-bottom-text" title="contoh">contoh</div>
-            </div>
-            </a>
-            <div onclick="getMenumanager(2)">
-              <div class="tools-wrp-bottom">
-                <div class="tool-bottom-wrp-icon">
-                  <img class="tool-bottom-icon" title="KONTAK" src="https://lanvry.github.io/gitiolanvry/icon.png"
-                    alt="KONTAK">
-                </div>
-                <div class="tool-bottom-text" title="KONTAK">KONTAK</div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <script>
-          /* menu */
-          function getMenumanager(id) {
-            showBasedModal();
-            $.ajax({
-              type: 'GET',
-              url: APP_URL + '/arjuna/kontak/' + id,
-              dataType: "html",
-              success: function (html) {
-                $("#navbar_based_modal_content").html(html);
-              },
-              error: function (err) {
-                $("#navbar_based_modal_content").html(
-                  `<div style="text-align:center; font-size:1.5rem">isi</div>`
-                );
-                console.log(err)
-              }
-            })
-          }
-
-          /* profile */
-          function getProfil(id) {
-            showBasedModal();
-            $.ajax({
-              type: 'GET',
-              url: APP_URL + '/arjuna/profil/' + id,
-              dataType: "html",
-              success: function (html) {
-                $("#navbar_based_modal_content").html(html);
-              },
-              error: function (err) {
-                $("#navbar_based_modal_content").html(
-                  `<div style="text-align:center; font-size:1.5rem">isi</div>`
-                );
-                console.log(err)
-              }
-            })
-          }
-
-
-        </script>
-
+        <?php 
+         include "toolbar.php";
+        ?>
       </div>
 
       <div class="xcontainer" id="p-1">
@@ -484,7 +393,7 @@
   <script type="text/javascript" src="https://lanvry.github.io/gitiolanvry/js/fe/bootstrap.bundle.min.js"></script>
   <script src="https://lanvry.github.io/gitiolanvry/js/fe/slick.min.js"></script>
   <script>
-    var APP_URL = "https://lanvry.github.io/gitiolanvry"
+    var APP_URL = "https://lanvry.github.io/gitiolanvry/"
   </script>
   <!-- Menu boostrap 4 -->
   <script>
