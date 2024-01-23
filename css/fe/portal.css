@@ -34,7 +34,7 @@ GREEN CREATION
 
 @font-face {
     font-family: cocon-reguler;
-    src: url(../webfonts/cocon-regular-font.otf);
+    src: url();
   }
 
 
@@ -153,6 +153,9 @@ input[type=number]:focus,
 
 .bg-transparant {
     background: transparent !important;
+}
+.bg-blur{
+    backdrop-filter: blur(10px);
 }
 
 
@@ -478,7 +481,7 @@ input[type=number]:focus,
     display: grid;
     grid-column-gap: auto;
     grid-template-columns: 70px 70px 70px 70px 70px;
-    background: rgba(209, 209, 209, 0.836);
+    background: rgba(209, 209, 209, 0.534);
     border-radius: 15px;
     padding: 10px;
     overflow-x: hidden;
@@ -1235,7 +1238,7 @@ input[type=number]:focus,
     /* transform: translateX(-100%); */
     /* background: rgba(255, 255, 255, 0.9); */
     background-color: linear-gradient(#ffffffe5, #ffffffe5, #ffffffe5, #ffffffe5) !important;
-    background: url('../img/gajah_oling_soft_small.png'), linear-gradient(#ffffffe5, #ffffffe5, #ffffffe5, #d8d8d8e5);
+    background: url(''), linear-gradient(#ffffffe5, #ffffffe5, #ffffffe5, #d8d8d8e5);
     background-blend-mode: screen;
     background-repeat: no-repeat;
     background-position: bottom left;

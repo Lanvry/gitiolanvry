@@ -1,3 +1,28 @@
+/* FadeIn Scroll */
+$(document).ready(function() {
+    
+    /* Every time the window is scrolled ... */
+    $("#main-content").scroll( function(){
+    
+        /* Check the location of each desired element */
+        $('.fade').each( function(i){
+            
+            var bottom_of_object = $(this).position().top + $(this).outerHeight();
+            var bottom_of_window = $("#main-content").scrollTop() + $("#main-content").height();
+            
+            /* If the object is completely visible in the window, fade it it */
+            if( bottom_of_window > bottom_of_object ){
+                
+                $(this).animate({'opacity':'1'},1200);
+                    
+            }
+            
+        }); 
+    
+    });
+    
+});
+
 function search() {
     document.getElementById("6").style.transition = "0.2s all";
     document.getElementById("5").style.transition = "0.2s all";
@@ -71,19 +96,3 @@ function searchoff() {
         }, 200);
     }, 1000);
 }
-
-    const counters = document.querySelectorAll(".number");
-
-    counters.forEach((counter) => {
-        counter.innerText = "0";
-        const updateCounter = () => {
-            const target = +counter.getAttribute("data-target");
-            const count = +counter.innerText;
-            const increment = target / 50000;
-            if (count < target) {
-                counter.innerText = `${Math.ceil(count + increment)}`;
-                setTimeout(updateCounter, 1);
-            } else counter.innerText = target;
-        };
-        updateCounter();
-    });

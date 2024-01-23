@@ -1,0 +1,323 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+
+header {
+    background-color: #008cff;
+    color: #fff;
+    padding: 3px;
+    left: 120px;
+}
+
+.headergrid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+}
+
+.headergrid h2 {
+    position: relative;
+    left: 80px;
+}
+
+.logos {
+    width: 80px;
+    top: 10px;
+    position: absolute;
+}
+
+nav {
+    background: linear-gradient(#c4c4c4,transparent);
+    padding: 10px;
+    width: 200px;
+    height: 100%;
+    position: absolute;
+    top: 76.5px;
+    box-shadow: inset -10px 10px 10px rgba(0, 0, 0, 0.123);
+    left: 0;
+    overflow-y: auto;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+nav li {
+    margin-bottom: 10px;
+}
+
+nav a {
+    text-decoration: none;
+    color: black;
+    display: block;
+    padding: 8px;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+}
+
+nav a:hover {
+    background-color: #555;
+}
+
+section {
+    margin-left: 220px;
+    padding: 20px;
+}
+
+.card {
+    background-color: #fff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    position: relative;
+    margin-bottom: 20px;
+    border-radius: 5px;
+}
+
+.deletebtn{
+    position: absolute;
+    right: 0;
+    margin-right: 10px;
+    background-color: #f00;
+    color: white;
+    cursor: pointer;
+    padding: 5px 10px;
+    border: none;
+    border-radius: 5px;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.164);
+}
+
+.deletebtn:hover{
+    background-color: #d00;
+}
+
+.profile {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #fff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    border-radius: 5px;
+    margin-bottom: 20px;
+}
+
+.profile img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    margin-right: 20px;
+}
+
+.profile-info {
+    position: relative;
+    top: -0px;
+    flex-grow: 1;
+}
+
+.profile-info h2 {
+    margin-bottom: 5px;
+}
+
+.profile-info p {
+    color: #777;
+    position: relative;
+    top: -20px;
+    /* Set margin to 0 */
+}
+
+.logout-btn {
+    background-color: #f00;
+    color: #fff;
+    padding: 8px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.logout-btn:hover {
+    background-color: #d00;
+}
+
+.addbtn{
+    background-color: rgb(0, 202, 0);
+    color: white;
+    padding: 5px 10px;
+    border-radius: 3px;
+    float: right;
+    border: none;
+}
+.addbtn:hover{
+    background-color: rgb(0, 138, 0);
+}
+
+.gridclass {
+    display: grid;
+    width: 100%;
+    grid-template-columns: repeat(3, 1fr);
+}
+
+a {
+    text-decoration: none;
+}
+
+.gridclass .card {
+    background-color: #fff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    margin: 5px;
+    color: black;
+    cursor: pointer;
+    text-align: center;
+    margin-bottom: 20px;
+    transition: 0.4s all;
+    border-radius: 5px;
+}
+
+.gridclass .card:hover {
+    background-color: rgb(209, 209, 209);
+}
+
+.gridclass .card h1 {
+    font-size: 70px;
+    padding: 0px;
+    margin: 0px;
+}
+
+.gridclass .card h2 {
+    padding: 0px;
+    margin: 0px;
+    position: relative;
+    top: -10px;
+    margin-bottom: 20px;
+}
+.usersettings{
+    width: 100%;
+    position: relative;
+}
+.usersettings input[type=text]{
+    padding: 10px 5px;
+    border-radius: 10px;
+    border: 1px solid grey;
+    float: right;
+    position: relative;
+    top: -6px;
+}
+.usersettings input[type=email]{
+    padding: 10px 5px;
+    border-radius: 10px;
+    border: 1px solid grey;
+    float: right;
+    position: relative;
+    top: -6px;
+}
+#save{
+    display: none;
+    background-color: #fff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+}
+.buttonadd{
+    position: fixed;
+    bottom: 0px;
+    right: 0px;
+    width: 55px;
+    font-size: 15px;
+    font-weight: bold;
+    height: 55px;
+    border: 0px;
+    border-radius: 5px;
+    margin: 20px;
+    background-color: #008cff;
+    padding: 10px;
+    transition: 0.3s all;
+    box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.192);
+}
+.buttonadd:hover{
+    background:#0066b9;
+}
+.close{
+    background: white;
+    border-radius: 5px;
+    position: absolute;
+    top: 20px;
+    border: 1px solid;
+    padding: 5px;
+    background-color: #008cff;
+    border: 0px;
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.329);
+}
+#formadd{
+    position: fixed;
+    display: none;
+    width: 800px;
+    height: auto;
+    padding: 10px;
+    overflow-y: auto;
+    bottom: -1000px;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    box-shadow: 0px -5px 10px rgba(0, 0, 0, 0.253);
+    background: rgba(255, 255, 255, 0.24);
+    backdrop-filter: blur(10px);
+    transform: translate(-50%, -0%);
+    left: 50%;
+    transition: 1s all;
+}
+#formadd1{
+    border-right: 1px solid;
+    padding-right: 10px;
+}
+.formadd-grid{
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    width: 100%;
+    gap: 10px;
+}
+#formadd h1{
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+}
+#formadd label{
+    font-family: Arial, Helvetica, sans-serif;
+    margin-bottom: 10px;
+    position: relative;
+}
+#formadd input{
+    margin-bottom: 10px;
+    margin-top: 10px;
+    padding: 5px 0px;
+    background-color: transparent;
+    width: 100%;
+    outline: 0;
+}
+#formadd input[type=text]{
+    width: 100%;
+    border: none;
+    border-bottom: 1px solid;
+}
+#formadd .date{
+    border: none;
+    border-bottom: 1px solid;
+}
+#formadd .files{
+    padding: 20px;
+    width: auto;
+    border: 1px dotted black;
+    border-radius: 10px;
+    margin-bottom: 10px;
+    margin-top: 10px;
+}
+#formadd input[type=submit]{
+    background-color: #008cff;
+    border-radius: 5px;
+    border: none;
+    outline: 0;
+    padding: 10px 0px ;
+    box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.219);
+}
