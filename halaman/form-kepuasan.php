@@ -41,6 +41,10 @@
   <link rel="apple-touch-icon" href="https://sumenepkab.go.id/assets/theme2/img/favicon.png" />
   <link rel="mask-icon" href="https://sumenepkab.go.id/assets/theme2/img/favicon.png" color="#f4e4d7">
 
+
+  <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+
   <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400%7CRaleway:300,400,500,600,700%7CLato:300,400,400italic,600,700" rel="stylesheet" type="text/css" />
   <link rel="stylesheet" href="https://lanvry.github.io/gitiolanvry/css/fe/bootstrap.min.css" type="text/css" />
   <link rel="stylesheet" href="https://lanvry.github.io/gitiolanvry/css/fe/portal.css" type="text/css" />
@@ -56,212 +60,311 @@
   <script src="https://lanvry.github.io/gitiolanvry/js/fe/owl.carousel.min.js"></script>
   <script src="https://lanvry.github.io/gitiolanvry/js/fe/select2.min.js"></script>
   <style>
-            .judul {
-            background: url("https://lanvry.github.io/gitiolanvry/sumenep.jpeg");
-            background-position: center;
-            width: 100%;
-            height: 110px;
-            left: 0px;
-            position: absolute;
-            background-size: cover;
-        }
+    .judul {
+      background: url("https://lanvry.github.io/gitiolanvry/sumenep.jpeg");
+      background-position: center;
+      width: 100%;
+      height: 110px;
+      left: 0px;
+      position: absolute;
+      background-size: cover;
+    }
 
-        .judulbackground {
-            background-color: rgba(255, 255, 255, 0.767);
-            position: relative;
-            padding: 40px;
-            font-weight: 500;
-            font-family: Arial, Helvetica, sans-serif;
-            width: 100%;
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-        }
+    .judulbackground {
+      background-color: rgba(255, 255, 255, 0.767);
+      position: relative;
+      padding: 40px;
+      font-weight: 500;
+      font-family: Arial, Helvetica, sans-serif;
+      width: 100%;
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+    }
 
-        .judulbackground h3 {
-            position: relative;
-            top: 0px;
-        }
+    .judulbackground h3 {
+      position: relative;
+      top: 0px;
+    }
 
-        form {
-            padding: 10px;
-            margin-top: 10px;
-            margin-left: 10px;
-            margin-right: 10px;
-            position: relative;
-            height: 100%;
-            background: white;
-            border-radius: 5px;
-            box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.295);
-        }
+    form {
+      padding: 10px;
+      margin-top: 10px;
+      margin-left: 10px;
+      margin-right: 10px;
+      position: relative;
+      height: 100%;
+      background: white;
+      border-radius: 5px;
+      box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.295);
+    }
 
-        .input label {
-            position: relative;
-            top: 10px;
-            font-family: Arial, Helvetica, sans-serif;
-            font-weight: bold;
-        }
+    .input label {
+      position: relative;
+      top: 10px;
+      font-family: Arial, Helvetica, sans-serif;
+      font-weight: bold;
+    }
 
-        .container-form {
-            display: grid;
-            grid-template-columns: 40% 60%;
-        }
+    .container-form {
+      display: grid;
+      grid-template-columns: 40% 60%;
+    }
 
-        input {
-            width: 100%;
-            margin-bottom: 10px;
-        }
-        input[type=text]{
-            border: 1px solid grey;
-            border-radius: 5px;
-            padding: 5px 5px;
-        }
-        input[type=number]{
-            border: 1px solid grey;
-            border-radius: 5px;
-            padding: 5px 5px;
-        }
-        input[type=tel]{
-            border: 1px solid grey;
-            border-radius: 5px;
-            padding: 5px 5px;
-        }
-        select{
-            width: 100%;
-            border: 1px solid grey;
-            border-radius: 5px;
-            padding: 5px 5px;
-        }
+    input {
+      width: 100%;
+      margin-bottom: 10px;
+    }
 
-        option .placeholder{
-            color:grey;
-        }
+    input[type=text] {
+      border: 1px solid grey;
+      border-radius: 5px;
+      padding: 5px 5px;
+    }
 
-        .baris-1 {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 10px;
-        }
+    input[type=number] {
+      border: 1px solid grey;
+      border-radius: 5px;
+      padding: 5px 5px;
+    }
 
-        .baris-2 {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 10px;
-        }
+    input[type=tel] {
+      border: 1px solid grey;
+      border-radius: 5px;
+      padding: 5px 5px;
+    }
 
-        @media only screen and (max-width: 800px) {
-            .container-form{
-            display: grid;
-            grid-template-columns: repeat(1, 1fr);
-            }
-            .baris-1 {
-            display: grid;
-            grid-template-columns: repeat(1, 1fr);
-            gap: 10px;
-        }
+    select {
+      width: 100%;
+      border: 1px solid grey;
+      border-radius: 5px;
+      padding: 5px 5px;
+    }
 
-        .baris-2 {
-            display: grid;
-            grid-template-columns: repeat(1, 1fr);
-            gap: 10px;
-        }
-        }
+    option .placeholder {
+      color: grey;
+    }
 
-        @media only screen and (max-width: 600px) {
-           
-            .judulbackground h3 {
-                position: relative;
-                top: -20px;
-                width: 100%;
-                font-size: 20px;
-            }
-        }
+    .baris-1 {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 10px;
+    }
 
-        #berita {
-            padding-top: 10px;
-        }
+    .baris-2 {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 10px;
+    }
 
-        .card-berita {
-            width: 100%;
-            border-radius: 5px;
-            background-color: white;
-            position: relative;
-            box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.295);
-        }
+    @media only screen and (max-width: 800px) {
+      .container-form {
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+      }
 
-        .content-berita {
-            width: 100%;
-            height: 100%;
-            max-height: 100%;
-            display: grid;
-            grid-template-columns: 80% 20%;
-        }
+      .baris-1 {
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+        gap: 10px;
+      }
 
-        .content-berita img {
-            height: 100%;
-            width: 100%;
-        }
+      .baris-2 {
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+        gap: 10px;
+      }
+    }
 
-        .about-berita {
-            margin-left: 20px;
-            margin-top: 10px;
-            margin-bottom: 10px;
-        }
+    @media only screen and (max-width: 600px) {
 
-        .about-berita h1 {
-            font-family: Arial, Helvetica, sans-serif;
-            font-weight: 550;
-        }
+      .judulbackground h3 {
+        position: relative;
+        top: -20px;
+        width: 100%;
+        font-size: 20px;
+      }
+    }
 
-        .pcimg {
-            display: inline-block;
-        }
+    #berita {
+      padding-top: 10px;
+    }
 
-        .androidimg {
-            display: none;
-        }
+    .card-berita {
+      width: 100%;
+      border-radius: 5px;
+      background-color: white;
+      position: relative;
+      box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.295);
+    }
 
-        @media only screen and (max-width: 600px) {
-            .androidimg {
-                display: inline-block;
-            }
+    .content-berita {
+      width: 100%;
+      height: 100%;
+      max-height: 100%;
+      display: grid;
+      grid-template-columns: 80% 20%;
+    }
 
-            .pcimg {
-                display: none;
-            }
+    .content-berita img {
+      height: 100%;
+      width: 100%;
+    }
 
-            .about-berita h1 {
-                font-size: 20px;
-            }
+    .about-berita {
+      margin-left: 20px;
+      margin-top: 10px;
+      margin-bottom: 10px;
+    }
 
-            .content-berita {
-                grid-template-columns: repeat(1, 1fr);
-            }
-        }
+    .about-berita h1 {
+      font-family: Arial, Helvetica, sans-serif;
+      font-weight: 550;
+    }
 
-        .btnsubmit {
-            background-color: #20a820;
-            color: white;
-            font-weight: bold;
-            box-shadow: 0px 6px #176e17,
-                0px 10px 10px rgba(0, 0, 0, 0.295);
-            padding: 5px 15px;
-            width: 100px;
-            border: 0;
-            transition: 0.2s all;
-            position: relative;
-            top: 0px;
-        }
+    .pcimg {
+      display: inline-block;
+    }
 
-        .btnsubmit:hover {
-            box-shadow: 0px 3px 0px #176e17,
-                0px 10px 10px rgba(0, 0, 0, 0.295);
-            top: 3px;
-        }
+    .androidimg {
+      display: none;
+    }
 
-        .btnsubmit:active {
-            box-shadow: 0px 0px 0px #176e17;
-            top: 5px;
-        }
+    @media only screen and (max-width: 600px) {
+      .androidimg {
+        display: inline-block;
+      }
+
+      .pcimg {
+        display: none;
+      }
+
+      .about-berita h1 {
+        font-size: 20px;
+      }
+
+      .content-berita {
+        grid-template-columns: repeat(1, 1fr);
+      }
+    }
+
+    .btnsubmit {
+      background-color: #20a820;
+      color: white;
+      font-weight: bold;
+      box-shadow: 0px 6px #176e17,
+        0px 10px 10px rgba(0, 0, 0, 0.295);
+      padding: 5px 15px;
+      width: 100px;
+      border: 0;
+      transition: 0.2s all;
+      position: relative;
+      top: 0px;
+    }
+
+    .btnsubmit:hover {
+      box-shadow: 0px 3px 0px #176e17,
+        0px 10px 10px rgba(0, 0, 0, 0.295);
+      top: 3px;
+    }
+
+    .btnsubmit:active {
+      box-shadow: 0px 0px 0px #176e17;
+      top: 5px;
+    }
+
+    .kunjungan {
+      width: 100%;
+      padding: 10px;
+      margin-top: 10px;
+    }
+
+    .grid-kunjungan {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      width: 100%;
+      gap: 10px;
+    }
+
+    .item-kunjungan {
+      width: 100%;
+      padding: 10px;
+      display: grid;
+      grid-template-columns: 80% 20%;
+      border-radius: 5px;
+      position: relative;
+      box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.105);
+    }
+
+    .item-kunjungan p,h1{
+      color: white;
+    }
+
+    .icon-kunjungan {
+      text-align: right;
+      font-size: 90px;
+      position: absolute;
+      color: #454343;
+      right: 0;
+      opacity: 40%;
+      top: 10px;
+    }
+    @media only screen and (max-width: 900px){
+      .grid-kunjungan {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      width: 100%;
+      gap: 10px;
+    }
+  }
+    @media only screen and (max-width: 600px){
+      .grid-kunjungan {
+      display: grid;
+      grid-template-columns: repeat(1, 1fr);
+      width: 100%;
+      gap: 10px;
+      padding: 10px;
+    }
+    .icon-kunjungan {
+      text-align: right;
+      font-size: 90px;
+      position: absolute;
+      color: #454343;
+      right: 0;
+      opacity: 0%;
+      display: none;
+      top: 10px;
+    }
+    .item-kunjungan {
+      width: 100%;
+      padding: 10px;
+      display: grid;
+      grid-template-columns: repeat(1,1fr);
+      border-radius: 5px;
+      position: relative;
+      box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.105);
+    }
+    .item-kunjungan p,h1{
+      color: white;
+      text-align: center;
+    }
+    }
+    .alert{
+      background:#20a820;
+      color:white;
+      width:100%;
+      border:1px solid grey;
+      padding:5px;
+    }
+    @keyframes alert{
+      from{
+        display: block;
+      }
+      to{
+        display: none;
+      }
+      
+    }
+
   </style>
 </head>
 <?php
@@ -329,70 +432,104 @@ require "koneksi.php"
         include "toolbar.php";
         ?>
       </div>
-
+      <div class="kunjungan">
+            <div class="grid-kunjungan">
+              <div class="item-kunjungan" style="background: #40A2D8;">
+                <div>
+                  <h1><b>0</b></h1>
+                  <b><p>Kunjungan Minggu Ini</p></b>
+                </div>
+                <h1 class="icon-kunjungan"><ion-icon name="people"></ion-icon></h1>
+              </div>
+              <div class="item-kunjungan" style="background: #00bf36;"><div>
+                  <h1><b>0</b></h1>
+                  <b><p>Kunjungan Bulan Ini</p></b>
+                </div>
+                <h1 class="icon-kunjungan"><ion-icon name="stats-chart"></ion-icon></h1></div>
+              <div class="item-kunjungan" style="background: #ad9902;"><div>
+                  <h1><b>0</b></h1>
+                  <b><p>Kunjungan Tahun Ini</p></b>
+                </div>
+                <h1 class="icon-kunjungan"><ion-icon name="person-add"></ion-icon></h1></div>
+              <div class="item-kunjungan" style="background: #b00202;"><div>
+                  <h1><b>0</b></h1>
+                  <b><p>Kunjungan Total</p></b>
+                </div>
+                <h1 class="icon-kunjungan"><ion-icon name="pie-chart"></ion-icon></h1></div>
+            </div>
+          </div>
       <div class="xcontainer" id="p-1">
         <article class="article-justify container">
+
+              <?php
+                if (isset($_GET['form'])) {
+                  if($_GET["form"] == "sukses"){
+                   echo "          <div class='alert' id='alert' style=''><p>Pengisian Form Sudah Di Rekam</p></div>";
+                }
+              }
+              ?>
           <!-- Form -->
-          <form action="">
-                <div class="container-form">
-                    <div class="baris" style="background: url(../sumenep-removebg-preview.png); background-position:center; background-size:cover; width:100%; height:100% ; padding-top:300px;"></div>
-                    <div class="baris">
-                        <div class="baris-1">
-                            <div class="input">
-                                <label for="">Nama Lengkap</label><br>
-                                <input type="text" placeholder="Nama Lengkap">
-                            </div>
-                            <div class="input">
-                                <label for="">Instansi</label><br>
-                                <input type="text" placeholder="Instansi">
-                            </div>
-                            <div class="input">
-                                <label for="">Telp / Hp</label><br>
-                                <input type="tel" placeholder="Telp / Hp">
-                            </div>
-                        </div>
-                        <div class="input">
-                            <label for="">Alamat</label><br>
-                            <input type="text"  placeholder="Alamat" style="width:100%;">
-                        </div>
-                        <div class="baris-2">
-                            <div class="input">
-                                <label for="">Ingin Bertemu Dengan Siapa?</label><br>
-                                <input type="text"  placeholder="Ingin Bertemu Dengan">
-                            </div>
-                            <div class="input">
-                                <label for="">Keperluan</label><br>
-                                <input type="text" placeholder="Keperluan">
-                            </div>
-                        </div>
-                        <div class="baris-1">
-                            <div class="input">
-                                <label for="">Jenis Kelamin</label><br>
-                                <select name="" id="" >
-                                    <option hidden class="placeholder">--Pilih--</option>
-                                    <option value=""></option>
-                                    <option value=""></option>
-                                </select>
-                            </div>
-                            <div class="input">
-                                <label for="">Pendidikan</label><br>
-                                <select name="" id="" >
-                                    <option hidden class="placeholder">--Pilih--</option>
-                                    <option value=""></option>
-                                    <option value=""></option>
-                                </select>
-                            </div>
-                            <div class="input">
-                                <label for="">Usia</label><br>
-                                <input type="number" placeholder="Usia">
-                            </div>
-                        </div>
-                        <hr>
-                        <input type="submit" class="btnsubmit" value="Kirim"/>
-                        <br><br>
-                    </div>
+          <form action="sistem-kepuasan.php" method="POST">
+            <div class="container-form">
+              <div class="baris" style="background: url(../sumenep-removebg-preview.png); background-position:center; background-size:cover; width:100%; height:100% ; padding-top:300px;"></div>
+              <div class="baris">
+                <div class="baris-1">
+                  <div class="input">
+                    <label for="">Nama Lengkap</label><br>
+                    <input type="text" name="namaLengkap" placeholder="Nama Lengkap">
+                  </div>
+                  <div class="input">
+                    <label for="">Instansi</label><br>
+                    <input type="text" name="Instansi" placeholder="Instansi">
+                  </div>
+                  <div class="input">
+                    <label for="">Telp / Hp</label><br>
+                    <input type="tel" name="Telp" placeholder="Telp / Hp">
+                  </div>
                 </div>
-            </form>
+                <div class="input">
+                  <label for="">Alamat</label><br>
+                  <input type="text" name="Alamat" placeholder="Alamat" style="width:100%;">
+                </div>
+                <div class="baris-2">
+                  <div class="input">
+                    <label for="">Ingin Bertemu Dengan Siapa?</label><br>
+                    <input type="text" name="Kepada" placeholder="Ingin Bertemu Dengan">
+                  </div>
+                  <div class="input">
+                    <label for="">Keperluan</label><br>
+                    <input type="text" name="Keperluan" placeholder="Keperluan">
+                  </div>
+                </div>
+                <div class="baris-1">
+                  <div class="input">
+                    <label for="" >Jenis Kelamin</label><br>
+                    <select name="Jenkel" id="">
+                      <option hidden class="placeholder">--Pilih--</option>
+                      <option value="Laki - Laki">Laki - Laki</option>
+                      <option value="Perempuan">Perempuan</option>
+                    </select>
+                  </div>
+                  <div class="input">
+                    <label for="">Pendidikan</label><br>
+                    <select name="Pendidikan" id="">
+                      <option hidden class="placeholder">--Pilih--</option>
+                      <option value="SD">SD</option>
+                      <option value="SMP">SMP</option>
+                      <option value="SMA">SMA</option>
+                    </select>
+                  </div>
+                  <div class="input">
+                    <label for="">Usia</label><br>
+                    <input name="Usia" type="number" placeholder="Usia">
+                  </div>
+                </div>
+                <hr>
+                <input type="submit" class="btnsubmit" value="Kirim" />
+                <br><br>
+              </div>
+            </div>
+          </form>
         </article>
         <div style="height: 3rem;"></div>
       </div>
@@ -717,6 +854,9 @@ require "koneksi.php"
       }
 
     })
+    setTimeout(() => {
+      document.getElementById("alert").style.display="none"
+    }, 1500);
   </script>
 
   <div id="notifications"></div>

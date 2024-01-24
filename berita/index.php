@@ -86,6 +86,8 @@
       .judulbackground h3 {
         position: relative;
         top: -20px;
+        width: 100%;
+        font-size: 20px;
       }
     }
 
@@ -103,8 +105,8 @@
 
     .content-berita {
       width: 100%;
-      height: 170px;
-      max-height: 190px;
+      height: 100%;
+      max-height: 100%;
       display: grid;
       grid-template-columns: 80% 20%;
     }
@@ -123,6 +125,26 @@
     .about-berita h1 {
       font-family: Arial, Helvetica, sans-serif;
       font-weight: 550;
+    }
+    .pcimg{
+      display: inline-block;
+    }
+    .androidimg{
+      display: none;
+    }
+    @media only screen and (max-width: 600px){
+    .androidimg{
+      display: inline-block;
+    }
+    .pcimg{
+      display: none;
+    }
+      .about-berita h1{
+        font-size: 20px;
+      }
+      .content-berita {
+        grid-template-columns: repeat(1,1fr);
+      }
     }
   </style>
 </head>
@@ -220,6 +242,7 @@ require "koneksi.php"
             <div id='berita'>
             <div class='card-berita'>
               <div class='content-berita'>
+              <div class='androidimg' style='background:url(../admin/berita/image/". $row['img'] .");width:100%;height:150px;background-size:cover;background-position:center;'></div>
                 <div class='about-berita' style='position:relative;margin-top:10px;'>
                   <a href='../admin/berita/halaman/". $row['link'] ."'><h1>" . mb_strimwidth($row["judul"], 0, 50, "...") . "</h1></a>
                   <p><ion-icon name='time'></ion-icon> ".$row["tanggal"]." | <text>".$row["author"]."</text></p>
@@ -228,7 +251,7 @@ require "koneksi.php"
                   <a href='#'><h4><ion-icon name='logo-facebook'></ion-icon></h4></a>
                   </div>
                 </div>
-                 <div style='background:url(../admin/berita/image/". $row['img'] .");width:100%;height:100%;background-size:cover;background-position:center;'></div>
+                 <div class='pcimg' style='background:url(../admin/berita/image/". $row['img'] .");width:100%;height:100%;background-size:cover;background-position:center;'></div>
               </div>
             </div>
           </div>
