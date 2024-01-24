@@ -377,7 +377,7 @@
           </h4>
           <p style="position:relative;top:-10px;">Form Pelayanan Bangkesbangpol</p>
           <br><br><br><br>
-          <a href="#" class="btnkunjungi" style="border:none;padding:10px 30px;margin-bottom:150px; color:white;font-weight:bold;">Kunjungi</a>
+          <a href="halaman/form-kepuasan.php" class="btnkunjungi" style="border:none;padding:10px 30px;margin-bottom:150px; color:white;font-weight:bold;">Kunjungi</a>
           <br><br><br><br><br><br><br>
         </center>
       </div>

@@ -12,12 +12,12 @@
                             </div>
                         </div>
 
-                        <div class="tools-wrp-bottom" id="2">
+                        <a href="berita/"><div class="tools-wrp-bottom" id="2">
                             <div class="tool-bottom-wrp-icon">
                                 <img class="tool-bottom-icon" style="background-color: white;" title="Berita" src="https://cdn.icon-icons.com/icons2/3249/PNG/512/news_filled_icon_200465.png" alt="contoh">
                             </div>
                             <div class="tool-bottom-text" title="contoh">Berita</div>
-                        </div>
+                        </div></a>
 
                         <div class="tools-wrp-bottom" id="3">
                             <div class="tool-bottom-wrp-icon">
