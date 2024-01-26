@@ -21,6 +21,7 @@
         <ul>
             <li><a href="../dashboard/">Dashboard</a></li>
             <li><a href="../berita/">Isi Berita</a></li>
+            <li><a href="../Kepuasan-masyarakat/">Kepuasan Masyarakat</a></li>
             <li><a href="../users/">Users</a></li>
             <li><a href="#">Settings</a></li>
         </ul>

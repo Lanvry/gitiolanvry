@@ -6,7 +6,7 @@ body {
 }
 
 header {
-    background-color: #008cff;
+    background-color: #20a820;
     color: #fff;
     padding: 3px;
     left: 120px;
@@ -233,7 +233,7 @@ a {
     border: 0px;
     border-radius: 5px;
     margin: 20px;
-    background-color: #008cff;
+    background-color: #20a820;
     padding: 10px;
     transition: 0.3s all;
     box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.192);
@@ -248,7 +248,7 @@ a {
     top: 20px;
     border: 1px solid;
     padding: 5px;
-    background-color: #008cff;
+    background-color: #20a820;
     border: 0px;
     box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.329);
 }
