@@ -46,6 +46,7 @@
 </head>
 
 <body style="background-color: #ffffff">
+
   <?php
   include "asset/header.php";
   ?>
@@ -68,175 +69,50 @@
           <div class="slide-container swiper fade">
             <div class="slide-content">
               <div class="card-wrapper swiper-wrapper">
-                <div class="card swiper-slide">
-                  <div class="image-content">
-                    <span class="overlay"></span>
+              <?php
+          require "asset/koneksi.php";
+          if (!$koneksi) {
+            die('Gagal terhubung MySQL: ' . mysqli_connect_error());
+          }
+          $sql = "SELECT * FROM `berita` ";
 
-                    <div class="card-image">
-                      <img src="https://worldofprintables.com/wp-content/uploads/2023/06/Lake-with-a-Mountain-Nature-Background-Desktop-650x364.jpg" alt="" class="card-img">
-                      <div class="tanggal">
-                        <div id="tanggal1">20</div>
-                        <div id="bulandantahun">NOV 23</div>
-                      </div>
-                    </div>
-                  </div>
+          $query = mysqli_query($koneksi, $sql);
 
-                  <div class="card-content">
-                    <div class="card-about">
-                      <div class="Waktu"><ion-icon name="time-outline"></ion-icon> 00:00 WIB</div>
-                    </div>
-                    <h2 class="name">Mohamed YousefMohamed YousefMohamed YousefMohamed YousefMohamed YousefMohamed YousefMohamed YousefMohamed YousefMohamed YousefMohamed YousefMohamed YousefMohamed Yousefs
-                    </h2><br>
-                    <a href="#" class="button">View More <ion-icon name="chevron-forward-outline"></ion-icon></a>
-                  </div>
+          if (!$query) {
+            die('SQL Error: ' . mysqli_error($koneksi));
+          }
+
+          while ($row = mysqli_fetch_array($query)) {
+            $str = $row["tanggal"];
+            
+            echo "
+            <div class='card swiper-slide'>
+            <div class='image-content'>
+              <span class='overlay'></span>
+
+              <div class='card-image'>
+                <img src='admin/berita/image/". $row['img'] ."' alt='' class='card-img'>
+                <div class='tanggal'>
+                  <div id='tanggal1'>". date('d', strtotime($str)) ."</div>
+                  <div id='bulandantahun'>". date('F Y', strtotime($str)) ."</div>
                 </div>
-                <div class="card swiper-slide">
-                  <div class="image-content">
-                    <span class="overlay"></span>
+              </div>
+            </div>
 
-                    <div class="card-image">
-                      <img src="https://images.unsplash.com/photo-1700422301302-c0f83f89fb79?q=80&w=1000&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxjb2xsZWN0aW9uLXBhZ2V8MXw4MjM4MDh8fGVufDB8fHx8fA%3D%3D" alt="" class="card-img">
-                      <div class="tanggal">
-                        <div id="tanggal1">20</div>
-                        <div id="bulandantahun">NOV 23</div>
-                      </div>
-                    </div>
-                  </div>
+            <div class='card-content'>
+              <div class='card-about'>
+                <div class='Waktu'><ion-icon name='person-outline'></ion-icon> ".$row["author"]."</div>
+              </div>
+              <h2 class='name'>". mb_strimwidth($row["judul"], 0, 50, "...") ."
+              </h2><br>
+              </div>
+              <a href='#' class='button'>View More <ion-icon name='chevron-forward-outline'></ion-icon></a>
+          </div>
+          ";
+          }
+          ?>
 
-                  <div class="card-content">
-                    <div class="card-about">
-                      <div class="Waktu"><ion-icon name="time-outline"></ion-icon> 00:00 WIB</div>
-                    </div>
-                    <h2 class="name">Mohamed Yousef
-                    </h2><br>
-                  </div><a href="#" class="button">View More <ion-icon name="chevron-forward-outline"></ion-icon></a>
-                </div>
-                <div class="card swiper-slide">
-                  <div class="image-content">
-                    <span class="overlay"></span>
-
-                    <div class="card-image">
-                      <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjxivAs4UknzmDfLBXGMxQkayiZDhR2ftB4jcIV7LEnIEStiUyMygioZnbLXCAND-I_xWQpVp0jv-dv9NVNbuKn4sNpXYtLIJk2-IOdWQNpC2Ldapnljifu0pnQqAWU848Ja4lT9ugQex-nwECEh3a96GXwiRXlnGEE6FFF_tKm66IGe3fzmLaVIoNL/s1600/img_avatar.png" alt="" class="card-img">
-                      <div class="tanggal">
-                        <div id="tanggal1">20</div>
-                        <div id="bulandantahun">NOV 23</div>
-                      </div>
-                    </div>
-                  </div>
-
-                  <div class="card-content">
-                    <div class="card-about">
-                      <div class="Waktu"><ion-icon name="time-outline"></ion-icon> 00:00 WIB</div>
-                    </div>
-                    <h2 class="name">Mohamed Yousef
-                    </h2><br>
-                  </div><a href="#" class="button">View More <ion-icon name="chevron-forward-outline"></ion-icon></a>
-                </div>
-                <div class="card swiper-slide">
-                  <div class="image-content">
-                    <span class="overlay"></span>
-
-                    <div class="card-image">
-                      <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjxivAs4UknzmDfLBXGMxQkayiZDhR2ftB4jcIV7LEnIEStiUyMygioZnbLXCAND-I_xWQpVp0jv-dv9NVNbuKn4sNpXYtLIJk2-IOdWQNpC2Ldapnljifu0pnQqAWU848Ja4lT9ugQex-nwECEh3a96GXwiRXlnGEE6FFF_tKm66IGe3fzmLaVIoNL/s1600/img_avatar.png" alt="" class="card-img">
-                      <div class="tanggal">
-                        <div id="tanggal1">20</div>
-                        <div id="bulandantahun">NOV 23</div>
-                      </div>
-                    </div>
-                  </div>
-
-                  <div class="card-content">
-                    <div class="card-about">
-                      <div class="Waktu"><ion-icon name="time-outline"></ion-icon> 00:00 WIB</div>
-                    </div>
-                    <h2 class="name">Mohamed Yousef
-                    </h2><br>
-                  </div><a href="#" class="button">View More <ion-icon name="chevron-forward-outline"></ion-icon></a>
-                </div>
-                <div class="card swiper-slide">
-                  <div class="image-content">
-                    <span class="overlay"></span>
-
-                    <div class="card-image">
-                      <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjxivAs4UknzmDfLBXGMxQkayiZDhR2ftB4jcIV7LEnIEStiUyMygioZnbLXCAND-I_xWQpVp0jv-dv9NVNbuKn4sNpXYtLIJk2-IOdWQNpC2Ldapnljifu0pnQqAWU848Ja4lT9ugQex-nwECEh3a96GXwiRXlnGEE6FFF_tKm66IGe3fzmLaVIoNL/s1600/img_avatar.png" alt="" class="card-img">
-                      <div class="tanggal">
-                        <div id="tanggal1">20</div>
-                        <div id="bulandantahun">NOV 23</div>
-                      </div>
-                    </div>
-                  </div>
-
-                  <div class="card-content">
-                    <div class="card-about">
-                      <div class="Waktu"><ion-icon name="time-outline"></ion-icon> 00:00 WIB</div>
-                    </div>
-                    <h2 class="name">Mohamed Yousef
-                    </h2><br>
-                  </div><a href="#" class="button">View More <ion-icon name="chevron-forward-outline"></ion-icon></a>
-                </div>
-                <div class="card swiper-slide">
-                  <div class="image-content">
-                    <span class="overlay"></span>
-
-                    <div class="card-image">
-                      <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjxivAs4UknzmDfLBXGMxQkayiZDhR2ftB4jcIV7LEnIEStiUyMygioZnbLXCAND-I_xWQpVp0jv-dv9NVNbuKn4sNpXYtLIJk2-IOdWQNpC2Ldapnljifu0pnQqAWU848Ja4lT9ugQex-nwECEh3a96GXwiRXlnGEE6FFF_tKm66IGe3fzmLaVIoNL/s1600/img_avatar.png" alt="" class="card-img">
-                      <div class="tanggal">
-                        <div id="tanggal1">20</div>
-                        <div id="bulandantahun">NOV 23</div>
-                      </div>
-                    </div>
-                  </div>
-
-                  <div class="card-content">
-                    <div class="card-about">
-                      <div class="Waktu"><ion-icon name="time-outline"></ion-icon> 00:00 WIB</div>
-                    </div>
-                    <h2 class="name">Mohamed Yousef
-                    </h2><br>
-                  </div><a href="#" class="button">View More <ion-icon name="chevron-forward-outline"></ion-icon></a>
-                </div>
-                <div class="card swiper-slide">
-                  <div class="image-content">
-                    <span class="overlay"></span>
-
-                    <div class="card-image">
-                      <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjxivAs4UknzmDfLBXGMxQkayiZDhR2ftB4jcIV7LEnIEStiUyMygioZnbLXCAND-I_xWQpVp0jv-dv9NVNbuKn4sNpXYtLIJk2-IOdWQNpC2Ldapnljifu0pnQqAWU848Ja4lT9ugQex-nwECEh3a96GXwiRXlnGEE6FFF_tKm66IGe3fzmLaVIoNL/s1600/img_avatar.png" alt="" class="card-img">
-                      <div class="tanggal">
-                        <div id="tanggal1">20</div>
-                        <div id="bulandantahun">NOV 23</div>
-                      </div>
-                    </div>
-                  </div>
-
-                  <div class="card-content">
-                    <div class="card-about">
-                      <div class="Waktu"><ion-icon name="time-outline"></ion-icon> 00:00 WIB</div>
-                    </div>
-                    <h2 class="name">Mohamed Yousef
-                    </h2><br>
-                  </div><a href="#" class="button">View More <ion-icon name="chevron-forward-outline"></ion-icon></a>
-                </div>
-                <div class="card swiper-slide">
-                  <div class="image-content">
-                    <span class="overlay"></span>
-
-                    <div class="card-image">
-                      <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjxivAs4UknzmDfLBXGMxQkayiZDhR2ftB4jcIV7LEnIEStiUyMygioZnbLXCAND-I_xWQpVp0jv-dv9NVNbuKn4sNpXYtLIJk2-IOdWQNpC2Ldapnljifu0pnQqAWU848Ja4lT9ugQex-nwECEh3a96GXwiRXlnGEE6FFF_tKm66IGe3fzmLaVIoNL/s1600/img_avatar.png" alt="" class="card-img">
-                      <div class="tanggal">
-                        <div id="tanggal1">20</div>
-                        <div id="bulandantahun">NOV 23</div>
-                      </div>
-                    </div>
-                  </div>
-
-                  <div class="card-content">
-                    <div class="card-about">
-                      <div class="Waktu"><ion-icon name="time-outline"></ion-icon> 00:00 WIB</div>
-                    </div>
-                    <h2 class="name">Mohamed Yousef
-                    </h2><br>
-                  </div><a href="#" class="button">View More <ion-icon name="chevron-forward-outline"></ion-icon></a>
-                </div>
+                
                 <!-- jika mau menambahkan berita -->
               </div>
             </div>
@@ -388,31 +264,66 @@
 
 
   <!-- Kontak Kami -->
-    <div class="kontak-kami" id="kontakkami">
-      <div class="col-md-12 text-center fade">
-        <span class="caption d-block mb-2 font-secondary font-weight-bold"></span>
-        <h2 class="site-section-heading text-uppercase text-center font-secondary">kontak Kami
-        </h2>
-      </div><br>
-      <div class="grid-kontak">
-        <div class="kontak-card">
-          <h2><b><ion-icon name="location"></ion-icon></b></h2>
-          <h3><b>Alamat Kami</b></h3>
-          <p>Jl. Maju Gerak</p>
+  <div class="kontak-kami" id="kontakkami">
+    <div class="col-md-12 text-center fade">
+      <span class="caption d-block mb-2 font-secondary font-weight-bold"></span>
+      <h2 class="site-section-heading text-uppercase text-center font-secondary">kontak Kami
+      </h2>
+    </div><br>
+    <div class="grid-kontak">
+      <div class="kontak-card">
+        <h2><b><ion-icon name="location"></ion-icon></b></h2>
+        <h3><b>Alamat Kami</b></h3>
+        <p>Jl. Maju Gerak</p>
+      </div>
+      <div class="kontak-card">
+        <h2><b><ion-icon name="mail"></ion-icon></b></h2>
+        <h3><b>Email Kami</b></h3>
+        <p>Info@example.com</p>
+      </div>
+      <div class="kontak-card">
+        <h2><b><ion-icon name="call"></ion-icon></b></h2>
+        <h3><b>Telp Kami</b></h3>
+        <p>Jl. Maju Gerak</p>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- Galeri -->
+  <div class="galeri">
+    <div class="col-md-12 text-center fade">
+      <span class="caption d-block mb-2 font-secondary font-weight-bold"></span>
+      <h2 class="site-section-heading text-uppercase text-center font-secondary">Galeri
+      </h2>
+    </div>
+    <div class="galeri-photo">
+      <div class="galeri-grid">
+        <div class="galeri-item">
+          <img class="imggrid1" src="https://portal.kesbangpol.bandung.go.id/wp-content/uploads/2023/10/WhatsApp-Image-2023-10-19-at-16.23.39-1024x576.jpeg" alt="">
         </div>
-        <div class="kontak-card">
-          <h2><b><ion-icon name="mail"></ion-icon></b></h2>
-          <h3><b>Email Kami</b></h3>
-          <p>Info@example.com</p>
+        <div class="galeri-item">
+          <img class="imggrid1" src="https://portal.kesbangpol.bandung.go.id/wp-content/uploads/2023/10/WhatsApp-Image-2023-10-19-at-16.23.39-1024x576.jpeg" alt="">
         </div>
-        <div class="kontak-card">
-          <h2><b><ion-icon name="call"></ion-icon></b></h2>
-          <h3><b>Telp Kami</b></h3>
-          <p>Jl. Maju Gerak</p>
+        <div class="galeri-item">
+          <img class="imggrid1" src="https://portal.kesbangpol.bandung.go.id/wp-content/uploads/2023/10/WhatsApp-Image-2023-10-19-at-16.23.39-1024x576.jpeg" alt="">
         </div>
       </div>
     </div>
-
+    <br><br>
+    <div class="col-md-12 text-center fade">
+      <span class="caption d-block mb-2 font-secondary font-weight-bold"></span>
+      <h2 class="site-section-heading text-uppercase text-center font-secondary">Galeri Video
+      </h2>
+    </div>
+    <div class="galeri-video">
+      <div class="galeri-grid">
+        <div class="galeri-item">
+        <iframe width="100%" height="240px" class="imggrid1" src="https://www.youtube.com/embed/bdg7LLY0N9w?si=t7mO7_1k2dtKwtND" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+        </div>
+      </div>
+    </div>
+  </div>
 
 
   <div class="site-section section-counter" style="margin-top: 30px;">

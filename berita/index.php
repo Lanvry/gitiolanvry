@@ -126,24 +126,30 @@
       font-family: Arial, Helvetica, sans-serif;
       font-weight: 550;
     }
-    .pcimg{
+
+    .pcimg {
       display: inline-block;
     }
-    .androidimg{
+
+    .androidimg {
       display: none;
     }
-    @media only screen and (max-width: 600px){
-    .androidimg{
-      display: inline-block;
-    }
-    .pcimg{
-      display: none;
-    }
-      .about-berita h1{
+
+    @media only screen and (max-width: 600px) {
+      .androidimg {
+        display: inline-block;
+      }
+
+      .pcimg {
+        display: none;
+      }
+
+      .about-berita h1 {
         font-size: 20px;
       }
+
       .content-berita {
-        grid-template-columns: repeat(1,1fr);
+        grid-template-columns: repeat(1, 1fr);
       }
     }
   </style>
@@ -242,16 +248,16 @@ require "koneksi.php"
             <div id='berita'>
             <div class='card-berita'>
               <div class='content-berita'>
-              <div class='androidimg' style='background:url(../admin/berita/image/". $row['img'] .");width:100%;height:150px;background-size:cover;background-position:center;'></div>
+              <div class='androidimg' style='background:url(../admin/berita/image/" . $row['img'] . ");width:100%;height:150px;background-size:cover;background-position:center;'></div>
                 <div class='about-berita' style='position:relative;margin-top:10px;'>
-                  <a href='../admin/berita/halaman/". $row['link'] ."'><h1>" . mb_strimwidth($row["judul"], 0, 50, "...") . "</h1></a>
-                  <p><ion-icon name='time'></ion-icon> ".$row["tanggal"]." | <text>".$row["author"]."</text></p>
+                  <a href='../admin/berita/halaman/" . $row['link'] . "'><h1>" . mb_strimwidth($row["judul"], 0, 50, "...") . "</h1></a>
+                  <p><ion-icon name='time'></ion-icon> " . $row["tanggal"] . " | <text>" . $row["author"] . "</text></p>
                   <div style='position:absolute;bottom:0;right:0;margin-right:10px;display:grid;grid-template-columns:repeat(2,1fr);gap:10px;'>
                   <a href='#'><h4><ion-icon name='logo-whatsapp'></ion-icon></h4></a>
                   <a href='#'><h4><ion-icon name='logo-facebook'></ion-icon></h4></a>
                   </div>
                 </div>
-                 <div class='pcimg' style='background:url(../admin/berita/image/". $row['img'] .");width:100%;height:100%;background-size:cover;background-position:center;'></div>
+                 <div class='pcimg' style='background:url(../admin/berita/image/" . $row['img'] . ");width:100%;height:100%;background-size:cover;background-position:center;'></div>
               </div>
             </div>
           </div>

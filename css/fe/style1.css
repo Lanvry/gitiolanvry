@@ -2407,7 +2407,7 @@ h5,
 .slide-container {
   max-width: 1120px;
   width: 100%;
-  height: 600px;
+  height: 500px;
   max-height: 1000px;
   padding: 40px 0;
 }
@@ -2866,6 +2866,8 @@ input[type="number"] {
 .galeri{
   position: relative;
   padding: 10px;
+  padding-left: 50px;
+  padding-right: 50px;
   width: 100%;
   margin-top: 50px;
   margin-bottom: 50px;
@@ -2887,11 +2889,6 @@ input[type="number"] {
   transition: 1s all;
 }
 
-.galeri-item{
-  padding-top: 20px;
-  padding-left: 100px;
-  padding-right: 100px;
-}
 .background-galeri{
   position: absolute;
   width: 100%;
