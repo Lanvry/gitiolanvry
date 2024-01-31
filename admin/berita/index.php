@@ -57,44 +57,15 @@
             echo "
             <div class='card'>
             <b>" . $row["judul"] . "</b>
-            <a href='../index.php'><button class='deletebtn'><ion-icon name='trash'></ion-icon></button></a>
+            <a href='edit-berita.php?id_berita=". $row["id_berita"] ."'><button class='editbtn'><ion-icon name='pencil'></ion-icon></button></a> <a href='delete-berita.php?id_berita=". $row["id_berita"] ."'><button class='deletebtn'><ion-icon name='trash'></ion-icon></button></a>
             </div>";
         }
         ?>
     </section>
 
     <div>
-        <button class="buttonadd" onclick="showberitaon()">+</button>
+        <a href="tambah-berita.php"><button class="buttonadd">+</button></a>
         <!-- Form penambahan berita -->
-        <div id="formadd">
-            <h1>
-                Tambahkan berita
-            </h1>
-            <button class="close" onclick="showberitaoff()">Back</button>
-            <form action="sistemadd.php" method="post" enctype="multipart/form-data">
-                <div class="formadd-grid">
-                    <div id="formadd1">
-                        <label for="">Judul</label><br>
-                        <input type="text" name="judul"><br>
-                        <label for="">Author</label><br>
-                        <input type="text" name="author"><br>
-                        <label for="">Tanggal</label><br>
-                        <input type="date" class="date" name="time"><br>
-                        <label for="">Gambar</label><br>
-                        <div class="files">
-                            <input type="file" name="img"><br>
-                        </div>
-                    </div>
-                    <div id="formadd2">
-                        <label for="">Content (<b>PHP ONLY</b>)</label><br>
-                        <div class="files">
-                        <textarea name="textarea"></textarea>
-                        </div>
-                    </div>
-                </div>
-                <input type="submit" name="upload" value="Kirim">
-        </div>
-        
 
     </div>
     <script src="../js/script.js"></script>

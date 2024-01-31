@@ -250,7 +250,7 @@ require "koneksi.php"
               <div class='content-berita'>
               <div class='androidimg' style='background:url(../admin/berita/image/". $row['img'] .");width:100%;height:150px;background-size:cover;background-position:center;'></div>
                 <div class='about-berita' style='position:relative;margin-top:10px;'>
-                  <a href='../admin/berita/halaman/". $row['link'] ."'><h1>" . mb_strimwidth($row["judul"], 0, 50, "...") . "</h1></a>
+                  <a href='berita/berita-halaman.php'><h1>" . mb_strimwidth($row["judul"], 0, 50, "...") . "</h1></a>
                   <p><ion-icon name='time'></ion-icon> ".$row["tanggal"]." | <text>".$row["author"]."</text></p>
                   <div style='position:absolute;bottom:0;right:0;margin-right:10px;display:grid;grid-template-columns:repeat(2,1fr);gap:10px;'>
                   <a href='#'><h4><ion-icon name='logo-whatsapp'></ion-icon></h4></a>

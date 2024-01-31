@@ -102,11 +102,11 @@
             <div class='card-content'>
               <div class='card-about'>
                 <div class='Waktu'><ion-icon name='person-outline'></ion-icon> ".$row["author"]."</div>
-              </div>
+              </div><br>
               <h2 class='name'>". mb_strimwidth($row["judul"], 0, 50, "...") ."
-              </h2><br>
+              </h2><br><br>
               </div>
-              <a href='#' class='button'>View More <ion-icon name='chevron-forward-outline'></ion-icon></a>
+             <a href='berita/berita-halaman.php?id_berita=$row[id_berita]'' class='button'>View More <ion-icon name='chevron-forward-outline'></ion-icon></a>
           </div>
           ";
           }

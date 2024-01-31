@@ -93,6 +93,22 @@ section {
 .deletebtn:hover{
     background-color: #d00;
 }
+.editbtn{
+    position: absolute;
+    right: 40px;
+    margin-right: 10px;
+    background-color: rgb(0, 138, 0);
+    color: white;
+    cursor: pointer;
+    padding: 5px 10px;
+    border: none;
+    border-radius: 5px;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.164);
+}
+
+.editbtn:hover{
+    background-color: darkgreen;
+}
 
 .profile {
     display: flex;
@@ -239,7 +255,7 @@ a {
     box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.192);
 }
 .buttonadd:hover{
-    background:#0066b9;
+    background:#177c17;
 }
 .close{
     background: white;
@@ -250,7 +266,6 @@ a {
     padding: 5px;
     background-color: #20a820;
     border: 0px;
-    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.329);
 }
 #formadd{
     position: fixed;
@@ -258,8 +273,9 @@ a {
     width: 800px;
     height: auto;
     padding: 10px;
-    overflow-y: auto;
+    overflow-y: hidden;
     bottom: -1000px;
+    scroll-behavior: smooth;
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
     box-shadow: 0px -5px 10px rgba(0, 0, 0, 0.253);
@@ -269,9 +285,30 @@ a {
     left: 50%;
     transition: 1s all;
 }
-#formadd1{
-    border-right: 1px solid;
-    padding-right: 10px;
+#formadd2{
+    position: fixed;
+    display: block;
+    width: 800px;
+    overflow: hidden;
+    height: auto;
+    padding: 10px;
+    overflow-y: auto;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    background: rgba(255, 255, 255, 0.24);
+    backdrop-filter: blur(10px);
+    transform: translate(-50%, -0%);
+    left: 50%;
+    transition: 1s all;
+}
+#formadd a{
+    background-color: #20a820;
+    border-radius: 5px;
+    border: none;
+    outline: 0;
+    right: 0px;
+    padding: 5px 10px ;
+    color: black;
 }
 .formadd-grid{
     display: grid;
@@ -314,7 +351,7 @@ a {
     margin-top: 10px;
 }
 #formadd input[type=submit]{
-    background-color: #008cff;
+    background-color: #20a820;
     border-radius: 5px;
     border: none;
     outline: 0;
