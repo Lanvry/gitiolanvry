@@ -106,7 +106,7 @@
               <h2 class='name'>". mb_strimwidth($row["judul"], 0, 50, "...") ."
               </h2><br><br>
               </div>
-             <a href='berita/berita-halaman.php?id_berita=$row[id_berita]'' class='button'>View More <ion-icon name='chevron-forward-outline'></ion-icon></a>
+             <a href='berita/berita-halaman.php?id_berita=$row[id_berita]' class='button'>View More <ion-icon name='chevron-forward-outline'></ion-icon></a>
           </div>
           ";
           }
@@ -169,46 +169,43 @@
 
     </div>
   </div>
-  <!-- Sponsor -->
-  <div class="sponsor fade">
-    <div class="slide-container swiper" style="height:auto; transform:scale(0.9);">
-      <div class="slide-content">
-        <div class="card-wrapper swiper-wrapper">
-          <div class="card swiper-slide">
-            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSSl5tb0gmuddNTEzAGncmf5cBjU2I24pphv_vCKHZltjdnn3HkVc7byPaZR7PDqQ4vM4A&usqp=CAU" alt="">
-          </div>
-          <div class="card swiper-slide">
-            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSSl5tb0gmuddNTEzAGncmf5cBjU2I24pphv_vCKHZltjdnn3HkVc7byPaZR7PDqQ4vM4A&usqp=CAU" alt="">
-          </div>
-          <div class="card swiper-slide">
-            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSSl5tb0gmuddNTEzAGncmf5cBjU2I24pphv_vCKHZltjdnn3HkVc7byPaZR7PDqQ4vM4A&usqp=CAU" alt="">
-          </div>
-          <div class="card swiper-slide">
-            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSSl5tb0gmuddNTEzAGncmf5cBjU2I24pphv_vCKHZltjdnn3HkVc7byPaZR7PDqQ4vM4A&usqp=CAU" alt="">
-          </div>
-          <div class="card swiper-slide">
-            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSSl5tb0gmuddNTEzAGncmf5cBjU2I24pphv_vCKHZltjdnn3HkVc7byPaZR7PDqQ4vM4A&usqp=CAU" alt="">
-          </div>
-          <div class="card swiper-slide">
-            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSSl5tb0gmuddNTEzAGncmf5cBjU2I24pphv_vCKHZltjdnn3HkVc7byPaZR7PDqQ4vM4A&usqp=CAU" alt="">
-          </div>
-          <div class="card swiper-slide">
-            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSSl5tb0gmuddNTEzAGncmf5cBjU2I24pphv_vCKHZltjdnn3HkVc7byPaZR7PDqQ4vM4A&usqp=CAU" alt="">
-          </div>
-          <div class="card swiper-slide">
-            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSSl5tb0gmuddNTEzAGncmf5cBjU2I24pphv_vCKHZltjdnn3HkVc7byPaZR7PDqQ4vM4A&usqp=CAU" alt="">
-          </div>
-          <div class="card swiper-slide">
-            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSSl5tb0gmuddNTEzAGncmf5cBjU2I24pphv_vCKHZltjdnn3HkVc7byPaZR7PDqQ4vM4A&usqp=CAU" alt="">
-          </div>
+  <!-- Galeri -->
+  <div class="galeri">
+    <div class="col-md-12 text-center fade">
+      <span class="caption d-block mb-2 font-secondary font-weight-bold"></span>
+      <h2 class="site-section-heading text-uppercase text-center font-secondary">Galeri
+      </h2>
+    </div>
+    <div class="galeri-photo">
+      <div class="galeri-grid">
+        <div class="galeri-item">
+          <img class="imggrid1" src="https://portal.kesbangpol.bandung.go.id/wp-content/uploads/2023/10/WhatsApp-Image-2023-10-19-at-16.23.39-1024x576.jpeg" alt="">
         </div>
-        <div class="swiper-button-next swiper-navBtn"></div>
-        <div class="swiper-button-prev swiper-navBtn"></div>
-        <div class="swiper-pagination"></div>
+        <div class="galeri-item">
+          <img class="imggrid1" src="https://portal.kesbangpol.bandung.go.id/wp-content/uploads/2023/10/WhatsApp-Image-2023-10-19-at-16.23.39-1024x576.jpeg" alt="">
+        </div>
+        <div class="galeri-item">
+          <img class="imggrid1" src="https://portal.kesbangpol.bandung.go.id/wp-content/uploads/2023/10/WhatsApp-Image-2023-10-19-at-16.23.39-1024x576.jpeg" alt="">
+        </div>
+      </div>
+    </div>
+    <br><br>
+    <div class="col-md-12 text-center fade">
+      <span class="caption d-block mb-2 font-secondary font-weight-bold"></span>
+      <h2 class="site-section-heading text-uppercase text-center font-secondary">Galeri Video
+      </h2>
+    </div>
+    <div class="galeri-video">
+      <div class="galeri-grid">
+        <div class="galeri-item">
+        <iframe width="100%" height="240px" class="imggrid1" src="https://www.youtube.com/embed/bdg7LLY0N9w?si=t7mO7_1k2dtKwtND" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+        </div>
       </div>
     </div>
   </div>
-  <div class="spanduk fade">
+
+ 
+  <!-- <div class="spanduk fade">
     <div class="grid-banner">
       <div class="item-banner">
         <div class="overlay-banner"></div>
@@ -226,7 +223,7 @@
         </div>
       </div>
     </div>
-  </div>
+  </div> -->
 
 
   <!-- Indeks Kepuasan Masyarakat -->
@@ -289,42 +286,46 @@
     </div>
   </div>
 
-
-  <!-- Galeri -->
-  <div class="galeri">
-    <div class="col-md-12 text-center fade">
-      <span class="caption d-block mb-2 font-secondary font-weight-bold"></span>
-      <h2 class="site-section-heading text-uppercase text-center font-secondary">Galeri
-      </h2>
-    </div>
-    <div class="galeri-photo">
-      <div class="galeri-grid">
-        <div class="galeri-item">
-          <img class="imggrid1" src="https://portal.kesbangpol.bandung.go.id/wp-content/uploads/2023/10/WhatsApp-Image-2023-10-19-at-16.23.39-1024x576.jpeg" alt="">
+ <!-- Sponsor -->
+ <div class="sponsor fade">
+    <div class="slide-container swiper" style="height:auto; transform:scale(0.9);">
+      <div class="slide-content">
+        <div class="card-wrapper swiper-wrapper">
+          <div class="card swiper-slide">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSSl5tb0gmuddNTEzAGncmf5cBjU2I24pphv_vCKHZltjdnn3HkVc7byPaZR7PDqQ4vM4A&usqp=CAU" alt="">
+          </div>
+          <div class="card swiper-slide">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSSl5tb0gmuddNTEzAGncmf5cBjU2I24pphv_vCKHZltjdnn3HkVc7byPaZR7PDqQ4vM4A&usqp=CAU" alt="">
+          </div>
+          <div class="card swiper-slide">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSSl5tb0gmuddNTEzAGncmf5cBjU2I24pphv_vCKHZltjdnn3HkVc7byPaZR7PDqQ4vM4A&usqp=CAU" alt="">
+          </div>
+          <div class="card swiper-slide">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSSl5tb0gmuddNTEzAGncmf5cBjU2I24pphv_vCKHZltjdnn3HkVc7byPaZR7PDqQ4vM4A&usqp=CAU" alt="">
+          </div>
+          <div class="card swiper-slide">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSSl5tb0gmuddNTEzAGncmf5cBjU2I24pphv_vCKHZltjdnn3HkVc7byPaZR7PDqQ4vM4A&usqp=CAU" alt="">
+          </div>
+          <div class="card swiper-slide">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSSl5tb0gmuddNTEzAGncmf5cBjU2I24pphv_vCKHZltjdnn3HkVc7byPaZR7PDqQ4vM4A&usqp=CAU" alt="">
+          </div>
+          <div class="card swiper-slide">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSSl5tb0gmuddNTEzAGncmf5cBjU2I24pphv_vCKHZltjdnn3HkVc7byPaZR7PDqQ4vM4A&usqp=CAU" alt="">
+          </div>
+          <div class="card swiper-slide">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSSl5tb0gmuddNTEzAGncmf5cBjU2I24pphv_vCKHZltjdnn3HkVc7byPaZR7PDqQ4vM4A&usqp=CAU" alt="">
+          </div>
+          <div class="card swiper-slide">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSSl5tb0gmuddNTEzAGncmf5cBjU2I24pphv_vCKHZltjdnn3HkVc7byPaZR7PDqQ4vM4A&usqp=CAU" alt="">
+          </div>
         </div>
-        <div class="galeri-item">
-          <img class="imggrid1" src="https://portal.kesbangpol.bandung.go.id/wp-content/uploads/2023/10/WhatsApp-Image-2023-10-19-at-16.23.39-1024x576.jpeg" alt="">
-        </div>
-        <div class="galeri-item">
-          <img class="imggrid1" src="https://portal.kesbangpol.bandung.go.id/wp-content/uploads/2023/10/WhatsApp-Image-2023-10-19-at-16.23.39-1024x576.jpeg" alt="">
-        </div>
+        <div class="swiper-button-next swiper-navBtn"></div>
+        <div class="swiper-button-prev swiper-navBtn"></div>
+        <div class="swiper-pagination"></div>
       </div>
     </div>
-    <br><br>
-    <div class="col-md-12 text-center fade">
-      <span class="caption d-block mb-2 font-secondary font-weight-bold"></span>
-      <h2 class="site-section-heading text-uppercase text-center font-secondary">Galeri Video
-      </h2>
-    </div>
-    <div class="galeri-video">
-      <div class="galeri-grid">
-        <div class="galeri-item">
-        <iframe width="100%" height="240px" class="imggrid1" src="https://www.youtube.com/embed/bdg7LLY0N9w?si=t7mO7_1k2dtKwtND" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-        </div>
-      </div>
-    </div>
-  </div>
-
+  </div><br><br> 
+  
 
   <div class="site-section section-counter" style="margin-top: 30px;">
     <div class="container fade">

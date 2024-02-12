@@ -17,7 +17,6 @@
             <img src="https://placekitten.com/200/200" alt="Profile Picture">
             <div class="profile-info">
                 <?php
-                session_start();
                 require "../koneksi.php";
                 if (!$koneksi) {
                     die('Gagal terhubung MySQL: ' . mysqli_connect_error());

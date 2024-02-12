@@ -18,7 +18,6 @@
             <img src="https://placekitten.com/200/200" alt="Profile Picture">
             <div class="profile-info">
                 <?php
-                session_start();
                 require "../koneksi.php";
                 if (!$koneksi) {
                     die('Gagal terhubung MySQL: ' . mysqli_connect_error());
@@ -36,7 +35,7 @@
                 }
                 ?>
             </div>
-            <a href="../index.php"><button class="logout-btn">Logout</button></a>
+            <a href="../logout"><button class="logout-btn">Logout</button></a>
         </div>
         <hr>
         <!-- body -->
@@ -57,7 +56,7 @@
             echo "
             <div class='card'>
             <b>" . $row["judul"] . "</b>
-            <a href='edit-berita.php?id_berita=". $row["id_berita"] ."'><button class='editbtn'><ion-icon name='pencil'></ion-icon></button></a> <a href='delete-berita.php?id_berita=". $row["id_berita"] ."'><button class='deletebtn'><ion-icon name='trash'></ion-icon></button></a>
+            <a href='edit-berita.php?id_berita=". $row["id_berita"] ."'><button class='editbtn'><ion-icon name='create'></ion-icon></button></a> <a href='delete-berita.php?id_berita=". $row["id_berita"] ."'><button class='deletebtn'><ion-icon name='trash'></ion-icon></button></a>
             </div>";
         }
         ?>
@@ -69,8 +68,8 @@
 
     </div>
     <script src="../js/script.js"></script>
-    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
     <script>
         tinymce.init({
     selector: 'textarea',

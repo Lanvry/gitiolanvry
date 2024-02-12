@@ -18,7 +18,6 @@
             <img src="https://placekitten.com/200/200" alt="Profile Picture">
             <div class="profile-info">
                 <?php
-                session_start();
                 require "../koneksi.php";
                 if (!$koneksi) {
                     die('Gagal terhubung MySQL: ' . mysqli_connect_error());
@@ -59,21 +58,22 @@
                 Tambahkan berita
             </h1>
             <form action="sistemadd.php" method="post" enctype="multipart/form-data">
-                <label for="">Judul</label>
-                <input type="text" name="judul"><br>
-                <label for="">Tanggal</label>
-                <input type="date" class="date" name="time"><br>
-                <label for="">Content</label>
+                <label for="inputPassword5" class="form-label">Judul Berita</label>
+                <input type="text" name="judul" id="inputPassword5" class="form-control" aria-describedby="passwordHelpBlock">
+                <label for="inputPassword5" class="form-label">Tanggal</label>
+                <input type="date" name="time" id="inputPassword5" class="form-control" aria-describedby="passwordHelpBlock">
+                <label for="inputPassword5" class="form-label">Kontent</label>
                 <textarea name="content1"></textarea><br>
-                <label for="">Gambar</label>
-                <input type="file" name="img"><br>
-                <input type="submit" id="formbtn" name="upload" value="Kirim"><br>
+                <label for="formFile" class="form-label">Gambar</label>
+                <input class="form-control" name="img" type="file" id="formFile">
+                <input type="submit" class="btn btn-success" id="formbtn" name="upload" value="Kirim"><br><br>
             </form>
         </div>
     </section>
 
 
     <script src="../js/script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
     <script>

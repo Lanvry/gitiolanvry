@@ -18,7 +18,6 @@
             <img src="https://placekitten.com/200/200" alt="Profile Picture">
             <div class="profile-info">
                 <?php
-                session_start();
                 require "../koneksi.php";
                 if (!$koneksi) {
                     die('Gagal terhubung MySQL: ' . mysqli_connect_error());
@@ -51,16 +50,17 @@
             <h1>
                 Edit Berita
             </h1>
-            <form action="sistemadd.php" method="post" enctype="multipart/form-data">
-                <label for="">Judul</label>
-                <input type="text" value="<?php echo $row['judul'] ?>" name="judul"><br>
-                <label for="">Tanggal</label>
-                <input type="date" value="<?php echo $row['tanggal'] ?>" class="date" name="time"><br>
-                <label for="">Content</label>
-                <textarea name="content1" value=""><?php echo $row['content'] ?></textarea><br>
-                <label for="">Gambar</label>
-                <input type="file" name="img"><br>
-                <input type="submit" id="formbtn" name="upload" value="Kirim"><br>
+            <form action="sistemedit.php?id_berita=<?php echo $id_berita ?>" method="post" enctype="multipart/form-data">
+                <label for="inputPassword5" class="form-label">Judul Berita</label>
+                <input type="text" class="form-control"  value="<?php echo $row['judul'] ?>" name="judul"><br>
+                <label for="inputPassword5" class="form-label">Tanggal</label>
+                <input type="date" class="form-control"  value="<?php echo $row['tanggal'] ?>" class="date" name="time1"><br>
+                <label for="inputPassword5" class="form-label">Content</label>
+                <textarea name="content1"  value=""><?php echo $row['content'] ?></textarea><br>
+                <label for="inputPassword5" class="form-label">Gambar</label>
+                <input type="file" class="form-control"   name="img"><br>
+                <input type="submit" id="formbtn" class="btn btn-success" name="upload" value="Kirim"><br>
+                <input hidden type="text" id="IMG" value="<?php echo $row['img'] ?>" class="date" name="time"><br>
             </form>
         </div>
     </section>

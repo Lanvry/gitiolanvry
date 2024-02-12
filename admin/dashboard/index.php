@@ -12,12 +12,18 @@
     <?php
     include "../head.php";
     ?>
+    <?php
+	if ($_SESSION['status'] != "login") {
+		header("location:../login.php?pesan=belum_login");
+	}?>
     <section>
-        <div class="profile">
-            <img src="https://placekitten.com/200/200" alt="Profile Picture">
-            <div class="profile-info">
+        <div class="profile-dashboard">
+            <center>
+                <h3 style="font-family:Arial, Helvetica, sans-serif;"><b>Your Profile</b></h3><hr>
+                <img src="https://placekitten.com/200/200" alt="Profile Picture">
+            </center>
+            <div class="profile-info-dashboard">
                 <?php
-                session_start();
                 require "../koneksi.php";
                 if (!$koneksi) {
                     die('Gagal terhubung MySQL: ' . mysqli_connect_error());
@@ -29,13 +35,14 @@
                     die('SQL Error: ' . mysqli_error($koneksi));
                 }
                 while ($row = mysqli_fetch_array($query)) {
-                    echo "<h2>".$row["username"]."</h2>
-                          <p>".$row["status"]."</p>
+                    echo "<h2>" . $row["username"] . "</h2>
+                          <p>" . $row["status"] . "</p>
                         ";
                 }
                 ?>
             </div>
-            <a href="../index.php"><button class="logout-btn">Logout</button></a>
+            <a href="../logout"><button class="btn btn-danger">Logout</button></a>
+            <a href="../users"><button style="color: white; position:absolute; right:10px;" class="btn btn-success">Edit</button></a>
         </div>
     </section>
     <div>

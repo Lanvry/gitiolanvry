@@ -23,6 +23,7 @@ $(document).ready(function() {
     
 });
 
+
 function search() {
     document.getElementById("6").style.transition = "0.2s all";
     document.getElementById("5").style.transition = "0.2s all";

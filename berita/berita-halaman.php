@@ -1,12 +1,18 @@
 <!DOCTYPE html>
 <html lang="id">
+<?php
+include 'koneksi.php';
+$id_berita = $_GET['id_berita'];
+$register = mysqli_query($koneksi, "SELECT * FROM `berita` WHERE id_berita='$id_berita'");
+$row = mysqli_fetch_array($register);
+?>
 
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <title>Visi dan Misi | Bakesbangpol Sumenep</title>
+    <title><?php echo $row["judul"] ?> | Bakesbangpol Sumenep</title>
     <meta name="description" content="ini deskripsi">
     <meta name="title" content="Visi dan Misi | Bakesbangpol Sumenep">
     <meta name="keyword" content="BAKESBANGPOL ">
@@ -112,30 +118,51 @@
             text-align: center;
         }
 
-        .isi-berita article{
+        .isi-berita article {
             font-size: 18px;
             font-family: Arial, Helvetica, sans-serif;
         }
 
-        .isi-berita article b{
+        .isi-berita article strong {
+            color: darkgreen;
+        }
+
+        .isi-berita article b {
             color: darkgreen;
         }
 
         .rekomendasi-berita {
             gap: 10px;
-            width: 96%;
+            width: 95%;
             position: relative;
-            height: 300px;
+            height: 360px;
             padding: 10px;
-            top:30px;
+            box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.164);
+            top: 30px;
         }
-        .rekomendasi-berita h3{
+
+        .rekomendasi-item {
+            display: grid;
+            margin-bottom: 5px;
+            position: relative;
+            height: auto;
+            grid-template-columns: 30% 70%;
+        }
+
+        .rekomendasi-item img {
+            width: 90px;
+            height: 90px;
+            border-radius: 100px;
+            border: 1px solid;
+        }
+
+        .rekomendasi-berita h4 {
             font-family: Arial, Helvetica, sans-serif;
             font-weight: bold;
             color: darkgreen;
         }
-        .rekomendasi-grid{
-            border: 1px solid grey;
+
+        .rekomendasi-grid {
             display: grid;
             padding: 10px;
             grid-template-columns: repeat(1, 1fr);
@@ -150,12 +177,7 @@
         }
     </style>
 </head>
-<?php
-include 'koneksi.php';
-$id_berita = $_GET['id_berita'];
-$register = mysqli_query($koneksi, "SELECT * FROM `berita` WHERE id_berita='$id_berita'");
-$row = mysqli_fetch_array($register);
-?>
+
 
 <body style="background-color: #fff">
     <div>
@@ -222,18 +244,41 @@ $row = mysqli_fetch_array($register);
                 <article>
                     <div class="container-berita">
                         <div class="isi-berita">
-                            <h1><?php echo $row["judul"]?></h1>
-                            <p class="waktu"><ion-icon name="time-outline"></ion-icon> <?php echo date('d F Y', strtotime($row["tanggal"]))?> </p>
+                            <h1><?php echo $row["judul"] ?></h1>
+                            <p class="waktu"><ion-icon name="time-outline"></ion-icon> <?php echo date('d F Y', strtotime($row["tanggal"])) ?> </p>
                             <div class='img-berita' style='background-image: url("../admin/berita/image/<?php echo $row["img"] ?>");'></div>
-                            <br><hr>
-                            <article><?php echo $row["content"]?></article>
+                            <br>
+                            <hr>
+                            <article><?php echo $row["content"] ?></article>
                         </div>
                         <div class="rekomendasi-berita">
-                            <h3>Berita Populer</h3>
+                            <h4>Berita Populer</h4>
                             <div class="rekomendasi-grid">
-                                <div class="rekomendasi-item">a</div>
-                                <div class="rekomendasi-item">b</div>
-                                <div class="rekomendasi-item">c</div>
+                                <?php
+                                require "koneksi.php";
+                                if (!$koneksi) {
+                                    die('Gagal terhubung MySQL: ' . mysqli_connect_error());
+                                }
+                                $sql = "SELECT * FROM `berita` ORDER BY RAND() LIMIT 3
+                                ";
+
+                                $query = mysqli_query($koneksi, $sql);
+
+                                if (!$query) {
+                                    die('SQL Error: ' . mysqli_error($koneksi));
+                                }
+
+                                while ($row = mysqli_fetch_array($query)) {
+                                     echo "<div class='rekomendasi-item'>
+                                     <img src='../admin/berita/image/" . $row["img"] . "' alt=''>
+                                     <div>
+                                         <p style='position:relative; margin:0px; padding:0px;'><ion-icon name='time-outline'></ion-icon> " . $row["tanggal"] . "</p>
+                                         <a href=berita-halaman.php?id_berita=$row[id_berita] style='position:relative; top:-5px; margin:0px; padding:0px;'><b>" . mb_strimwidth($row["judul"], 0, 40, "...") . "</b></a>
+                                     </div>
+                                 </div>
+                                          ";
+                                }
+                                ?>
                             </div>
                         </div>
                     </div>
