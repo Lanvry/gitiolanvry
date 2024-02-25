@@ -7,7 +7,7 @@
         <img class="iming" src="https://sumenepkab.go.id/assets/theme2/img/logo.png" style="width:350px">
     </div>
     <!-- search bar -->
-    <form action="sistemsearch.php" method="post" class="searchform">
+    <form action="../assetPage/sistemsearch.php" method="post" class="searchform">
         <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
 
         <div class="wrapper" style="top:-100px; position:relative;">

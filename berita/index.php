@@ -125,6 +125,8 @@
     .about-berita h1 {
       font-family: Arial, Helvetica, sans-serif;
       font-weight: 550;
+      font-size: 20px;
+      margin-bottom: 15px;
     }
 
     .pcimg {
@@ -211,12 +213,12 @@ require "koneksi.php"
     </div>
     <div id="main-content" style="opacity: 1; z-index:1; position: relative; max-height:100vh; overflow-y:auto; overflow-x:hidden;" class="scroller">
       <?php
-      include "formsearch.php"
+      include "../assetPage/formsearch.php"
       ?>
       <div style="height: 8vh;" class="gangg"></div>
       <div id="toolbar-p-1" class="bottom-based-tools-wrp">
         <?php
-        include "toolbar.php";
+        include "../assetPage/toolbar.php";
         ?>
       </div>
 
@@ -250,7 +252,7 @@ require "koneksi.php"
               <div class='content-berita'>
               <div class='androidimg' style='background:url(../admin/berita/image/" . $row['img'] . ");width:100%;height:150px;background-size:cover;background-position:center;'></div>
                 <div class='about-berita' style='position:relative;margin-top:10px;'>
-                  <a href=berita-halaman.php?id_berita=$row[id_berita]><h1>" . mb_strimwidth($row["judul"], 0, 50, "...") . "</h1></a>
+                  <a href=berita-halaman.php?id_berita=$row[id_berita]><h1>" . mb_strimwidth($row["judul"], 0, 200, "...") . "</h1></a>
                   <p><ion-icon name='time'></ion-icon> " . $row["tanggal"] . " | <text>" . $row["author"] . "</text></p>
                   <div style='position:absolute;bottom:0;right:0;margin-right:10px;display:grid;grid-template-columns:repeat(2,1fr);gap:10px;'>
                   <a href='#'><h4><ion-icon name='logo-whatsapp'></ion-icon></h4></a>

@@ -8,7 +8,7 @@ if (isset($_POST['upload'])) {
     $tempname = $_FILES["img"]["tmp_name"];
     $folder = "./image/" . $filename;
     $content = $_POST["content1"];
-    $id = rand(10,10000);
+    $id = rand(1,10000);
 
     require "koneksi.php";
 

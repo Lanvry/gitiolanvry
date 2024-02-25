@@ -29,7 +29,7 @@ body {
 }
 
 .nav1 {
-    background: linear-gradient(#c4c4c4,transparent);
+    background: linear-gradient(#c4c4c4, transparent);
     padding: 10px;
     width: 200px;
     height: 100%;
@@ -77,7 +77,9 @@ section {
     border-radius: 5px;
 }
 
-.deletebtn{
+
+
+.deletebtn {
     position: absolute;
     right: 0;
     margin-right: 10px;
@@ -91,10 +93,30 @@ section {
     box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.164);
 }
 
-.deletebtn:hover{
+.deletebtn:hover {
     background-color: #d00;
 }
-.editbtn{
+
+.detailbtn {
+    position: absolute;
+    right: 0;
+    margin-right: 10px;
+    background-color: rgb(0, 153, 255);
+    color: white;
+    transform: translate(0%, -50%);
+    top: 50%;
+    cursor: pointer;
+    padding: 5px 10px;
+    border: none;
+    border-radius: 5px;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.164);
+}
+
+.detailbtn:hover {
+    background-color: rgb(2, 117, 194);
+}
+
+.editbtn {
     position: absolute;
     right: 40px;
     margin-right: 10px;
@@ -108,8 +130,56 @@ section {
     box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.164);
 }
 
-.editbtn:hover{
+.editbtn:hover {
     background-color: darkgreen;
+}
+.diterimabtn {
+    position: absolute;
+    right: 0px;
+    margin-right: 10px;
+    background-color: rgb(0, 138, 0);
+    color: white;
+    cursor: pointer;
+    padding: 5px 10px;
+    transform: translate(-0%, -50%);
+    top: 50%;
+    border: none;
+    border-radius: 5px;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.164);
+}
+
+.diterimabtn:hover {
+    background-color: darkgreen;
+}
+.ditolakbtn {
+    position: absolute;
+    right: 0px;
+    margin-right: 10px;
+    background-color: rgb(138, 0, 0);
+    color: white;
+    cursor: pointer;
+    padding: 5px 10px;
+    transform: translate(-0%, -50%);
+    top: 50%;
+    border: none;
+    border-radius: 5px;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.164);
+}
+
+.ditolakbtn:hover {
+    background-color: rgb(100, 0, 0);
+}
+
+#btn-diterima{
+    display: none;
+}
+
+#btn-ditolak{
+    display: none;
+}
+
+#btn-detail{
+    display: block;
 }
 
 .profile {
@@ -146,6 +216,7 @@ section {
     top: -5px;
     /* Set margin to 0 */
 }
+
 .profile-dashboard {
     display: inline-block;
     position: relative;
@@ -195,7 +266,7 @@ section {
     background-color: #d00;
 }
 
-.addbtn{
+.addbtn {
     background-color: rgb(0, 202, 0);
     color: white;
     padding: 5px 10px;
@@ -203,7 +274,8 @@ section {
     float: right;
     border: none;
 }
-.addbtn:hover{
+
+.addbtn:hover {
     background-color: rgb(0, 138, 0);
 }
 
@@ -247,11 +319,13 @@ a {
     top: -10px;
     margin-bottom: 20px;
 }
-.usersettings{
+
+.usersettings {
     width: 100%;
     position: relative;
 }
-.usersettings input[type=text]{
+
+.usersettings input[type=text] {
     padding: 10px 5px;
     border-radius: 10px;
     border: 1px solid grey;
@@ -259,7 +333,8 @@ a {
     position: relative;
     top: -6px;
 }
-.usersettings input[type=email]{
+
+.usersettings input[type=email] {
     padding: 10px 5px;
     border-radius: 10px;
     border: 1px solid grey;
@@ -267,7 +342,8 @@ a {
     position: relative;
     top: -6px;
 }
-#save{
+
+#save {
     display: none;
     background-color: #fff;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
@@ -275,7 +351,8 @@ a {
     margin-bottom: 20px;
     border-radius: 5px;
 }
-.buttonadd{
+
+.buttonadd {
     position: fixed;
     bottom: 0px;
     right: 0px;
@@ -291,10 +368,12 @@ a {
     transition: 0.3s all;
     box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.192);
 }
-.buttonadd:hover{
-    background:#177c17;
+
+.buttonadd:hover {
+    background: #177c17;
 }
-.close{
+
+.close {
     background: white;
     border-radius: 5px;
     position: absolute;
@@ -304,7 +383,8 @@ a {
     background-color: #20a820;
     border: 0px;
 }
-#formadd{
+
+#formadd {
     position: fixed;
     display: none;
     width: 800px;
@@ -322,7 +402,8 @@ a {
     left: 50%;
     transition: 1s all;
 }
-#formadd2{
+
+#formadd2 {
     position: fixed;
     display: block;
     width: 800px;
@@ -338,31 +419,36 @@ a {
     left: 50%;
     transition: 1s all;
 }
-#formadd a{
+
+#formadd a {
     background-color: #20a820;
     border-radius: 5px;
     border: none;
     outline: 0;
     right: 0px;
-    padding: 5px 10px ;
+    padding: 5px 10px;
     color: black;
 }
-.formadd-grid{
+
+.formadd-grid {
     display: grid;
-    grid-template-columns: repeat(2,1fr);
+    grid-template-columns: repeat(2, 1fr);
     width: 100%;
     gap: 10px;
 }
-#formadd h1{
+
+#formadd h1 {
     text-align: center;
     font-family: Arial, Helvetica, sans-serif;
 }
-#formadd label{
+
+#formadd label {
     font-family: Arial, Helvetica, sans-serif;
     margin-bottom: 10px;
     position: relative;
 }
-#formadd input{
+
+#formadd input {
     margin-bottom: 10px;
     margin-top: 10px;
     padding: 5px 0px;
@@ -370,16 +456,19 @@ a {
     width: 100%;
     outline: 0;
 }
-#formadd input[type=text]{
+
+#formadd input[type=text] {
     width: 100%;
     border: none;
     border-bottom: 1px solid;
 }
-#formadd .date{
+
+#formadd .date {
     border: none;
     border-bottom: 1px solid;
 }
-#formadd .files{
+
+#formadd .files {
     padding: 20px;
     width: auto;
     border: 1px dotted black;
@@ -387,16 +476,28 @@ a {
     margin-bottom: 10px;
     margin-top: 10px;
 }
-#formadd input[type=submit]{
+
+#formadd input[type=submit] {
     background-color: #20a820;
     border-radius: 5px;
     border: none;
     outline: 0;
-    padding: 10px 0px ;
+    padding: 10px 0px;
     box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.219);
 }
-#formbtn{
+
+#formbtn {
     position: absolute;
     margin: 10px;
     right: 10px;
+}
+
+#detailtamu{
+    background-color: rgba(128, 128, 128, 0.164);
+    padding: 10px;
+    width: 100%;
+}
+#detailtamu .form-label {
+    margin: 0px;
+    padding: 0px;
 }

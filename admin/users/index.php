@@ -46,32 +46,32 @@
         <form action="edituser.php" method="post">
             <div class="card">
                 <div class="usersettings">
-                    <label for="">Username</label>
+                    <label for=""><b>Username</b></label>
                     <input onchange="save()" type="text" name="username" value="<?php echo $row1['username']; ?>">
                 </div>
             </div>
             </div>
             <div class="card">
                 <div class="usersettings">
-                    <label for="">Password</label>
+                    <label for=""><b>Password</b></label>
                     <input onchange="save()" type="text" name="password" value="<?php echo $row1['password']; ?>">
                 </div>
             </div>
             <div class="card">
                 <div class="usersettings">
-                    <label for="">Email</label>
+                    <label for=""><b>Email</b></label>
                     <input onchange="save()" type="text" name="email" value="<?php echo $row1['email']; ?>">
                 </div>
             </div>
             <div class="card">
                 <div class="usersettings">
-                    <label for="">Guru Mapel</label>
+                    <label for=""><b>Bidang</b></label>
                     <input onchange="save()" type="text" name="mapel" value="<?php echo $row1['status']; ?>">
                 </div>
             </div>
             <div id="save" class="card" >
                 <div class="usersettings">
-                    <label for="">Save A Changes?</label>
+                    <label for=""><b>Save A Changes?</b></label>
                     <input type="submit" value="Save" class="addbtn">
                 </div>
             </div>

@@ -125,25 +125,33 @@
     .about-berita h1 {
       font-family: Arial, Helvetica, sans-serif;
       font-weight: 550;
+      font-size: 20px;
+      margin-bottom: 15px;
     }
-    .pcimg{
+
+    .pcimg {
       display: inline-block;
     }
-    .androidimg{
+
+    .androidimg {
       display: none;
     }
-    @media only screen and (max-width: 600px){
-    .androidimg{
-      display: inline-block;
-    }
-    .pcimg{
-      display: none;
-    }
-      .about-berita h1{
+
+    @media only screen and (max-width: 600px) {
+      .androidimg {
+        display: inline-block;
+      }
+
+      .pcimg {
+        display: none;
+      }
+
+      .about-berita h1 {
         font-size: 20px;
       }
+
       .content-berita {
-        grid-template-columns: repeat(1,1fr);
+        grid-template-columns: repeat(1, 1fr);
       }
     }
   </style>
@@ -205,12 +213,12 @@ require "koneksi.php"
     </div>
     <div id="main-content" style="opacity: 1; z-index:1; position: relative; max-height:100vh; overflow-y:auto; overflow-x:hidden;" class="scroller">
       <?php
-      include "formsearch.php"
+      include "../assetPage/formsearch.php"
       ?>
       <div style="height: 8vh;" class="gangg"></div>
       <div id="toolbar-p-1" class="bottom-based-tools-wrp">
         <?php
-        include "toolbar.php";
+        include "../assetPage/toolbar.php";
         ?>
       </div>
 
@@ -218,87 +226,13 @@ require "koneksi.php"
         <article class="article-justify container">
           <div class="judul">
             <div class="judulbackground">
-              <h3><b>Search Result :
-                  <?php
-                  if (isset($_GET['search'])) {
-                    echo $_GET['search'];
-                    $judul = $_GET['search'];
-                  }
-                  else{
-                    $judul = null;
-                  }
-                  ?>
+              <h3><b>Galeri
                 </b></h3>
               <div class="kotak"></div>
             </div>
           </div>
           <br><br><br><br><br><br>
-          <?php
-          require "koneksi.php";
-          if (!$koneksi) {
-            die('Gagal terhubung MySQL: ' . mysqli_connect_error());
-          }
-          if($judul != NULL){
-            $sql = "SELECT * FROM `berita` WHERE judul like '%$judul%'; ";
-
-            $query = mysqli_query($koneksi, $sql);
-  
-            if (!$query) {
-              die('SQL Error: ' . mysqli_error($koneksi));
-            }
-  
-            while ($row = mysqli_fetch_array($query)) {
-              echo "
-              <div id='berita'>
-              <div class='card-berita'>
-                <div class='content-berita'>
-                <div class='androidimg' style='background:url(../admin/berita/image/". $row['img'] .");width:100%;height:150px;background-size:cover;background-position:center;'></div>
-                  <div class='about-berita' style='position:relative;margin-top:10px;'>
-                    <a href='../berita/berita-halaman.php?id_berita=$row[id_berita]'><h1>" . mb_strimwidth($row["judul"], 0, 50, "...") . "</h1></a>
-                    <p><ion-icon name='time'></ion-icon> ".$row["tanggal"]." | <text>".$row["author"]."</text></p>
-                    <div style='position:absolute;bottom:0;right:0;margin-right:10px;display:grid;grid-template-columns:repeat(2,1fr);gap:10px;'>
-                    <a href='#'><h4><ion-icon name='logo-whatsapp'></ion-icon></h4></a>
-                    <a href='#'><h4><ion-icon name='logo-facebook'></ion-icon></h4></a>
-                    </div>
-                  </div>
-                   <div class='pcimg' style='background:url(../admin/berita/image/". $row['img'] .");width:100%;height:100%;background-size:cover;background-position:center;'></div>
-                </div>
-              </div>
-            </div>
-            ";
-            }
-          }
-          else{
-            $sql = "SELECT * FROM `berita` ";
-
-            $query = mysqli_query($koneksi, $sql);
-  
-            if (!$query) {
-              die('SQL Error: ' . mysqli_error($koneksi));
-            }
-  
-            while ($row = mysqli_fetch_array($query)) {
-              echo "
-              <div id='berita'>
-              <div class='card-berita'>
-                <div class='content-berita'>
-                <div class='androidimg' style='background:url(../admin/berita/image/". $row['img'] .");width:100%;height:150px;background-size:cover;background-position:center;'></div>
-                  <div class='about-berita' style='position:relative;margin-top:10px;'>
-                    <a href='../berita/berita-halaman.php?id_berita=$row[id_berita]'><h1>" . mb_strimwidth($row["judul"], 0, 50, "...") . "</h1></a>
-                    <p><ion-icon name='time'></ion-icon> ".$row["tanggal"]." | <text>".$row["author"]."</text></p>
-                    <div style='position:absolute;bottom:0;right:0;margin-right:10px;display:grid;grid-template-columns:repeat(2,1fr);gap:10px;'>
-                    <a href='#'><h4><ion-icon name='logo-whatsapp'></ion-icon></h4></a>
-                    <a href='#'><h4><ion-icon name='logo-facebook'></ion-icon></h4></a>
-                    </div>
-                  </div>
-                   <div class='pcimg' style='background:url(../admin/berita/image/". $row['img'] .");width:100%;height:100%;background-size:cover;background-position:center;'></div>
-                </div>
-              </div>
-            </div>
-            ";
-            }
-          }
-          ?>
+          
         </article>
         <div style="height: 3rem;"></div>
       </div>

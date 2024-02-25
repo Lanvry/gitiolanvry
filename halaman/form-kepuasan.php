@@ -127,6 +127,13 @@
       padding: 5px 5px;
     }
 
+    textarea {
+      border: 1px solid grey;
+      border-radius: 5px;
+      padding: 5px 5px;
+      width: 100%;
+    }
+
     input[type=tel] {
       border: 1px solid grey;
       border-radius: 5px;
@@ -295,7 +302,8 @@
       box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.105);
     }
 
-    .item-kunjungan p,h1{
+    .item-kunjungan p,
+    h1 {
       color: white;
     }
 
@@ -308,63 +316,71 @@
       opacity: 40%;
       top: 10px;
     }
-    @media only screen and (max-width: 900px){
+
+    @media only screen and (max-width: 900px) {
       .grid-kunjungan {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      width: 100%;
-      gap: 10px;
-    }
-  }
-    @media only screen and (max-width: 600px){
-      .grid-kunjungan {
-      display: grid;
-      grid-template-columns: repeat(1, 1fr);
-      width: 100%;
-      gap: 10px;
-      padding: 10px;
-    }
-    .icon-kunjungan {
-      text-align: right;
-      font-size: 90px;
-      position: absolute;
-      color: #454343;
-      right: 0;
-      opacity: 0%;
-      display: none;
-      top: 10px;
-    }
-    .item-kunjungan {
-      width: 100%;
-      padding: 10px;
-      display: grid;
-      grid-template-columns: repeat(1,1fr);
-      border-radius: 5px;
-      position: relative;
-      box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.105);
-    }
-    .item-kunjungan p,h1{
-      color: white;
-      text-align: center;
-    }
-    }
-    .alert{
-      background:#20a820;
-      color:white;
-      width:100%;
-      border:1px solid grey;
-      padding:5px;
-    }
-    @keyframes alert{
-      from{
-        display: block;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        width: 100%;
+        gap: 10px;
       }
-      to{
-        display: none;
-      }
-      
     }
 
+    @media only screen and (max-width: 600px) {
+      .grid-kunjungan {
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+        width: 100%;
+        gap: 10px;
+        padding: 10px;
+      }
+
+      .icon-kunjungan {
+        text-align: right;
+        font-size: 90px;
+        position: absolute;
+        color: #454343;
+        right: 0;
+        opacity: 0%;
+        display: none;
+        top: 10px;
+      }
+
+      .item-kunjungan {
+        width: 100%;
+        padding: 10px;
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+        border-radius: 5px;
+        position: relative;
+        box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.105);
+      }
+
+      .item-kunjungan p,
+      h1 {
+        color: white;
+        text-align: center;
+      }
+    }
+
+    .alert {
+      background: #20a820;
+      color: white;
+      width: 100%;
+      border: 1px solid grey;
+      padding: 5px;
+    }
+
+    @keyframes alert {
+      from {
+        display: block;
+      }
+
+      to {
+        display: none;
+      }
+
+    }
   </style>
 </head>
 <?php
@@ -433,41 +449,123 @@ require "koneksi.php"
         ?>
       </div>
       <div class="kunjungan">
-            <div class="grid-kunjungan">
-              <div class="item-kunjungan" style="background: #40A2D8;">
-                <div>
-                  <h1><b>0</b></h1>
-                  <b><p>Kunjungan Minggu Ini</p></b>
-                </div>
-                <h1 class="icon-kunjungan"><ion-icon name="people"></ion-icon></h1>
-              </div>
-              <div class="item-kunjungan" style="background: #00bf36;"><div>
-                  <h1><b>0</b></h1>
-                  <b><p>Kunjungan Bulan Ini</p></b>
-                </div>
-                <h1 class="icon-kunjungan"><ion-icon name="stats-chart"></ion-icon></h1></div>
-              <div class="item-kunjungan" style="background: #ad9902;"><div>
-                  <h1><b>0</b></h1>
-                  <b><p>Kunjungan Tahun Ini</p></b>
-                </div>
-                <h1 class="icon-kunjungan"><ion-icon name="person-add"></ion-icon></h1></div>
-              <div class="item-kunjungan" style="background: #b00202;"><div>
-                  <h1><b>0</b></h1>
-                  <b><p>Kunjungan Total</p></b>
-                </div>
-                <h1 class="icon-kunjungan"><ion-icon name="pie-chart"></ion-icon></h1></div>
+        <!-- sistem viewer counter -->
+        <?php
+        // Fungsi untuk meningkatkan hitungan kunjungan
+        function increaseCounter($counterFile)
+        {
+          $count = (int)file_get_contents($counterFile);
+          $count++;
+          file_put_contents($counterFile, $count);
+        }
+
+        // Counter untuk kunjungan dalam 1 minggu
+        function weeklyCounter()
+        {
+          $counterFile = "weekly_counter.txt";
+          $currentTime = time();
+          $lastVisitTime = filemtime($counterFile);
+          $oneWeek = 7 * 24 * 60 * 60; // 1 minggu dalam detik
+          if (($currentTime - $lastVisitTime) > $oneWeek) {
+            increaseCounter($counterFile);
+            touch($counterFile);
+          }
+        }
+
+        // Counter untuk kunjungan dalam 1 bulan
+        function monthlyCounter()
+        {
+          $counterFile = "monthly_counter.txt";
+          $currentTime = time();
+          $lastVisitTime = filemtime($counterFile);
+          $oneMonth = 30 * 24 * 60 * 60; // 1 bulan dalam detik
+          if (($currentTime - $lastVisitTime) > $oneMonth) {
+            increaseCounter($counterFile);
+            touch($counterFile);
+          }
+        }
+
+        // Counter untuk kunjungan dalam 1 tahun
+        function yearlyCounter()
+        {
+          $counterFile = "yearly_counter.txt";
+          $currentTime = time();
+          $lastVisitTime = filemtime($counterFile);
+          $oneYear = 365 * 24 * 60 * 60; // 1 tahun dalam detik
+          if (($currentTime - $lastVisitTime) > $oneYear) {
+            increaseCounter($counterFile);
+            touch($counterFile);
+          }
+        }
+
+        // Counter untuk total kunjungan
+        function totalCounter()
+        {
+          $weeklyCount = (int)file_get_contents("weekly_counter.txt");
+          $monthlyCount = (int)file_get_contents("monthly_counter.txt");
+          $yearlyCount = (int)file_get_contents("yearly_counter.txt");
+          $totalCount = $weeklyCount + $monthlyCount + $yearlyCount;
+          return $totalCount;
+        }
+
+        // Panggil fungsi-fungsi counter
+        weeklyCounter();
+        monthlyCounter();
+        yearlyCounter();
+        $totalCount = totalCounter();
+        ?>
+
+        <div class="grid-kunjungan">
+          <div class="item-kunjungan" style="background: #40A2D8;">
+            <div>
+              <h1><b><?php echo file_get_contents("weekly_counter.txt"); ?></b></h1>
+              <b>
+                <p>Kunjungan Minggu Ini</p>
+              </b>
             </div>
+            <h1 class="icon-kunjungan"><ion-icon name="people"></ion-icon></h1>
           </div>
+          <div class="item-kunjungan" style="background: #00bf36;">
+            <div>
+              <h1><b><?php echo file_get_contents("monthly_counter.txt"); ?></b></h1>
+              <b>
+                <p>Kunjungan Bulan Ini</p>
+              </b>
+            </div>
+            <h1 class="icon-kunjungan"><ion-icon name="stats-chart"></ion-icon></h1>
+          </div>
+          <div class="item-kunjungan" style="background: #ad9902;">
+            <div>
+              <h1><b><?php echo file_get_contents("yearly_counter.txt"); ?></b></h1>
+              <b>
+                <p>Kunjungan Tahun Ini</p>
+              </b>
+            </div>
+            <h1 class="icon-kunjungan"><ion-icon name="person-add"></ion-icon></h1>
+          </div>
+          <div class="item-kunjungan" style="background: #b00202;">
+            <div>
+              <h1><b>
+                  <?php echo $totalCount; ?>
+                </b></h1>
+              <b>
+                <p>Kunjungan Total</p>
+              </b>
+            </div>
+            <h1 class="icon-kunjungan"><ion-icon name="pie-chart"></ion-icon></h1>
+          </div>
+        </div>
+      </div>
       <div class="xcontainer" id="p-1">
         <article class="article-justify container">
 
-              <?php
-                if (isset($_GET['form'])) {
-                  if($_GET["form"] == "sukses"){
-                   echo "          <div class='alert' id='alert' style=''><p>Pengisian Form Sudah Di Rekam</p></div>";
-                }
-              }
-              ?>
+          <?php
+          if (isset($_GET['form'])) {
+            if ($_GET["form"] == "sukses") {
+              echo "          <div class='alert' id='alert' style=''><p>Pengisian Form Sudah Di Rekam</p></div>";
+            }
+          }
+          ?>
           <!-- Form -->
           <form action="sistem-kepuasan.php" method="POST">
             <div class="container-form">
@@ -489,34 +587,46 @@ require "koneksi.php"
                 </div>
                 <div class="input">
                   <label for="">Alamat</label><br>
-                  <input type="text" name="Alamat" placeholder="Alamat" style="width:100%;">
+                  <textarea name="Alamat" placeholder="Alamat"></textarea>
                 </div>
                 <div class="baris-2">
                   <div class="input">
                     <label for="">Ingin Bertemu Dengan Siapa?</label><br>
-                    <input type="text" name="Kepada" placeholder="Ingin Bertemu Dengan">
+                    <select name="kepada" id="">
+                      <option value="" hidden style='color: grey;'>Ingin Bertemu Dengan Siapa?</option>
+                      <?php
+                      require "koneksi.php";
+                      if (!$koneksi) {
+                        die('Gagal terhubung MySQL: ' . mysqli_connect_error());
+                      }
+                      $sql = "SELECT * FROM `bidang` ";
+
+                      $query = mysqli_query($koneksi, $sql);
+
+                      if (!$query) {
+                        die('SQL Error: ' . mysqli_error($koneksi));
+                      }
+
+                      while ($row = mysqli_fetch_array($query)) {
+                        echo "
+                        <option value=''>" . $row["status"] . "</option>
+                        ";
+                      }
+                      ?>
+                    </select>
                   </div>
                   <div class="input">
                     <label for="">Keperluan</label><br>
                     <input type="text" name="Keperluan" placeholder="Keperluan">
                   </div>
                 </div>
-                <div class="baris-1">
+                <div class="baris-2">
                   <div class="input">
-                    <label for="" >Jenis Kelamin</label><br>
+                    <label for="">Jenis Kelamin</label><br>
                     <select name="Jenkel" id="">
                       <option hidden class="placeholder">--Pilih--</option>
                       <option value="Laki - Laki">Laki - Laki</option>
                       <option value="Perempuan">Perempuan</option>
-                    </select>
-                  </div>
-                  <div class="input">
-                    <label for="">Pendidikan</label><br>
-                    <select name="Pendidikan" id="">
-                      <option hidden class="placeholder">--Pilih--</option>
-                      <option value="SD">SD</option>
-                      <option value="SMP">SMP</option>
-                      <option value="SMA">SMA</option>
                     </select>
                   </div>
                   <div class="input">
@@ -855,7 +965,7 @@ require "koneksi.php"
 
     })
     setTimeout(() => {
-      document.getElementById("alert").style.display="none"
+      document.getElementById("alert").style.display = "none"
     }, 1500);
   </script>
 

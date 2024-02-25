@@ -51,7 +51,6 @@
   include "asset/header.php";
   ?>
   <!-- BODY -->
-
   <div class="background">
     <div class="backgroundprofile">
       <div class="shape"></div>
@@ -127,7 +126,6 @@
           </center>
         </div>
       </div>
-      <hr>
 
       <div class="col-md-12 text-center fade">
         <span class="caption d-block mb-2 font-secondary font-weight-bold">About</span>
