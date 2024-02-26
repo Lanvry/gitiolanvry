@@ -370,6 +370,7 @@
   ?>
   <!-- script -->
   <script>
+        sessionStorage.setItem('rating','false');
     const counters = document.querySelectorAll(".number");
 
     counters.forEach((counter) => {
