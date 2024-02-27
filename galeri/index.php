@@ -232,6 +232,7 @@ require "koneksi.php"
             </div>
           </div>
           <br><br><br><br><br><br>
+        <div style="background-color:"></div>
           
         </article>
         <div style="height: 3rem;"></div>
