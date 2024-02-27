@@ -58,7 +58,7 @@
       align-items: center;
       min-height: 100vh;
       padding: 1rem;
-      background-image: url(sumenep.jpeg);
+      background-image: url(../sumenep.jpeg);
       background-size: cover;
       background-repeat: no-repeat;
     }
@@ -189,6 +189,7 @@
 </head>
 
 <body>
+  
   <div class="container">
   <div class="wrapper">
     <h3>BAKESBANGPOL</h3>
@@ -233,13 +234,6 @@
         }
       })
     })
-
-    if(sessionStorage.getItem("rating") == "false"){
-      header("location:index.php");
-    }
-    else{
-
-    }
   </script>
 </body>
 

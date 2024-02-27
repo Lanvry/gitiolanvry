@@ -61,20 +61,22 @@ input[type="number"] {
 </figure>
 
 
+<?php
+echo "
 <script>
     Highcharts.chart('container', {
     chart: {
         type: 'pie'
     },
     title: {
-        text: 'Egg Yolk Composition'
+        text: 'Sistem Informasi Induk Masyarakat'
     },
     tooltip: {
         valueSuffix: '%'
     },
     subtitle: {
         text:
-        'Source:<a href="https://www.mdpi.com/2072-6643/11/3/684/htm" target="_default">MDPI</a>'
+        'Feedback'
     },
     plotOptions: {
         series: {
@@ -104,22 +106,25 @@ input[type="number"] {
         {
             name: 'Percentage',
             colorByPoint: true,
-            data: [
-                {
-                    name: 'Water',
-                    y: 55.02
-                },
-                {
-                    name: 'Fat',
-                    y: 26.71
-                },
-                {
-                    name: 'Ash',
-                    y: 1.68
-                }
+            data: [";
+
+            echo "
+            {
+                name: 'Puas',
+                y: 55.02
+            },
+            {
+                name: 'Tidak Puas',
+                y: 55.02
+            },
+            ";
+
+            echo "
             ]
         }
     ]
 });
+"
+?>
 
 </script>

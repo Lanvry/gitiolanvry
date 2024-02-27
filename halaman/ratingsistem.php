@@ -23,10 +23,10 @@ switch ($rating) {
         $keterangan = 'Belum Ada Penilaian';
 }
 
-require "asset/koneksi.php";
+require "koneksi.php";
 
 $sql = "insert into rating (rating, keterangan) values ('$rating', '$keterangan')";
 $mysql = mysqli_query($koneksi,$sql);
 if($mysql){
-    header("location:index.php?");
+    header("location:../ index.php?");
 }
