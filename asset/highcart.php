@@ -107,17 +107,27 @@ echo "
             name: 'Percentage',
             colorByPoint: true,
             data: [";
-
-            echo "
+            require "koneksi.php";
+            if (!$koneksi) {
+              die('Gagal terhubung MySQL: ' . mysqli_connect_error());
+            }
+            $sql = "SELECT Keterangan, COUNT(*) AS jumlah, ROUND(COUNT(*) / (SELECT COUNT(*) FROM rating) * 100, 2) AS persentase FROM rating GROUP BY Keterangan;";
+  
+            $query = mysqli_query($koneksi, $sql);
+  
+            if (!$query) {
+              die('SQL Error: ' . mysqli_error($koneksi));
+            }
+  
+            while ($row = mysqli_fetch_array($query)) {
+               echo "
             {
-                name: 'Puas',
-                y: 55.02
-            },
-            {
-                name: 'Tidak Puas',
-                y: 55.02
+                name: '".$row["Keterangan"]."',
+                y: ".$row["persentase"]."
             },
             ";
+            }
+          
 
             echo "
             ]
