@@ -43,10 +43,10 @@
         </div>
         <hr>
         <div class="card">
-            <form action="tambahkanbidang.php">
+            <form action="sistemadd.php" method="post">
                 <label for="" class="label-control">Tambahkan Bidang</label>
-                <input type="text" class='form-control' style="margin-bottom: 10px;" placeholder="Tambahkan Bidang">
-                <button class="btn btn-success" style="float:right;">Tambahkan</button><br>
+                <input type="text" class='form-control' name="bidang" style="margin-bottom: 10px;" placeholder="Tambahkan Bidang">
+                <input type="submit" class="btn btn-success" style="float:right;" value="Tambahkan"><br>
             </form>
         </div>
         <hr>
@@ -72,7 +72,7 @@
                     <h5>
                         ".$row["status"]."
                     </h5>
-                     <a href='delete-berita.php?id_berita=". $row["status"] ."'><button class='deletebtn'><ion-icon name='trash'></ion-icon></button></a>
+                     <a href='deletesistem.php?status=". $row["status"] ."'><button class='deletebtn'><ion-icon name='trash'></ion-icon></button></a>
                 </div>
                         ";
                 }
