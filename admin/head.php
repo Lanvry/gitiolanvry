@@ -26,11 +26,14 @@
         <ul>
             <li><a href="../dashboard/">Dashboard</a></li>
             <li><a href="../berita/">Isi Berita</a></li>
+            <li><a href="../bidang/">Bidang</a></li>
             <li><a href="../Kepuasan-masyarakat/">Kepuasan Masyarakat</a></li>
+            <li><a href="../galeri/">Galeri</a></li>
+            <li><a href="../tambah-user/">Management User</a></li>
             <li><a href="../users/">Users</a></li>
-            <li><a href="#">Settings</a></li>
         </ul>
     </nav>
+
     <script src="js/script.js"></script>
     <script src="https://unpkg.com/ionicons@4.5.10-0/dist/ionicons.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>

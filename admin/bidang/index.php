@@ -19,7 +19,7 @@
 
     <section>
         <div class="profile">
-        <img src="../users/image/<?php echo $row1["img"] ?>" alt="Profile Picture">
+            <img src="../users/image/<?php echo $row1["img"] ?>" alt="Profile Picture">
             <div class="profile-info">
                 <?php
                 require "../koneksi.php";
@@ -39,34 +39,44 @@
                 }
                 ?>
             </div>
-            <a href="../logout"><button class="logout-btn">Logout</button></a>
+            <a href="../index.php"><button class="logout-btn">Logout</button></a>
         </div>
         <hr>
+        <div class="card">
+            <form action="tambahkanbidang.php">
+                <label for="" class="label-control">Tambahkan Bidang</label>
+                <input type="text" class='form-control' style="margin-bottom: 10px;" placeholder="Tambahkan Bidang">
+                <button class="btn btn-success" style="float:right;">Tambahkan</button><br>
+            </form>
+        </div>
+        <hr>
+        <h3>
+            <b>
+                Bidang
+            </b>
+        </h3>
         <?php
-        require "../koneksi.php";
-        if (!$koneksi) {
-            die('Gagal terhubung MySQL: ' . mysqli_connect_error());
-        }
-        $sql = "SELECT * FROM `kepuasanmasyarakat` ORDER BY tgl DESC ";
-        $query = mysqli_query($koneksi, $sql);
-        if (!$query) {
-            die('SQL Error: ' . mysqli_error($koneksi));
-        }
-        while ($row = mysqli_fetch_array($query)) {
-            echo "<div class='card'>
-                    <text style='margin:0px;padding:0px;position:relative;top:10px;'>Ada Tamu Yang Ingin Menemui Anda, Atas Nama: </text>
-                    <p><b>" . $row["Nama_Lengkap"] . "</b></p>
-                    <div id='status-detail'>
-                     <a id='btn-detail' href='detail-tamu.php?id_tamu=".$row["id_tamu"]."'><button id='detail' class='detailbtn'><ion-icon name='eye'></ion-icon> ".$row["status"]." </button></a>
-                    </div>
-                    </div>
-                        ";               
-        }
-        $check = mysqli_fetch_array($query)
-
-        
-
-        ?>
+                require "../koneksi.php";
+                if (!$koneksi) {
+                    die('Gagal terhubung MySQL: ' . mysqli_connect_error());
+                }
+                $username = $_SESSION["username"];
+                $sql = "SELECT * FROM `bidang`; ";
+                $query = mysqli_query($koneksi, $sql);
+                if (!$query) {
+                    die('SQL Error: ' . mysqli_error($koneksi));
+                }
+                while ($row = mysqli_fetch_array($query)) {
+                    echo "
+                <div class='card'>
+                    <h5>
+                        ".$row["status"]."
+                    </h5>
+                     <a href='delete-berita.php?id_berita=". $row["status"] ."'><button class='deletebtn'><ion-icon name='trash'></ion-icon></button></a>
+                </div>
+                        ";
+                }
+                ?>
     </section>
     <script src="../js/script.js"></script>
     <script>

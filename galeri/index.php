@@ -136,6 +136,23 @@
     .androidimg {
       display: none;
     }
+    .gallery-grid{
+      display: grid;
+      gap: 5px;
+      grid-template-columns: repeat(4,1fr);
+    }
+    .card{
+      padding: 10px;
+      position: relative;
+    }
+    .img-card img{
+      width: 100%;
+      position: relative;
+    }
+    .img-text p{
+      position: relative;
+      top: 10px;
+    }
 
     @media only screen and (max-width: 600px) {
       .androidimg {
@@ -232,8 +249,22 @@ require "koneksi.php"
             </div>
           </div>
           <br><br><br><br><br><br>
-        <div style="background-color:"></div>
-          
+          <div style="background-color:hsl(120, 65%, 39%); padding:5px;color:white;">
+            <h5 style="position:relative;top:5px;"><ion-icon name="camera"></ion-icon> <b>Gallery Photo</b></h5>
+          </div>
+          <div class="gallery-grid">
+            <div class="card">
+               <div class="content">
+                 <div class="img-card">
+                  <img src="../admin/berita/image/sumenep.png" alt="">
+                 </div>
+                 <div class="img-text">
+                  <p><ion-icon name='time-outline'></ion-icon> 0 January 2022</p>
+                   <h5><b>CONTOH</b></h5>
+                 </div>
+               </div>
+            </div>
+          </div>
         </article>
         <div style="height: 3rem;"></div>
       </div>

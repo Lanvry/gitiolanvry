@@ -11,10 +11,14 @@
 <body>
     <?php
     include "../head.php";
+    include '../koneksi.php';
+    $id_user        = $_SESSION["username"];
+    $register  = mysqli_query($koneksi, "select * from user where username='$id_user'");
+    $row1       = mysqli_fetch_array($register);
     ?>
     <section>
         <div class="profile">
-            <img src="https://placekitten.com/200/200" alt="Profile Picture">
+        <img src="image/<?php echo $row1["img"] ?>" alt="Profile Picture">
             <div class="profile-info">
                 <?php
                 require "../koneksi.php";
@@ -37,39 +41,39 @@
             <a href="../index.php"><button class="logout-btn">Logout</button></a>
         </div>
         <hr>
-        <?php
-        include '../koneksi.php';
-        $id_siswa        = $_SESSION["username"];
-        $register  = mysqli_query($koneksi, "select * from user where username='$id_siswa'");
-        $row1       = mysqli_fetch_array($register);
-        ?>
-        <form action="edituser.php" method="post">
+        <form action="edituser.php" method="post" enctype="multipart/form-data">
+            <div class="card">
+                <div class="usersettings">
+                    <label for=""><b>Profile</b></label>
+                    <input onchange="save()" class="form-control" type="file" value="<?php echo $row1['img']; ?>" name="img">
+                </div>
+            </div>
             <div class="card">
                 <div class="usersettings">
                     <label for=""><b>Username</b></label>
-                    <input onchange="save()" type="text" name="username" value="<?php echo $row1['username']; ?>">
+                    <input onchange="save()" class="form-control" type="text" name="username" value="<?php echo $row1['username']; ?>">
                 </div>
             </div>
             </div>
             <div class="card">
                 <div class="usersettings">
                     <label for=""><b>Password</b></label>
-                    <input onchange="save()" type="text" name="password" value="<?php echo $row1['password']; ?>">
+                    <input onchange="save()" class="form-control" type="text" name="password" value="<?php echo $row1['password']; ?>">
                 </div>
             </div>
             <div class="card">
                 <div class="usersettings">
                     <label for=""><b>Email</b></label>
-                    <input onchange="save()" type="text" name="email" value="<?php echo $row1['email']; ?>">
+                    <input onchange="save()" class="form-control" type="text" name="email" value="<?php echo $row1['email']; ?>">
                 </div>
             </div>
             <div class="card">
                 <div class="usersettings">
                     <label for=""><b>Bidang</b></label>
-                    <input onchange="save()" type="text" name="mapel" value="<?php echo $row1['status']; ?>">
+                    <input onchange="save()" class="form-control" type="text" name="bidang" value="<?php echo $row1['status']; ?>">
                 </div>
             </div>
-            <div id="save" class="card" >
+            <div id="save" class="card">
                 <div class="usersettings">
                     <label for=""><b>Save A Changes?</b></label>
                     <input type="submit" value="Save" class="addbtn">

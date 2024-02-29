@@ -325,24 +325,6 @@ a {
     position: relative;
 }
 
-.usersettings input[type=text] {
-    padding: 10px 5px;
-    border-radius: 10px;
-    border: 1px solid grey;
-    float: right;
-    position: relative;
-    top: -6px;
-}
-
-.usersettings input[type=email] {
-    padding: 10px 5px;
-    border-radius: 10px;
-    border: 1px solid grey;
-    float: right;
-    position: relative;
-    top: -6px;
-}
-
 #save {
     display: none;
     background-color: #fff;

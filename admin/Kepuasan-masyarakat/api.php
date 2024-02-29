@@ -5,7 +5,7 @@ require "../koneksi.php";
 $token = "53vftmsSRbs+g7pPXB@G";
 $target = $_POST["nomor"];
 $date = date("d M Y",strtotime($_POST["tgl"]));
-$pesan = "Assalamualaikum Wr. Wb \n\n Mohon Maaf mengganggu waktu anda, kami Admin BAKESBANGPOL Ingin Memberitahu permintaan kunjungan anda ingin bertemu dengan ".$_POST["Kepada"]."\n\n Status : ".$_POST["status"]."\n Tanggal Perjanjian : ".$date."\n Pesan : ".$_POST["pesan"]."";
+$pesan = "Assalamualaikum Wr. Wb \n\n Mohon Maaf mengganggu waktu anda, kami Admin BAKESBANGPOL Ingin Memberitahu permintaan kunjungan anda ingin bertemu dengan ".$_POST["Kepada"]."\n\n Status : ".$_POST["status"]."\n Tanggal Perjanjian : ".$date."\n Pesan : ".$_POST["pesan"]."\n\n\nTolong Berikan Rating : ";
 
 $sql = "UPDATE `kepuasanmasyarakat` SET `status` = '".$_POST["status"]."' WHERE `kepuasanmasyarakat`.`id_tamu` = ".$_POST["id_tamu"] .";";
 mysqli_query($koneksi,$sql);

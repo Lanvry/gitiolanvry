@@ -11,10 +11,15 @@
 <body>
     <?php
     include "../head.php";
+    include '../koneksi.php';
+    $id_user        = $_SESSION["username"];
+    $register  = mysqli_query($koneksi, "select * from user where username='$id_user'");
+    $row1       = mysqli_fetch_array($register);
     ?>
+
     <section>
         <div class="profile">
-            <img src="https://placekitten.com/200/200" alt="Profile Picture">
+        <img src="../users/image/<?php echo $row1["img"] ?>" alt="Profile Picture">
             <div class="profile-info">
                 <?php
                 require "../koneksi.php";
@@ -37,6 +42,9 @@
             <a href="../logout"><button class="logout-btn">Logout</button></a>
         </div>
         <hr>
+        <div class="card">
+            <a href="index.php" class='btn btn-success' style="position:relative;width:90px;"><b>< BACK</b></a>
+        </div>
         <?php
         require "../koneksi.php";
         if (!$koneksi) {

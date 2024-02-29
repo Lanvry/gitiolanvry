@@ -11,6 +11,10 @@
 <body>
     <?php
     include "../head.php";
+    include '../koneksi.php';
+    $id_user        = $_SESSION["username"];
+    $register  = mysqli_query($koneksi, "select * from user where username='$id_user'");
+    $row1       = mysqli_fetch_array($register);
     ?>
     <?php
 	if ($_SESSION['status'] != "login") {
@@ -20,7 +24,7 @@
         <div class="profile-dashboard">
             <center>
                 <h3 style="font-family:Arial, Helvetica, sans-serif;"><b>Your Profile</b></h3><hr>
-                <img src="https://placekitten.com/200/200" alt="Profile Picture">
+                <img src="../users/image/<?php echo $row1["img"] ?>" alt="Profile Picture">
             </center>
             <div class="profile-info-dashboard">
                 <?php
