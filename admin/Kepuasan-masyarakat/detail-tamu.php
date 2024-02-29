@@ -87,7 +87,7 @@
                             <textarea class='form-control' placeholder='Tulis Pesan Anda Disini..' name='pesan'></textarea>
                             <input type='text' name='nomor' hidden value='0". $row["Telp"] ."' class='form-control'>
                             <input type='text' name='status' hidden value='Diterima' class='form-control'>
-                            <input type='text' name='bertemu' hidden value='".$row["Kepada"]."' class='form-control'>
+                            <input type='text' name='bertemu' hidden value='".$row["bidang"]."' class='form-control'>
                             <input type='text' name='id_tamu' hidden value='".$row["id_tamu"]."' class='form-control'>
                         </div>
                         <div class='modal-footer'>
@@ -112,7 +112,7 @@
                             <input type='text' name='pesan' class='form-control'>
                             <input type='text' name='nomor' hidden value='0". $row["Telp"] ."' class='form-control'>
                             <input type='text' name='status' hidden value='Ditolak' class='form-control'>
-                            <input type='text' name='bertemu' hidden value='".$row["Kepada"]."' class='form-control'>
+                            <input type='text' name='bertemu' hidden value='".$row["bidang"]."' class='form-control'>
                             <input type='text' name='id_tamu' hidden value='".$row["id_tamu"]."' class='form-control'>
                         </div>
                         <div class='modal-footer'>

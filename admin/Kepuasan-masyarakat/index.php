@@ -19,7 +19,7 @@
 
     <section>
         <div class="profile">
-        <img src="../users/image/<?php echo $row1["img"] ?>" alt="Profile Picture">
+            <img src="../users/image/<?php echo $row1["img"] ?>" alt="Profile Picture">
             <div class="profile-info">
                 <?php
                 require "../koneksi.php";
@@ -37,35 +37,46 @@
                           <p>" . $row["status"] . "</p>
                         ";
                 }
+                $row1 = mysqli_fetch_array($query);
                 ?>
             </div>
             <a href="../logout"><button class="logout-btn">Logout</button></a>
         </div>
         <hr>
         <?php
-        require "../koneksi.php";
-        if (!$koneksi) {
-            die('Gagal terhubung MySQL: ' . mysqli_connect_error());
-        }
-        $sql = "SELECT * FROM `kepuasanmasyarakat` ORDER BY tgl DESC ";
+        $username = $_SESSION["username"];
+        $sql = "SELECT * FROM `user` WHERE username='$username'; ";
         $query = mysqli_query($koneksi, $sql);
-        if (!$query) {
-            die('SQL Error: ' . mysqli_error($koneksi));
+        $row1 = mysqli_fetch_array($query);
+        if ($row1["status"] == "Admin") {
+            $sql = "SELECT * FROM `kepuasanmasyarakat` ORDER BY tgl DESC ";
+            $query = mysqli_query($koneksi, $sql);
+            while ($row = mysqli_fetch_array($query)) {
+                echo "<div class='card'>
+                        <text style='margin:0px;padding:0px;position:relative;top:10px;'>Ada Tamu Yang Ingin Menemui Anda, Atas Nama: </text>
+                        <p><b>" . $row["Nama_Lengkap"] . "</b></p>
+                        <div id='status-detail'>
+                         <a id='btn-detail' href='detail-tamu.php?id_tamu=" . $row["id_tamu"] . "'><button id='detail' class='detailbtn'><ion-icon name='eye'></ion-icon> " . $row["status"] . " </button></a>
+                        </div>
+                        </div>
+                            ";
+            }
         }
-        while ($row = mysqli_fetch_array($query)) {
-            echo "<div class='card'>
-                    <text style='margin:0px;padding:0px;position:relative;top:10px;'>Ada Tamu Yang Ingin Menemui Anda, Atas Nama: </text>
-                    <p><b>" . $row["Nama_Lengkap"] . "</b></p>
-                    <div id='status-detail'>
-                     <a id='btn-detail' href='detail-tamu.php?id_tamu=".$row["id_tamu"]."'><button id='detail' class='detailbtn'><ion-icon name='eye'></ion-icon> ".$row["status"]." </button></a>
-                    </div>
-                    </div>
-                        ";               
+        else{
+            $status = $row1["status"];
+            $sql = "SELECT * FROM `kepuasanmasyarakat` WHERE `bidang`='$status' ORDER BY tgl DESC";
+            $query = mysqli_query($koneksi, $sql);
+            while ($row = mysqli_fetch_array($query)) {
+                echo "<div class='card'>
+                        <text style='margin:0px;padding:0px;position:relative;top:10px;'>Ada Tamu Yang Ingin Menemui Anda, Atas Nama: </text>
+                        <p><b>" . $row["Nama_Lengkap"] . "</b></p>
+                        <div id='status-detail'>
+                         <a id='btn-detail' href='detail-tamu.php?id_tamu=".$row["id_tamu"]."'><button id='detail' class='detailbtn'><ion-icon name='eye'></ion-icon> ".$row["status"]." </button></a>
+                        </div>
+                        </div>
+                            ";               
+            }
         }
-        $check = mysqli_fetch_array($query)
-
-        
-
         ?>
     </section>
     <script src="../js/script.js"></script>

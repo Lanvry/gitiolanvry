@@ -592,15 +592,16 @@ require "koneksi.php"
                 <div class="baris-2">
                   <div class="input">
                     <label for="">Ingin Bertemu Dengan Siapa?</label><br>
-                    <select name="kepada" id="">
-                      <option value="" hidden style='color: grey;'>Ingin Bertemu Dengan Siapa?</option>
+                    <select name="dengansiapa">
+                      <option value="Admin" style='color: grey;' disabled hidden selected>Ingin Bertemu Dengan Siapa?</option>
                       <?php
                       require "koneksi.php";
+
                       if (!$koneksi) {
                         die('Gagal terhubung MySQL: ' . mysqli_connect_error());
                       }
-                      $sql = "SELECT * FROM `bidang` ";
 
+                      $sql = "SELECT * FROM `bidang` ";
                       $query = mysqli_query($koneksi, $sql);
 
                       if (!$query) {
@@ -608,9 +609,8 @@ require "koneksi.php"
                       }
 
                       while ($row = mysqli_fetch_array($query)) {
-                        echo "
-                        <option value=''>" . $row["status"] . "</option>
-                        ";
+                        $status = $row["status"];
+                        echo "<option value='" . $status . "'>" . $status . "</option>";
                       }
                       ?>
                     </select>
