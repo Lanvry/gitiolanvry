@@ -16,19 +16,35 @@
         </center>
         <form action="login.php" method="post">
             <center>
-                <input type="text" name="username" placeholder="Username..." id=""><br>
+                <input type="text" name="username" onchange="user1()" placeholder="Username..." id="user"><br>
                 <input type="password" name="password" placeholder="Password..." id=""><br>
+                <script>
+                    function user1() {
+                        var a = document.getElementById("user").value;
+                        document.getElementById("span").href = "verification/index.php?user=" + a;
+                    }
+                </script>
+            </center>
+            <div style="position:relative;">
+                <text style="position:absolute;right:50px;top:-20px;"><a id="span" href=''>Forget Password</a></text><br>
+            </div>
+            <center>
                 <input type="submit" value="Login"><br>
             </center>
         </form>
-            <?php
-            if (isset($_GET['pesan'])) {
-                if($_GET["pesan"] == "oopss"){
-                    echo "<div class='pesan'> Password atau Username Yang Anda Masukkan Salah </div>";
-                }
+        <?php
+        session_start();
+        function otp(){
+            $_SESSION["check"] = "null";
+        }
+        otp();
+        if (isset($_GET['pesan'])) {
+            if ($_GET["pesan"] == "oopss") {
+                echo "<div class='pesan'> Password atau Username Yang Anda Masukkan Salah </div>";
             }
-            ?>
-        
+        }
+        ?>
+
     </div>
     <script src="js/login.js"></script>
 </body>
