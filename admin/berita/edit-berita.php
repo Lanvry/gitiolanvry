@@ -18,6 +18,10 @@
     $row1       = mysqli_fetch_array($register);
     ?>
     <section>
+    <div class="card" style="display:grid;grid-template-columns:10% 90%;">
+            <a href="index.php" class='btn btn-success' style="position:relative;width:90px;"><b>< BACK</b></a>
+            <h3><b><i>Edit Berita</i></b></h3>
+        </div>
         <div class="profile">
         <img src="../users/image/<?php echo $row1["img"] ?>" alt="Profile Picture">
             <div class="profile-info">
@@ -42,9 +46,6 @@
             <a href="../index.php"><button class="logout-btn">Logout</button></a>
         </div>
         <hr>
-        <div class="card">
-            <a href="index.php" class='btn btn-success' style="position:relative;width:90px;"><b>< BACK</b></a>
-        </div>
         <!-- body -->
         <?php
         include 'koneksi.php';

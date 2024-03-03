@@ -133,6 +133,38 @@ section {
 .editbtn:hover {
     background-color: darkgreen;
 }
+.editbtn-position-realtive {
+    position: relative;
+    background-color: rgb(0, 138, 0);
+    color: white;
+    text-align: center;
+    cursor: pointer;
+    padding: 5px 10px;
+    top: 15px;
+    border: none;
+    border-radius: 5px;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.164);
+}
+
+.editbtn-position-realtive:hover {
+    background-color: darkgreen;
+}
+.removebtn-position-realtive {
+    position: relative;
+    background-color: rgb(138, 0, 0);
+    color: white;
+    cursor: pointer;
+    text-align: center;
+    padding: 5px 10px;
+    top: 15px;
+    border: none;
+    border-radius: 5px;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.164);
+}
+
+.removebtn-position-realtive:hover {
+    background-color: rgb(100, 0, 0);
+}
 .diterimabtn {
     position: absolute;
     right: 0px;
@@ -482,4 +514,12 @@ a {
 #detailtamu .form-label {
     margin: 0px;
     padding: 0px;
+}
+
+.grid-galeri{
+    display: grid;
+    width: 100%;
+    position: relative;
+    grid-template-columns: repeat(5,1fr);
+    gap: 10px;
 }

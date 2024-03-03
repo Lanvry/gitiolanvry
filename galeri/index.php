@@ -252,19 +252,29 @@ require "koneksi.php"
           <div style="background-color:hsl(120, 65%, 39%); padding:5px;color:white;">
             <h5 style="position:relative;top:5px;"><ion-icon name="camera"></ion-icon> <b>Gallery Photo</b></h5>
           </div>
-          <div class="gallery-grid">
-            <div class="card">
-               <div class="content">
-                 <div class="img-card">
-                  <img src="../admin/berita/image/sumenep.png" alt="">
+          <?php
+        require "koneksi.php";
+
+        $sql= "SELECT * FROM gambar";
+        $mysql = mysqli_query($koneksi,$sql);
+        while($row = mysqli_fetch_array($mysql)){
+          echo "
+          <div class='gallery-grid'>
+            <div class='card'>
+               <div class='content'>
+                 <div class='img-card'>
+                  <img src='../admin/galeri/gambar/".$row["url_gambar"]."' alt=''>
                  </div>
-                 <div class="img-text">
-                  <p><ion-icon name='time-outline'></ion-icon> 0 January 2022</p>
-                   <h5><b>CONTOH</b></h5>
+                 <div class='img-text'>
+                  <p><ion-icon name='time-outline'></ion-icon> ".date('d F Y', strtotime($row["tgl"]))."</p>
+                   <h5><b>".$row["judul"]."</b></h5>
                  </div>
                </div>
             </div>
           </div>
+          ";
+        }
+        ?>
         </article>
         <div style="height: 3rem;"></div>
       </div>

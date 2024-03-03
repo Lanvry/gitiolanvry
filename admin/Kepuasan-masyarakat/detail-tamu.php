@@ -18,8 +18,12 @@
     ?>
 
     <section>
+    <div class="card" style="display:grid;grid-template-columns:10% 90%;">
+            <a href="index.php" class='btn btn-success' style="position:relative;width:90px;"><b>< BACK</b></a>
+            <h3><b><i>Detail Tamu</i></b></h3>
+        </div>
         <div class="profile">
-        <img src="../users/image/<?php echo $row1["img"] ?>" alt="Profile Picture">
+            <img src="../users/image/<?php echo $row1["img"] ?>" alt="Profile Picture">
             <div class="profile-info">
                 <?php
                 require "../koneksi.php";
@@ -42,9 +46,6 @@
             <a href="../logout"><button class="logout-btn">Logout</button></a>
         </div>
         <hr>
-        <div class="card">
-            <a href="index.php" class='btn btn-success' style="position:relative;width:90px;"><b>< BACK</b></a>
-        </div>
         <?php
         require "../koneksi.php";
         if (!$koneksi) {
@@ -85,10 +86,10 @@
                             <input type='date' name='tgl' placeholder='Tanggal Perjanjian' class='form-control'>
                             <label for='' class='form-label'>Pesan</label>
                             <textarea class='form-control' placeholder='Tulis Pesan Anda Disini..' name='pesan'></textarea>
-                            <input type='text' name='nomor' hidden value='0". $row["Telp"] ."' class='form-control'>
+                            <input type='text' name='nomor' hidden value='0" . $row["Telp"] . "' class='form-control'>
                             <input type='text' name='status' hidden value='Diterima' class='form-control'>
-                            <input type='text' name='bidang' hidden value='".$row["bidang"]."' class='form-control'>
-                            <input type='text' name='id_tamu' hidden value='".$row["id_tamu"]."' class='form-control'>
+                            <input type='text' name='bidang' hidden value='" . $row["bidang"] . "' class='form-control'>
+                            <input type='text' name='id_tamu' hidden value='" . $row["id_tamu"] . "' class='form-control'>
                         </div>
                         <div class='modal-footer'>
                             <button type='button' class='btn btn-secondary' data-bs-dismiss='modal'>Close</button>
@@ -110,10 +111,10 @@
                         <div class='modal-body'>
                             <label for='' class='form-label'>Alasan</label>
                             <input type='text' name='pesan' class='form-control'>
-                            <input type='text' name='nomor' hidden value='0". $row["Telp"] ."' class='form-control'>
+                            <input type='text' name='nomor' hidden value='0" . $row["Telp"] . "' class='form-control'>
                             <input type='text' name='status' hidden value='Ditolak' class='form-control'>
-                            <input type='text' name='bertemu' hidden value='".$row["bidang"]."' class='form-control'>
-                            <input type='text' name='id_tamu' hidden value='".$row["id_tamu"]."' class='form-control'>
+                            <input type='text' name='bertemu' hidden value='" . $row["bidang"] . "' class='form-control'>
+                            <input type='text' name='id_tamu' hidden value='" . $row["id_tamu"] . "' class='form-control'>
                         </div>
                         <div class='modal-footer'>
                             <button type='button' class='btn btn-secondary' data-bs-dismiss='modal'>Close</button>
@@ -124,21 +125,20 @@
             </div>
         </div>
                         ";
-                        if($row["status"] == "Diterima"){
-                            echo "<script>
+            if ($row["status"] == "Diterima") {
+                echo "<script>
                             document.getElementById('btnoption').style.display='none';
                             </script>";
-                        }
-                        else if($row["status"] == "Ditolak"){
-                            echo "<script>
+            } else if ($row["status"] == "Ditolak") {
+                echo "<script>
                             document.getElementById('btnoption').style.display='none';
                             </script>";
-                        }
+            }
         }
         ?>
         <!-- Button trigger modal -->
 
-        
+
     </section>
     <script src="../js/script.js"></script>
     <script>

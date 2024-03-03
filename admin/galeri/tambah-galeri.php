@@ -18,6 +18,10 @@
     ?>
 
     <section>
+    <div class="card" style="display:grid;grid-template-columns:10% 90%;">
+            <a href="index.php" class='btn btn-success' style="position:relative;width:90px;"><b>< BACK</b></a>
+            <h3><b><i>Tambah Galeri</i></b></h3>
+        </div>
         <div class="profile">
             <img src="../users/image/<?php echo $row1["img"] ?>" alt="Profile Picture">
             <div class="profile-info">
@@ -42,35 +46,22 @@
             <a href="../index.php"><button class="logout-btn">Logout</button></a>
         </div>
         <hr>
-
-        <?php
-        require "../koneksi.php";
-
-        $sql= "SELECT * FROM gambar";
-        $mysql = mysqli_query($koneksi,$sql);
-        while($row = mysqli_fetch_array($mysql)){
-            echo "
-            <div class='grid-galeri'>
-            <div class='card'>
-                <img src='gambar/".$row["url_gambar"]."' class='rounded img-fluid'><br>
-                <p>".mb_strimwidth($row["judul"], 0, 39, "...")."</p>
-                <div class='row' style='gap:10px;'>
-                    <div class='col editbtn-position-realtive' ><a href='edit-galeri.php?id_gambar=".$row["id_gambar"]."' style='color:white;text-decoration:none;'><ion-icon name='create'></ion-icon></a></div>
-                    <div class='col removebtn-position-realtive '><a href='sistemremove.php?id_gambar=".$row["id_gambar"]."' style='color:white;text-decoration:none;'><ion-icon name='trash'></ion-icon></a></div>
-                </div>
-            </div>
+        <div class="card">
+            <form action="sistemadd.php" method="post" enctype="multipart/form-data">
+                <label for="" class="label-control">Judul</label>
+                <input type="text" name="judul" id="" class="form-control">
+                <label for="" class="label-control">Tanggal</label>
+                <input type="date" name="time" id="" class="form-control">
+                <label for="" class="label-control">Gambar</label>
+                <input type="file" name="img" id="" class="form-control"><br>
+                <input type="submit" value="Tambah" class="btn btn-success">
+            </form>
         </div>
-            ";
-        }
-        ?>
+
 
     </section>
-    <a href="tambah-galeri.php"><button class="buttonadd">+</button></a>
     <script src="../js/script.js"></script>
     <script>
-        function save() {
-            document.getElementById("save").style.display = "block";
-        }
     </script>
 
 </body>
