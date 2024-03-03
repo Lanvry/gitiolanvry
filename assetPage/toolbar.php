@@ -46,7 +46,7 @@
                             </a>
                         </div>
 
-                        <div onclick="kontak()" id="6">
+                        <div onclick="getMenumanager(2)" id="6">
                             <div class="tools-wrp-bottom">
                                 <div class="tool-bottom-wrp-icon">
                                     <img class="tool-bottom-icon" title="Kontak" src="https://i.ibb.co/VHh4X5y/phone-icon-flat-style-isolated-on-grey-background-telephone-symbol-call-illustration-sign-for-web-an.jpg" alt="KONTAK">
