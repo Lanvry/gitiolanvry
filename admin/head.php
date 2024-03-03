@@ -10,29 +10,52 @@
 </head>
 
 <body>
-<?php
-	session_start();
-	if ($_SESSION['status'] != "login") {
-		header("location:../login.php?pesan=belum_login");
-	}?>
+    <?php
+    session_start();
+    if ($_SESSION['status'] != "login") {
+        header("location:../login.php?pesan=belum_login");
+    } ?>
     <div class="header1">
         <div class="headergrid">
             <img src="image/Logos.jpg" class="logo" alt="">
             <h2>Bangkesbangpol</h2>
         </div>
-</div>
+    </div>
 
     <nav class="nav1">
         <ul>
             <li><a href="../dashboard/">Dashboard</a></li>
             <li><a href="../berita/">Isi Berita</a></li>
-            <li><a href="../bidang/">Bidang</a></li>
             <li><a href="../Kepuasan-masyarakat/">Kepuasan Masyarakat</a></li>
             <li><a href="../galeri/">Galeri</a></li>
-            <li><a href="../tambah-user/">Management User</a></li>
             <li><a href="../users/">Users</a></li>
+            <div class="dropdown">
+                <a class=" dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    Management
+                </a>
+                <ul class="dropdown-menu">
+                    <li><a class="dropdown-item" href="../bidang/">Tambah Bidang</a></li>
+                    <li id="management_user"><a class="dropdown-item" href="../tambah-user/">Management User</a></li>
+                </ul>
+            </div>
         </ul>
     </nav>
+
+    <?php
+    require "koneksi.php";
+    $username = $_SESSION["username"];
+    $sql = "select * from user where username='$username'";
+    $mysql = mysqli_query($koneksi, $sql);
+    $row = mysqli_fetch_array($mysql);
+
+    if ($row["status"] != "Admin") {
+        echo "
+    <script>
+    document.getElementById('management_user').style.display='none';
+    </script>
+    ";
+    }
+    ?>
 
     <script src="js/script.js"></script>
     <script src="https://unpkg.com/ionicons@4.5.10-0/dist/ionicons.js"></script>

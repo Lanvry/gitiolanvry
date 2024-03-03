@@ -18,7 +18,7 @@
     ?>
     <section>
         <div class="profile">
-        <img src="image/<?php echo $row1["img"] ?>" alt="Profile Picture">
+            <img src="image/<?php echo $row1["img"] ?>" alt="Profile Picture">
             <div class="profile-info">
                 <?php
                 require "../koneksi.php";
@@ -70,7 +70,18 @@
             <div class="card">
                 <div class="usersettings">
                     <label for=""><b>Bidang</b></label>
-                    <input onchange="save()" class="form-control" type="text" name="bidang" value="<?php echo $row1['status']; ?>">
+                    <select onchange="save()" class="form-control" name="bidang">
+                    <option value="<?php echo $row1['status']; ?>" hidden><?php echo $row1['status']; ?></option>
+                        <?php
+                        require "../koneksi.php";
+                        $sql = "SELECT * FROM `bidang` ";
+                        $query = mysqli_query($koneksi, $sql);
+                        while ($row2 = mysqli_fetch_array($query)) {
+                            $status = $row2["status"];
+                            echo "<option value='" . $status . "'>" . $status . "</option>";
+                        }
+                        ?>
+                    </select>
                 </div>
             </div>
             <div id="save" class="card">

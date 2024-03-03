@@ -52,7 +52,7 @@
         $register = mysqli_query($koneksi, "SELECT * FROM `berita` WHERE id_berita='$id_berita'");
         $row = mysqli_fetch_array($register);
         ?>
-        <div>
+        <div class="card">
             <!-- Form penambahan berita -->
             <h1>
                 Edit Berita

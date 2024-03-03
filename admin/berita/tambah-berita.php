@@ -59,7 +59,7 @@
             return $result;
         }
         ?>
-        <div>
+        <div class="card">
             <!-- Form penambahan berita -->
             <h1>
                 Tambahkan berita
