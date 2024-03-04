@@ -6,6 +6,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dashboard Page</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.datatables.net/2.0.1/css/dataTables.dataTables.css">
+    <link rel="stylesheet" href="https://cdn.datatables.net/2.0.1/css/dataTables.bootstrap5.css">
+    <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+    <script src="https://cdn.datatables.net/2.0.1/js/dataTables.bootstrap5.js"></script>
+    <script src="https://cdn.datatables.net/2.0.1/js/dataTables.js"></script>
     <link rel="stylesheet" href="css/style.css">
 </head>
 
@@ -25,12 +30,22 @@
     <nav class="nav1">
         <ul>
             <li><a href="../dashboard/">Dashboard</a></li>
+            <div class="dropdown">
+                <a class=" dropdown-toggle" href="#" style="position:relative; top:-5px;" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    Profile
+                </a>
+                <ul class="dropdown-menu">
+                    <li><a class="dropdown-item" href="../bidang/">Visi Misi</a></li>
+                    <li><a class="dropdown-item" href="../tambah-user/">Struktur</a></li>
+                    <li><a class="dropdown-item" href="../tambah-user/">Staf Dan Kepemimpinan</a></li>
+                </ul>
+            </div>
             <li><a href="../berita/">Isi Berita</a></li>
             <li><a href="../Kepuasan-masyarakat/">Kepuasan Masyarakat</a></li>
             <li><a href="../galeri/">Galeri</a></li>
             <li><a href="../users/">Users</a></li>
             <div class="dropdown">
-                <a class=" dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                <a class=" dropdown-toggle" href="#" style="position:relative; top:-5px;" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                     Management
                 </a>
                 <ul class="dropdown-menu">

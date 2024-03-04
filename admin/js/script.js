@@ -15,3 +15,4 @@ function showberitaoff(){
     document.getElementById("formadd").style.display="block"
   }, 1000);
 }
+new DataTable('#example');

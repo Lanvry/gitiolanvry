@@ -90,26 +90,42 @@
                 <input type="submit" value="Tambah" class="btn btn-success">
             </form>
         </div>
+        <div class="card">
+        <table id="example" width="100%" class="table table-striped">
+            <thead>
+                <tr>
+                    <th>Username</th>
+                    <th>Status</th>
+                    <th>Option</th>
+                </tr>
+            </thead>
+            <tbody>
+                <?php
+                    require "../koneksi.php";
+                    
+                    $sql = "select * from user";
+                    $mysql = mysqli_query($koneksi, $sql);
+                    while ($row = mysqli_fetch_array($mysql)) {
+                        echo "
+                             <tr>
+                             <td>" . $row["username"] . "</td>
+                             <td>" . $row["status"] . "</td>
+                             <td> <a style='position:relative;top:-15px;' href='deleteuser.php?id_user=". $row["id_user"] ."'><button class='removebtn-position-relative'><ion-icon name='trash'></ion-icon></button></a> </td>
+                             </tr>
+                           ";
+                    }
 
+                    ?>
+            </tbody>
+        </table>
+        </div>
         <br><br>
-        <?php
-        require "../koneksi.php";
-
-        $sql = "select * from user";
-        $mysql = mysqli_query($koneksi, $sql);
-        while ($row = mysqli_fetch_array($mysql)) {
-            echo "
-            <div class='card'>
-                <p><b>" . $row["username"] . "</b></p>
-                <span style='position:absolute; top:40px;'>" . $row["status"] . "</span>
-                <a href=''><button class='editbtn'><ion-icon name='create'></ion-icon></button></a> <a href='deleteuser.php?id_user=" . $row["id_user"] . "'><button class='deletebtn'><ion-icon name='trash'></ion-icon></button></a>
-            </div>
-            ";
-        }
-
-        ?>
     </section>
     <script src="../js/script.js"></script>
+    <script>
+        new DataTable('#example');
+    </script>
+
     <script>
         function save() {
             document.getElementById("save").style.display = "block";

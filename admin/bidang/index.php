@@ -50,33 +50,34 @@
             </form>
         </div>
         <hr>
-        <h3>
-            <b>
-                Bidang
-            </b>
-        </h3>
-        <?php
-                require "../koneksi.php";
-                if (!$koneksi) {
-                    die('Gagal terhubung MySQL: ' . mysqli_connect_error());
-                }
-                $username = $_SESSION["username"];
-                $sql = "SELECT * FROM `bidang`; ";
-                $query = mysqli_query($koneksi, $sql);
-                if (!$query) {
-                    die('SQL Error: ' . mysqli_error($koneksi));
-                }
-                while ($row = mysqli_fetch_array($query)) {
-                    echo "
-                <div class='card'>
-                    <h5>
-                        ".$row["status"]."
-                    </h5>
-                     <a href='deletesistem.php?status=". $row["status"] ."'><button class='deletebtn'><ion-icon name='trash'></ion-icon></button></a>
-                </div>
-                        ";
-                }
-                ?>
+        
+        <div class="card">
+        <table id="example" width="100%" class="table table-striped">
+            <thead>
+                <tr>
+                    <th>Bidang</th>
+                    <th>Option</th>
+                </tr>
+            </thead>
+            <tbody>
+                <?php
+                    require "../koneksi.php";
+                    
+                    $sql = "select * from bidang";
+                    $mysql = mysqli_query($koneksi, $sql);
+                    while ($row = mysqli_fetch_array($mysql)) {
+                        echo "
+                             <tr>
+                             <td style='position:relative;padding:10px 10px;'>" . $row["status"] . "</td>
+                             <td style='position:relative;'> <a style='position:absolute;top:-10px;right:10px;' href='deletsistem.php?status=". $row["status"] ."'><button class='removebtn-position-relative'><ion-icon name='trash'></ion-icon></button></a> </td>
+                             </tr>
+                           ";
+                    }
+
+                    ?>
+            </tbody>
+        </table>
+        </div>
     </section>
     <script src="../js/script.js"></script>
     <script>

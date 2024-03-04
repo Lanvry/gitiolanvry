@@ -26,7 +26,7 @@
                 </script>
             </center>
             <div style="position:relative;">
-                <text style="position:absolute;right:50px;top:-20px;"><a id="span" href=''>Forget Password</a></text><br>
+                <text style="font-family:Arial, Helvetica, sans-serif; position:absolute;right:50px;top:-15px;"><a id="span" href=''>Lupa Password</a></text><br>
             </div>
             <center>
                 <input type="submit" value="Login"><br>
@@ -36,6 +36,7 @@
         session_start();
         function otp(){
             $_SESSION["check"] = "null";
+            $_SESSION["otp1"] = "0";
         }
         otp();
         if (isset($_GET['pesan'])) {

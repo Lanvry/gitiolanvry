@@ -102,7 +102,7 @@
                     <h6>Please enter the one time password <br> to verify your account</h6>
                     <div> <span>A code has been sent to</span> <small><?php echo $output ?></small> </div>
                     <div id="otp" class="inputs d-flex flex-row justify-content-center mt-2"> <input class="m-2 text-center form-control rounded" type="text" id="first" name="first" maxlength="1" /> <input class="m-2 text-center form-control rounded" type="text" id="second" name="second" maxlength="1" /> <input class="m-2 text-center form-control rounded" type="text" id="third" name="third" maxlength="1" /> <input class="m-2 text-center form-control rounded" type="text" id="fourth" name="fourth" maxlength="1" /> <input class="m-2 text-center form-control rounded" type="text" id="fifth"  name="fifth" maxlength="1" /> <input class="m-2 text-center form-control rounded" type="text" id="sixth" name="sixth" maxlength="1" /> </div>
-                    <div class="mt-4"> <input class="btn btn-danger px-4 validate" type="submit" value="Submit"> </div>
+                    <div class="mt-4"> <input class="btn btn-success px-4 validate" type="submit" value="Submit"><br><p style="position:relative;top:10px;color:grey;cursor:pointer;" id="Kirim Ulang"><a href="redirect.php?user=<?php echo $user ?>">Kirim Ulang</a></p> </div>
                 </div>
             </div>
         </div>

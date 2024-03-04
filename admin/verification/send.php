@@ -3,7 +3,11 @@ session_start();
 
 require "../koneksi.php";
 
-// Cek apakah pengguna telah mencoba sebelumnya
+if($_SESSION["otp1"] == "1"){
+
+}
+else{
+    // Cek apakah pengguna telah mencoba sebelumnya
 if (!isset($_SESSION['attempt_count'])) {
     $_SESSION['attempt_count'] = 0;
 }
@@ -11,7 +15,7 @@ if (!isset($_SESSION['attempt_count'])) {
 // Cek apakah telah berlaku timeout sebelumnya
 if (isset($_SESSION['last_attempt_time'])) {
     $time_elapsed = time() - $_SESSION['last_attempt_time'];
-    $timeout_duration = 10; // Waktu tunggu setelah 3 kali percobaan gagal (5 menit)
+    $timeout_duration = 120; // Waktu tunggu setelah 3 kali percobaan gagal (2 menit)
 
     if ($time_elapsed < $timeout_duration) {
         $time_left = $timeout_duration - $time_elapsed;
@@ -21,7 +25,7 @@ if (isset($_SESSION['last_attempt_time'])) {
                 <div class='card p-2 text-center'>
                     <center>
                      <h5>
-                     Anda harus menunggu $time_left detik sebelum mencoba lagi.
+                     Tersisa $time_left Detik
                      </h5>
                     </center>
                 </div>
@@ -109,4 +113,7 @@ if ($_SESSION["check"] == "salah") {
 
     // Tambahkan jumlah percobaan
     $_SESSION['attempt_count']++;
+    $_SESSION["otp1"] = "1";
+}
+
 }

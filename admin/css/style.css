@@ -133,7 +133,7 @@ section {
 .editbtn:hover {
     background-color: darkgreen;
 }
-.editbtn-position-realtive {
+.editbtn-position-relative {
     position: relative;
     background-color: rgb(0, 138, 0);
     color: white;
@@ -146,10 +146,10 @@ section {
     box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.164);
 }
 
-.editbtn-position-realtive:hover {
+.editbtn-position-relative:hover {
     background-color: darkgreen;
 }
-.removebtn-position-realtive {
+.removebtn-position-relative {
     position: relative;
     background-color: rgb(138, 0, 0);
     color: white;
@@ -162,7 +162,7 @@ section {
     box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.164);
 }
 
-.removebtn-position-realtive:hover {
+.removebtn-position-relative:hover {
     background-color: rgb(100, 0, 0);
 }
 .diterimabtn {

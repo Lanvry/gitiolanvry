@@ -55,8 +55,8 @@
                 <img src='gambar/".$row["url_gambar"]."' class='rounded img-fluid'><br>
                 <p>".mb_strimwidth($row["judul"], 0, 39, "...")."</p>
                 <div class='row' style='gap:10px;'>
-                    <div class='col editbtn-position-realtive' ><a href='edit-galeri.php?id_gambar=".$row["id_gambar"]."' style='color:white;text-decoration:none;'><ion-icon name='create'></ion-icon></a></div>
-                    <div class='col removebtn-position-realtive '><a href='sistemremove.php?id_gambar=".$row["id_gambar"]."' style='color:white;text-decoration:none;'><ion-icon name='trash'></ion-icon></a></div>
+                    <div class='col editbtn-position-relative'><a href='edit-galeri.php?id_gambar=".$row["id_gambar"]."' style='color:white;text-decoration:none;'><ion-icon name='create'></ion-icon></a></div>
+                    <div class='col removebtn-position-relative'><a href='sistemremove.php?id_gambar=".$row["id_gambar"]."' style='color:white;text-decoration:none;'><ion-icon name='trash'></ion-icon></a></div>
                 </div>
             </div>
         </div>
