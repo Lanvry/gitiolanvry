@@ -136,20 +136,24 @@
     .androidimg {
       display: none;
     }
-    .gallery-grid{
+
+    .gallery-grid {
       display: grid;
       gap: 5px;
-      grid-template-columns: repeat(4,1fr);
+      grid-template-columns: repeat(4, 1fr);
     }
-    .card{
+
+    .card {
       padding: 10px;
       position: relative;
     }
-    .img-card img{
+
+    .img-card img {
       width: 100%;
       position: relative;
     }
-    .img-text p{
+
+    .img-text p {
       position: relative;
       top: 10px;
     }
@@ -243,42 +247,41 @@ require "koneksi.php"
         <article class="article-justify container">
           <div class="judul">
             <div class="judulbackground">
-              <h3><b>Galeri
+              <h3><b>Download Kategori :
                 </b></h3>
               <div class="kotak"></div>
             </div>
           </div>
           <br><br><br><br><br><br>
-          <div style="background-color:hsl(120, 65%, 39%); padding:5px;color:white;">
-            <h5 style="position:relative;top:5px;"><ion-icon name="camera"></ion-icon> <b>Gallery Photo</b></h5>
-          </div>
-          <?php
-        require "koneksi.php";
 
-        $sql= "SELECT * FROM gambar";
-        $mysql = mysqli_query($koneksi,$sql);
-        echo "
-        <div class='gallery-grid'>
-        ";
-        while($row = mysqli_fetch_array($mysql)){
-          echo "
-            <div class='card'>
-               <div class='content'>
-                 <div class='img-card'>
-                  <img src='../admin/galeri/gambar/".$row["url_gambar"]."' alt=''>
-                 </div>
-                 <div class='img-text'>
-                  <p><ion-icon name='time-outline'></ion-icon> ".date('d F Y', strtotime($row["tgl"]))."</p>
-                   <h5><b>".$row["judul"]."</b></h5>
-                 </div>
-               </div>
-            </div>
-            ";
-          }
-          echo "
+          <div class="card">
+            <table id="example" width="100%" class="table table-striped">
+              <thead>
+                <tr>
+                  <th>Dokumen</th>
+                  <th>Option</th>
+                </tr>
+              </thead>
+              <tbody>
+                <?php
+                require "koneksi.php";
+
+                $sql = "select * from download";
+                $mysql = mysqli_query($koneksi, $sql);
+                while ($row = mysqli_fetch_array($mysql)) {
+                  echo "
+                             <tr>
+                             <td style='position:relative;padding:10px 10px;'>" . $row["nama_dokumen"] . "</td>
+                             <td style='position:relative;'> <a style='position:absolute;top:-10px;right:10px;' href='../admin/download/files/" . $row["url_dokumen"] . "'><button class='editbtn-position-relative'><ion-icon name='download'></ion-icon></button></a> </td>
+                             </tr>
+                           ";
+                }
+
+                ?>
+              </tbody>
+            </table>
           </div>
-        ";
-        ?>
+
         </article>
         <div style="height: 3rem;"></div>
       </div>
@@ -328,6 +331,9 @@ require "koneksi.php"
       </div>
     </div>
   </div>
+  <script>
+    new DataTable('#example');
+  </script>
   <script>
     function submitSearch(e) {
 

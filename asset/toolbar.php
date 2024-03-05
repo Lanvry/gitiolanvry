@@ -19,13 +19,14 @@
                             <div class="tool-bottom-text" title="contoh">Berita</div>
                         </div></a>
 
-                        <div class="tools-wrp-bottom" id="3">
+                        <div onclick="download(2)" class="tools-wrp-bottom" id="3">
                             <div class="tool-bottom-wrp-icon">
                                 <img class="tool-bottom-icon" style="background-color: white;" title="Download" src="https://cdn.icon-icons.com/icons2/1674/PNG/512/download_111133.png" alt="contoh">
                             </div>
                             <div class="tool-bottom-text" title="contoh">Download</div>
                         </div>
 
+                        <a href="galeri/">
                         <div class="tools-wrp-bottom" id="4">
                             <div class="tool-bottom-wrp-icon">
                                 <img class="tool-bottom-icon" style="background-color: white;" title="Galeri" src="https://cdn.icon-icons.com/icons2/3871/PNG/512/gallery_import_icon_244246.png" alt="contoh">
@@ -79,6 +80,25 @@
                         </div>
                     </form>
                 </div>
+                <script>
+                    function download(id) {
+                        showBasedModal();
+                        $.ajax({
+                            type: 'GET',
+                            url: APP_URL + 'arjuna/kontak/' + id,
+                            dataType: "html",
+                            success: function(html) {
+                                $("#navbar_based_modal_content").html(html);
+                            },
+                            error: function(err) {
+                                $("#navbar_based_modal_content").html(
+                                    `<div style="text-align:center; font-size:1.5rem">isi</div>`
+                                );
+                                console.log(err)
+                            }
+                        })
+                    }
+                </script>
                 <script>
                     function getMenumanager(id) {
                         showBasedModal();

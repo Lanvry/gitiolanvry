@@ -30,17 +30,16 @@
     <nav class="nav1">
         <ul>
             <li><a href="../dashboard/">Dashboard</a></li>
+            <li><a href="../berita/">Isi Berita</a></li>
             <div class="dropdown">
                 <a class=" dropdown-toggle" href="#" style="position:relative; top:-5px;" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                    Profile
+                    Download
                 </a>
                 <ul class="dropdown-menu">
-                    <li><a class="dropdown-item" href="../bidang/">Visi Misi</a></li>
-                    <li><a class="dropdown-item" href="../tambah-user/">Struktur</a></li>
-                    <li><a class="dropdown-item" href="../tambah-user/">Staf Dan Kepemimpinan</a></li>
+                    <li><a class="dropdown-item" href="../download/">Download</a></li>
+                    <li id="management_user"><a class="dropdown-item" href="../kategori-download/">Kategori Download</a></li>
                 </ul>
             </div>
-            <li><a href="../berita/">Isi Berita</a></li>
             <li><a href="../Kepuasan-masyarakat/">Kepuasan Masyarakat</a></li>
             <li><a href="../galeri/">Galeri</a></li>
             <li><a href="../users/">Users</a></li>

@@ -174,6 +174,27 @@ $row = mysqli_fetch_array($register);
                 position: relative;
                 top: -20px;
             }
+
+            .container-berita {
+                display: grid;
+                grid-template-columns: repeat(1, 1fr);
+                gap: 0px;
+                width: 100%;
+            }
+            .isi-berita{
+                padding: 10px;
+                margin-left: 0px;
+            }
+            .isi-berita h1{
+                font-size: 23px;
+            }
+            .img-berita {
+            width: 100%;
+            max-height: 500px;
+            background-position: center;
+            background-size: cover;
+            background-repeat: no-repeat;
+        }
         }
     </style>
 </head>
@@ -269,7 +290,7 @@ $row = mysqli_fetch_array($register);
                                 }
 
                                 while ($row = mysqli_fetch_array($query)) {
-                                     echo "<div class='rekomendasi-item'>
+                                    echo "<div class='rekomendasi-item'>
                                      <img src='../admin/berita/image/" . $row["img"] . "' alt=''>
                                      <div>
                                          <p style='position:relative; margin:0px; padding:0px;'><ion-icon name='time-outline'></ion-icon> " . $row["tanggal"] . "</p>

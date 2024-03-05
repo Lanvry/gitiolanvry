@@ -68,50 +68,50 @@
           <div class="slide-container swiper fade">
             <div class="slide-content">
               <div class="card-wrapper swiper-wrapper">
-              <?php
-          require "asset/koneksi.php";
-          if (!$koneksi) {
-            die('Gagal terhubung MySQL: ' . mysqli_connect_error());
-          }
-          $sql = "SELECT * FROM `berita` ";
+                <?php
+                require "asset/koneksi.php";
+                if (!$koneksi) {
+                  die('Gagal terhubung MySQL: ' . mysqli_connect_error());
+                }
+                $sql = "SELECT * FROM `berita` ";
 
-          $query = mysqli_query($koneksi, $sql);
+                $query = mysqli_query($koneksi, $sql);
 
-          if (!$query) {
-            die('SQL Error: ' . mysqli_error($koneksi));
-          }
+                if (!$query) {
+                  die('SQL Error: ' . mysqli_error($koneksi));
+                }
 
-          while ($row = mysqli_fetch_array($query)) {
-            $str = $row["tanggal"];
-            
-            echo "
+                while ($row = mysqli_fetch_array($query)) {
+                  $str = $row["tanggal"];
+
+                  echo "
             <div class='card swiper-slide'>
             <div class='image-content'>
               <span class='overlay'></span>
 
               <div class='card-image'>
-                <img src='admin/berita/image/". $row['img'] ."' alt='' class='card-img'>
+                <img src='admin/berita/image/" . $row['img'] . "' alt='' class='card-img'>
                 <div class='tanggal'>
-                  <div id='tanggal1'>". date('d', strtotime($str)) ."</div>
-                  <div id='bulandantahun'>". date('F Y', strtotime($str)) ."</div>
+                  <div id='tanggal1'>" . date('d', strtotime($str)) . "</div>
+                  <div id='bulandantahun'>" . date('F Y', strtotime($str)) . "</div>
                 </div>
               </div>
             </div>
 
             <div class='card-content'>
               <div class='card-about'>
-                <div class='Waktu'><ion-icon name='person-outline'></ion-icon> ".$row["author"]."</div>
+                <div class='Waktu'><ion-icon name='person-outline'></ion-icon> " . $row["author"] . "</div>
               </div><br>
-              <h2 class='name'>". mb_strimwidth($row["judul"], 0, 50, "...") ."
+              <h2 class='name'>" . mb_strimwidth($row["judul"], 0, 50, "...") . "
               </h2><br><br>
               </div>
              <a href='berita/berita-halaman.php?id_berita=$row[id_berita]' class='button'>View More <ion-icon name='chevron-forward-outline'></ion-icon></a>
           </div>
           ";
-          }
-          ?>
+                }
+                ?>
 
-                
+
                 <!-- jika mau menambahkan berita -->
               </div>
             </div>
@@ -176,15 +176,20 @@
     </div>
     <div class="galeri-photo">
       <div class="galeri-grid">
-        <div class="galeri-item">
-          <img class="imggrid1" src="https://portal.kesbangpol.bandung.go.id/wp-content/uploads/2023/10/WhatsApp-Image-2023-10-19-at-16.23.39-1024x576.jpeg" alt="">
-        </div>
-        <div class="galeri-item">
-          <img class="imggrid1" src="https://portal.kesbangpol.bandung.go.id/wp-content/uploads/2023/10/WhatsApp-Image-2023-10-19-at-16.23.39-1024x576.jpeg" alt="">
-        </div>
-        <div class="galeri-item">
-          <img class="imggrid1" src="https://portal.kesbangpol.bandung.go.id/wp-content/uploads/2023/10/WhatsApp-Image-2023-10-19-at-16.23.39-1024x576.jpeg" alt="">
-        </div>
+        <?php
+        require "asset/koneksi.php";
+
+        $sql = "SELECT * FROM gambar ORDER BY RAND() LIMIT 3";
+        $mysql = mysqli_query($koneksi, $sql);
+
+        while ($row_galeri = mysqli_fetch_array($mysql)) {
+          echo "
+    <div class='galeri-item'>
+        <div class='imggrid1' style='background-image:url(admin/galeri/gambar/" . $row_galeri["url_gambar"] . ");'></div>
+    </div>
+    ";
+        }
+        ?>
       </div>
     </div>
     <br><br>
@@ -196,13 +201,13 @@
     <div class="galeri-video">
       <div class="galeri-grid">
         <div class="galeri-item">
-        <iframe width="100%" height="240px" class="imggrid1" src="https://www.youtube.com/embed/bdg7LLY0N9w?si=t7mO7_1k2dtKwtND" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+          <iframe width="100%" height="240px" class="imggrid1" src="https://www.youtube.com/embed/bdg7LLY0N9w?si=t7mO7_1k2dtKwtND" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
         </div>
       </div>
     </div>
   </div>
 
- 
+
   <!-- <div class="spanduk fade">
     <div class="grid-banner">
       <div class="item-banner">
@@ -284,8 +289,8 @@
     </div>
   </div>
 
- <!-- Sponsor -->
- <div class="sponsor fade">
+  <!-- Sponsor -->
+  <div class="sponsor fade">
     <div class="slide-container swiper" style="height:auto; transform:scale(0.9);">
       <div class="slide-content">
         <div class="card-wrapper swiper-wrapper">
@@ -322,8 +327,8 @@
         <div class="swiper-pagination"></div>
       </div>
     </div>
-  </div><br><br> 
-  
+  </div><br><br>
+
 
   <div class="site-section section-counter" style="margin-top: 30px;">
     <div class="container fade">
@@ -370,7 +375,7 @@
   ?>
   <!-- script -->
   <script>
-        sessionStorage.setItem('rating','false');
+    sessionStorage.setItem('rating', 'false');
     const counters = document.querySelectorAll(".number");
 
     counters.forEach((counter) => {

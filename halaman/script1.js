@@ -71,3 +71,4 @@ function searchoff() {
         }, 200);
     }, 1000);
 }
+new DataTable('#example');

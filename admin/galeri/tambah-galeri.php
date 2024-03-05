@@ -48,11 +48,11 @@
         <hr>
         <div class="card">
             <form action="sistemadd.php" method="post" enctype="multipart/form-data">
-                <label for="" class="label-control">Judul</label>
+                <label for="" class="label-control">Judul </label>
                 <input type="text" name="judul" id="" class="form-control">
                 <label for="" class="label-control">Tanggal</label>
                 <input type="date" name="time" id="" class="form-control">
-                <label for="" class="label-control">Gambar</label>
+                <label for="" class="label-control">Gambar <sup>( Rasio 1280x720 )</sup></label>
                 <input type="file" name="img" id="" class="form-control"><br>
                 <input type="submit" value="Tambah" class="btn btn-success">
             </form>

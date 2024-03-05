@@ -48,9 +48,9 @@
 
         $sql= "SELECT * FROM gambar";
         $mysql = mysqli_query($koneksi,$sql);
+        echo "<div class='grid-galeri'>";
         while($row = mysqli_fetch_array($mysql)){
             echo "
-            <div class='grid-galeri'>
             <div class='card'>
                 <img src='gambar/".$row["url_gambar"]."' class='rounded img-fluid'><br>
                 <p>".mb_strimwidth($row["judul"], 0, 39, "...")."</p>
@@ -59,9 +59,9 @@
                     <div class='col removebtn-position-relative'><a href='sistemremove.php?id_gambar=".$row["id_gambar"]."' style='color:white;text-decoration:none;'><ion-icon name='trash'></ion-icon></a></div>
                 </div>
             </div>
-        </div>
             ";
         }
+        echo "</div>";
         ?>
 
     </section>
