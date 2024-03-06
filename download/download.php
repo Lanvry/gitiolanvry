@@ -240,6 +240,7 @@ require "koneksi.php"
       <div id="toolbar-p-1" class="bottom-based-tools-wrp">
         <?php
         include "../assetPage/toolbar.php";
+        $nama_kategori = $_GET["nama_kategori"];
         ?>
       </div>
 
@@ -247,7 +248,7 @@ require "koneksi.php"
         <article class="article-justify container">
           <div class="judul">
             <div class="judulbackground">
-              <h3><b>Download
+              <h3><b>Download Kategori : <?php echo $nama_kategori; ?>
                 </b></h3>
               <div class="kotak"></div>
             </div>
@@ -255,31 +256,23 @@ require "koneksi.php"
           <br><br><br><br><br><br>
 
           <div class="card">
-            <center>
-              <h2 style='font-family:Arial, Helvetica, sans-serif;'>
-                <b>
-                  <i>Pilih Kategori</i>
-                </b>
-              </h2>
-            </center>
             <table id="example" width="100%" class="table table-striped">
               <thead>
                 <tr>
-                  <th>Kategori</th>
+                  <th>Dokumen</th>
                   <th>Option</th>
                 </tr>
               </thead>
               <tbody>
                 <?php
                 require "koneksi.php";
-
-                $sql = "select * from kategori_download";
+                $sql = "SELECT * FROM download WHERE nama_kategori='$nama_kategori'";
                 $mysql = mysqli_query($koneksi, $sql);
                 while ($row = mysqli_fetch_array($mysql)) {
                   echo "
                              <tr>
-                             <td style='position:relative;padding:10px 10px;'>" . $row["nama_kategori"] . "</td>
-                             <td style='position:relative;'> <a style='position:absolute;top:-10px;right:10px;' href='download.php?nama_kategori=" . $row["nama_kategori"] . "'><button class='editbtn-position-relative'><ion-icon name='eye'></ion-icon></button></a> </td>
+                             <td style='position:relative;padding:10px 10px;'>" . $row["nama_dokumen"] . "</td>
+                             <td style='position:relative;'> <a style='position:absolute;top:-10px;right:10px;' href='../admin/download/files/" . $row["url_dokumen"] . "'><button class='editbtn-position-relative'><ion-icon name='download'></ion-icon></button></a> </td>
                              </tr>
                            ";
                 }

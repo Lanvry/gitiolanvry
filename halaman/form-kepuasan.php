@@ -400,7 +400,7 @@ require "koneksi.php"
             </div>
           </a>
           <div class="toolbar-nav ml-auto">
-            <a class="btn btn-default navbar-nav" href="https://lanvry.github.io/gitiolanvry/">
+            <a class="btn btn-default navbar-nav" href="../index.php">
               <i class="fas fa-home"></i>
             </a>
             </button>

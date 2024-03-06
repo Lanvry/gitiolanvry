@@ -26,12 +26,14 @@
                 </div>
             </a>
 
-            <div class="tools-wrp-bottom" onclick="download(2)" id="3">
-                <div class="tool-bottom-wrp-icon">
-                    <img class="tool-bottom-icon" style="background-color: white;" title="Download" src="https://cdn.icon-icons.com/icons2/1674/PNG/512/download_111133.png" alt="contoh">
+            <a href="../download/">
+                <div class="tools-wrp-bottom" id="3">
+                    <div class="tool-bottom-wrp-icon">
+                        <img class="tool-bottom-icon" style="background-color: white;" title="Download" src="https://cdn.icon-icons.com/icons2/1674/PNG/512/download_111133.png" alt="contoh">
+                    </div>
+                    <div class="tool-bottom-text" title="contoh">Download</div>
                 </div>
-                <div class="tool-bottom-text" title="contoh">Download</div>
-            </div>
+            </a>
 
             <a href="../galeri/">
                 <div class="tools-wrp-bottom" id="4">

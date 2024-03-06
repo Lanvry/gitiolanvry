@@ -214,61 +214,61 @@
             width: 100%;
             grid-template-columns: repeat(4, 1fr);
         }
+
         /* responsive card */
         @media only screen and (max-width: 400px) {
+
             /* posisi 1 */
-        .posisi-1 {
-            width: 100%;
-            grid-template-columns: repeat(1, 1fr);
+            .posisi-1 {
+                width: 100%;
+                grid-template-columns: repeat(1, 1fr);
+            }
+
+            /* posisi 2 */
+            .posisi-2a {
+                width: 100%;
+                grid-template-columns: repeat(1, 1fr);
+            }
+
+            .posisi-2b {
+                width: 100%;
+                grid-template-columns: repeat(1, 1fr);
+            }
+
+            /* posisi 3 */
+            .posisi-3a {
+                width: 100%;
+                position: relative;
+                gap: 16%;
+                grid-template-columns: repeat(1, 1fr);
+            }
+
+            .posisi-3b {
+                width: 100%;
+                position: relative;
+                gap: 16%;
+                grid-template-columns: repeat(1, 1fr);
+            }
+
+            /* posisi 4 */
+            .posisi-4a {
+                width: 100%;
+                grid-template-columns: repeat(1, 1fr);
+            }
+
+            .posisi-2b {
+                width: 100%;
+                grid-template-columns: repeat(1, 1fr);
+            }
+
+            /* responsive card */
         }
 
-        /* posisi 2 */
-        .posisi-2a {
-            width: 100%;
-            grid-template-columns: repeat(1, 1fr);
-        }
+        @media only screen and (max-width: 400px) {}
 
-        .posisi-2b {
-            width: 100%;
-            grid-template-columns: repeat(1, 1fr);
-        }
+        @media only screen and (max-width: 600px) {}
 
-        /* posisi 3 */
-        .posisi-3a {
-            width: 100%;
-            position: relative;
-            gap: 16%;
-            grid-template-columns: repeat(1, 1fr);
-        }
-
-        .posisi-3b {
-            width: 100%;
-            position: relative;
-            gap: 16%;
-            grid-template-columns: repeat(1, 1fr);
-        }
-
-        /* posisi 4 */
-        .posisi-4a {
-            width: 100%;
-            grid-template-columns: repeat(1, 1fr);
-        }
-
-        .posisi-2b {
-            width: 100%;
-            grid-template-columns: repeat(1, 1fr);
-        }
-        /* responsive card */
-        }
-        @media only screen and (max-width: 400px) {
-            
-        }
-        @media only screen and (max-width: 600px) {
-            
-        }
-        @media only screen and (max-width: 900px) {
-            
-        }
+        @media only screen and (max-width: 900px) {}
     </style>
 </head>
 
@@ -284,7 +284,7 @@
                         </div>
                     </a>
                     <div class="toolbar-nav ml-auto">
-                        <a class="btn btn-default navbar-nav" href="https://lanvry.github.io/gitiolanvry/">
+                        <a class="btn btn-default navbar-nav" href="../index.php">
                             <i class="fas fa-home"></i>
                         </a>
                         </button>

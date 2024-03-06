@@ -51,12 +51,12 @@
         echo "<div class='grid-galeri'>";
         while($row = mysqli_fetch_array($mysql)){
             echo "
-            <div class='card'>
+            <div class='card' style='padding-bottom:35px;'>
                 <img src='gambar/".$row["url_gambar"]."' class='rounded img-fluid'><br>
                 <p>".mb_strimwidth($row["judul"], 0, 39, "...")."</p>
-                <div class='row' style='gap:10px;'>
-                    <div class='col editbtn-position-relative'><a href='edit-galeri.php?id_gambar=".$row["id_gambar"]."' style='color:white;text-decoration:none;'><ion-icon name='create'></ion-icon></a></div>
-                    <div class='col removebtn-position-relative'><a href='sistemremove.php?id_gambar=".$row["id_gambar"]."' style='color:white;text-decoration:none;'><ion-icon name='trash'></ion-icon></a></div>
+                <div class='row' style='position:absolute; width:92%; bottom:0; margin-bottom:20px;gap:10px;'>
+                    <div class='col editbtn-position-relative'><a href='edit-galeri.php?id_gambar=".$row["id_gambar"]."' style='color:white;text-decoration:none; width:100%;'><ion-icon name='create'></ion-icon></a></div>
+                    <div class='col removebtn-position-relative'><a href='sistemremove.php?id_gambar=".$row["id_gambar"]."' style='color:white;text-decoration:none; width:100%;'><ion-icon name='trash'></ion-icon></a></div>
                 </div>
             </div>
             ";
